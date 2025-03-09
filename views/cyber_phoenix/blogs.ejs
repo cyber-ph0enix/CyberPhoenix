@@ -1,0 +1,20 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<main>
+    <div class="blogs-container">
+        <h2>
+            Latest Blogs:
+        </h2>
+        <% blogs.forEach((item)=>{%>
+            <div class="blog">
+                <div class="blog-title">
+                    <%=item%>
+                </div>
+                <div class="blog-subtitle">subtitle</div>
+                <div class="blog-post-date">09, March 2025</div>
+                <div class="blog-thumbnail">
+                    <img src="https://www.freeiconspng.com/uploads/no-image-icon-13.png" alt="img" class="blog-thumbnail-img">
+                </div>
+            </div>
+            <%});%>
+    </div>
+</main>
