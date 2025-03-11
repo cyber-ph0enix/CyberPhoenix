@@ -1,5 +1,13 @@
 gsap.registerPlugin(ScrollTrigger);
 
+gsap.from("#blogtext > h2", {
+	skewX: -30,
+	opacity: 0,
+	scale: 0.8,
+	y: 50,
+	duration: 0.75,
+})
+
 const blogs = gsap.utils.toArray(".blog");
 
 blogs.forEach((blog) => {

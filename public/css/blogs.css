@@ -21,7 +21,7 @@ body {
 	top: 50vh;
 	left: 3%;
 	width: 15%;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Kode Mono", sans-serif;
 }
 
 .blogs-page-container {
@@ -59,13 +59,13 @@ body {
 
 .blog-details {
 	padding: 5%;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Kode Mono", sans-serif;
 }
 
 .blog-title {
 	height: 20%;
 	color: var(--title-color);
-	font-size: 1.5vw;
+	font-size: 1.35vw;
 	font-weight: bolder;
 }
 
