@@ -1,0 +1,139 @@
+:root {
+	--bg-color: #f1f2f6;
+	--subtitle-color: #aeb8fe;
+	--title-color: #27187e;
+	--color-4: #758bfd;
+	--color-5: #ff8600;
+}
+
+body {
+	background-color: var(--bg-color);
+	overflow-x: hidden;
+}
+
+#blogtext {
+	/* border: 2px solid green; */
+	width: 15%;
+}
+
+#blogtext > h2 {
+	position: fixed;
+	top: 50vh;
+	left: 3%;
+	width: 15%;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.blogs-page-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.blogs-container {
+	width: 80vw;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	/* border: 2px solid blue; */
+}
+
+.blog {
+	width: 25%;
+	aspect-ratio: 1/1;
+	border-radius: 7px;
+	box-shadow: 4px 5px 10px 3px #0000003b;
+	display: inline-block;
+	margin: 2rem;
+	transition: all 0.5s;
+	position: relative;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.blog-thumbnail {
+	aspect-ratio: 16/9;
+	width: 100%;
+	border-radius: 7px;
+}
+
+.blog-details {
+	padding: 5%;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.blog-title {
+	height: 20%;
+	color: var(--title-color);
+	font-size: 1.5vw;
+	font-weight: bolder;
+}
+
+.blog-post-date {
+	color: var(--subtitle-color);
+	font-size: 1vw;
+}
+
+.blog-read-button {
+	opacity: 0;
+	border-radius: 5px;
+	background-color: #ffffff79;
+	color: var(--title-color);
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+	transition: all 0.5s;
+	border: 1px solid black;
+	width: 25%;
+	height: 12%;
+	font-size: 1vw;
+	text-align: center;
+}
+
+.blog:hover {
+	transform: scale(1.05);
+	box-shadow: 8px 9px 10px 5px #0000003b;
+}
+
+.blog:hover .blog-read-button {
+	opacity: 1;
+	transition: all 0.5s;
+}
+
+.blog-read-button:hover {
+	background-color: var(--bg-color);
+	color: var(--color-5);
+}
+
+@media (max-width: 450px) {
+	#blogtext {
+		/* border: 2px solid green; */
+		width: auto;
+	}
+
+	#blogtext > h2 {
+		position: static;
+		width: auto;
+	}
+
+	.blogs-page-container {
+		flex-direction: column;
+		align-items: center;
+	}
+	.blog {
+		width: 75%;
+	}
+
+	.blog-title {
+		font-size: 5vw;
+	}
+
+	.blog-post-date {
+		font-size: 3vw;
+	}
+	.blog-read-button {
+		font-size: 3vw;
+		bottom: 3%;
+		right: 3%;
+	}
+}
