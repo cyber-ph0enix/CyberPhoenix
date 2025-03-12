@@ -17,7 +17,7 @@ app.get("/blogs", (req, res) => {
     res.render("cyber_phoenix/blogs.ejs");
 });
 
-app.get("/about", (res, req) => {
+app.get("/about", (req, res) => {
     res.render("cyber_phoenix/aboutUs.ejs");
 })
 
