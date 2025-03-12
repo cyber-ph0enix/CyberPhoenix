@@ -1,0 +1,60 @@
+:root {
+	--bg-color: #f1f2f6;
+	--subtitle-color: #aeb8fe;
+	--title-color: #27187e;
+	--color-4: #758bfd;
+	--color-5: #ff8600;
+}
+
+.club-details-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	height: 100vh;
+}
+
+.club-details {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.bg-circle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bolder;
+	font-size: 2rem;
+	aspect-ratio: 1/1;
+	width: 160vmin;
+	border-radius: 50%;
+	position: absolute;
+	left: -80vh;
+	top: -30vh;
+	z-index: -1;
+	background-color: var(--subtitle-color);
+}
+
+.club-name {
+    font-family: "Kode Mono", sans-serif;
+    font-size: 10vmin;
+    color: var(--title-color);
+	margin: 0;
+	text-align: center;
+}
+
+.club-tagline {
+    font-family: "Kode Mono", sans-serif;
+	font-size: 3.5vmin;
+	color: var(--color-4);
+	text-align: center;
+}
+
+.club-description {
+	display: none;
+}
+
+@media (width < height) {
+
+}
