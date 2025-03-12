@@ -11,14 +11,12 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kode+Mono:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap"
             rel="stylesheet" />
-            
-        <link rel="stylesheet" href="/css/index.css">
+
+        <link rel="stylesheet" href="/css/index.css" />
     </head>
 
     <body>
-        <header>
-            <%- include("../includes/navbar.ejs") %>
-        </header>
+        <header><%- include("../includes/navbar.ejs") %></header>
 
         <main>
             <section class="section1">
@@ -41,15 +39,18 @@
 
             <section class="section2">
                 <div class="section2-part1">
-                    <h1><span>WHO</span><span>WE ARE</span></h1>
+                    <h1>
+                        <span class="span-1">WHO WE</span
+                        ><span class="span-2">ARE</span>
+                    </h1>
                 </div>
 
                 <div class="section2-part2">
                     <div class="para-1">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Quasi sapiente officia earum quam id temporibus
-                        soluta, voluptatum et doloribus officiis magnam illo
-                        accusamus ad nam ea nostrum vitae, neque voluptatem.
+                        <div class="line"><span>Lorem ipsum dolor sit amet, adipisicing</span></div>
+                        <div class="line"><span>elit. Natus nulla voluptates quae quam</span></div>
+                        <div class="line"><span>Odit molestiae harum, quo quibusdam</span></div>
+                        <div class="line"><span>cum expedita eveniet ipsa.</span></div>
                     </div>
                     <div class="para-2">
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -65,10 +66,10 @@
             <section class="section3">
                 <div class="section3-head">
                     <div>
-                        <h1><span>WHAT WE</span><span>OFFER</span></h1>
+                        <h1><span class="span-1">WHAT WE</span><span class="span-2">OFFER</span></h1>
                         <h3>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Sint, nisi.
+                            <div class="line"><span>Lorem ipsum dolor sit amet consectetur</span></div>
+                            <div class="line"><span>elit. Sint, nisi.</span></div>
                         </h3>
                     </div>
                 </div>
@@ -112,9 +113,9 @@
 
             <section class="section4 vertical-flex-center">
                 <div class="section4-part1">
-                    <h1 class="section4-head">
-                        <span class="head2-part1">OUR</span>
-                        <span class="head2-part2">EVENTS</span>
+                    <h1 class="section4-head vertical-flex-center">
+                        <span class="span-1">OUR</span>
+                        <span class="span-2">EVENTS</span>
                     </h1>
                 </div>
 
@@ -155,11 +156,11 @@
             </section>
 
             <div class="section5 vertical-flex-center">
-                <div class="section5-head">
-                    <h1>JOIN OUR</h1>
-                    <h1>VENTURES</h1>
-                    <h1>HERE</h1>
-                </div>
+                <h1 class="section5-head vertical-flex-center">
+                    <span class="span-1">JOIN OUR</span>
+                    <span class="span-2">VENTURES</span>
+                    <span class="span-3">HERE</span>
+                </h1>
 
                 <div class="social-links vertical-flex-center">
                     <div class="social">

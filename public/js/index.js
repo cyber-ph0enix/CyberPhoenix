@@ -23,11 +23,101 @@ tl.from(".section1 h3", {
     duration: 0.5,
 });
 
-// -------------------- section 3 elements ------------------------
-tl.from(".el1 img", {
-    opacity: 0,
-    rotation: 10,
+// -------------------- section 2 ------------------------
+tl.from(".section2-part1 h1 .span-1", {
     x: 100,
+    backgroundPositionX: "-15.5%",
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".section2-part1 h1 .span-1",
+        scroller: "body",
+        start: "top 80%",
+        scrub: true,
+    },
+});
+tl.from(".section2-part1 h1 .span-2", {
+    x: 30,
+    backgroundPositionX: "-15.5%",
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".section2-part1 h1 .span-2",
+        scroller: "body",
+        start: "top 80%",
+        scrub: true,
+    },
+});
+
+tl.to(".para-1 .line span", {
+    transform: "translateY(0)",
+    duration: 1,
+    stagger: 0.4,
+    scrollTrigger: {
+        trigger: ".para-1 .line span",
+        end: "top 30%",
+        scrub: true,
+    },
+});
+tl.from(".para-2", {
+    y: 70,
+    opacity: 0,
+    duration: 1,
+});
+tl.from(".section2-part2 button", {
+    y: 20,
+    opacity: 0,
+    duration: 1,
+});
+
+// --------------------- section 3 head ---------------------------
+tl.from(".section3-head h1 .span-1", {
+    x: 100,
+    backgroundPositionX: "-15.5%",
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".section3-head h1 .span-2",
+        scroller: "body",
+        start: "top 80%",
+        scrub: true,
+    },
+});
+tl.from(".section3-head h1 .span-2", {
+    x: 30,
+    backgroundPositionX: "-15.5%",
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".section3-head h1 .span-2",
+        scroller: "body",
+        start: "top 80%",
+        scrub: true,
+    },
+});
+tl.to(".section3-head h3 .line span", {
+    transform: "translateY(0)",
+    duration: 1,
+    stagger: 0.4,
+    scrollTrigger: {
+        trigger: ".section3-head h3 .line span",
+        end: "top 30%",
+        scrub: true,
+    },
+});
+
+// -------------------- section 3 elements ------------------------
+
+tl.from(".el1", {
+    opacity: 0,
+    y: 300,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".el1",
+        scrub: true,
+        end: "top 80%"
+    },
+})
+tl.from(".el1 img", {
+    // opacity: 0,
+    rotation: 10,
+    x: 400,
     y: 100,
     duration: 1,
     scrollTrigger: {
@@ -36,10 +126,20 @@ tl.from(".el1 img", {
         start: "top 80%",
     },
 });
-tl.from(".el2 img", {
+tl.from(".el2", {
     opacity: 0,
+    y: 300,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".el2",
+        scrub: true,
+        end: "top 80%"
+    },
+})
+tl.from(".el2 img", {
+    // opacity: 0,
     rotation: -10,
-    x: -100,
+    x: -400,
     y: 100,
     duration: 1,
     scrollTrigger: {
@@ -48,16 +148,50 @@ tl.from(".el2 img", {
         start: "top 80%",
     },
 });
-tl.from(".el3 img", {
+tl.from(".el3", {
     opacity: 0,
+    y: 300,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".el3",
+        scrub: true,
+        end: "top 80%"
+    },
+})
+tl.from(".el3 img", {
+    // opacity: 0,
     rotation: 10,
-    x: 100,
+    x: 400,
     y: 100,
     duration: 1,
     scrollTrigger: {
         trigger: ".el3 img",
         scrub: true,
         start: "top 80%",
+    },
+});
+
+// ------------------ section 4 -------------------
+tl.from(".section4-part1 h1 .span-1", {
+    x: 100,
+    backgroundPositionX: "-15.5%",
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".section4-part1 h1 .span-2",
+        scroller: "body",
+        start: "top 80%",
+        scrub: true,
+    },
+});
+tl.from(".section4-part1 h1 .span-2", {
+    x: 30,
+    backgroundPositionX: "-15.5%",
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".section4-part1 h1 .span-2",
+        scroller: "body",
+        start: "top 80%",
+        scrub: true,
     },
 });
 
@@ -116,6 +250,41 @@ tl.from(".event-4", {
         scrub: true,
         start: "top 80%",
         end: "bottom 80%",
+    },
+});
+
+// -------------------- section 5 --------------------
+tl.from(".section5-head .span-1", {
+    x: 100,
+    backgroundPositionX: "-15.5%",
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".section5-head .span-2",
+        scroller: "body",
+        start: "top 80%",
+        scrub: true,
+    },
+});
+tl.from(".section5-head .span-2", {
+    x: 30,
+    backgroundPositionX: "-15.5%",
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".section5-head .span-2",
+        scroller: "body",
+        start: "top 80%",
+        scrub: true,
+    },
+});
+tl.from(".section5-head .span-3", {
+    x: 30,
+    backgroundPositionX: "-15.5%",
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".section5-head .span-3",
+        scroller: "body",
+        start: "top 80%",
+        scrub: true,
     },
 });
 
