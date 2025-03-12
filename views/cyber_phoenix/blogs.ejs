@@ -1,20 +1,29 @@
 <% layout("/layouts/boilerplate.ejs") %>
 <main>
-    <div class="blogs-container">
-        <h2>
-            Latest Blogs:
-        </h2>
-        <% blogs.forEach((item)=>{%>
-            <div class="blog">
-                <div class="blog-title">
-                    <%=item%>
-                </div>
-                <div class="blog-subtitle">subtitle</div>
-                <div class="blog-post-date">09, March 2025</div>
-                <div class="blog-thumbnail">
-                    <img src="https://www.freeiconspng.com/uploads/no-image-icon-13.png" alt="img" class="blog-thumbnail-img">
-                </div>
-            </div>
-            <%});%>
-    </div>
+	<div class="blogs-page-container">
+		<div id="blogtext">
+			<h2>Read our Blogs:</h2>
+		</div>
+		<div class="blogs-container">
+			<% for (let i = 0; i<50; i++) {%>
+			<div class="blog">
+				<img
+					src="https://previews.123rf.com/images/aimage/aimage1706/aimage170600007/79563474-vector-illustration-of-cyber-security.jpg"
+					alt="img"
+					class="blog-thumbnail"
+					loading="lazy"
+				/>
+				<div class="blog-details">
+					<div class="blog-title">
+						How to hack any wifi within 15 minutes?
+					</div>
+					<div class="blog-post-date blog-subtitle">
+						09, March 2025
+					</div>
+				</div>
+				<button class="blog-read-button">Read</button>
+			</div>
+			<%}%>
+		</div>
+	</div>
 </main>

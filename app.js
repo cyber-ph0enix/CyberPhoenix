@@ -12,9 +12,13 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
     res.render("cyber_phoenix/index.ejs");
 });
+
 app.get("/blogs", (req, res) => {
-    let data = ["blog 1", "blog 2", "blog 3", "blog 4", "blog 5", "blog 6", "blog 7", "blog 8", "blog 9", "blog 10"];
-    res.render("cyber_phoenix/blogs.ejs", {blogs: data});
+    res.render("cyber_phoenix/blogs.ejs");
 });
+
+app.get("/about", (res, req) => {
+    res.render("cyber_phoenix/aboutUs.ejs");
+})
 
 app.listen(8080, () => console.log("app is listening to port 8080"));
