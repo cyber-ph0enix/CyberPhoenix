@@ -1,60 +1,60 @@
 :root {
-	--bg-color: #f1f2f6;
-	--subtitle-color: #aeb8fe;
-	--title-color: #27187e;
+	--color-1: #e0eeee;
+	--color-2: #121315;
+	--color-3: #aeb8fe;
 	--color-4: #758bfd;
 	--color-5: #ff8600;
 }
 
-.club-details-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-	height: 100vh;
+* {
+	margin: 0;
+	padding: 0;
 }
 
-.club-details {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+body {
+	background-color: var(--color-2);
+	color: var(--color-1);
+	font-family: "Kode Mono", sans-serif;
 }
 
-.bg-circle {
+.vertical-center {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-weight: bolder;
-	font-size: 2rem;
-	aspect-ratio: 1/1;
-	width: 160vmin;
-	border-radius: 50%;
-	position: absolute;
-	left: -80vh;
-	top: -30vh;
-	z-index: -1;
-	background-color: var(--subtitle-color);
+}
+
+.box {
+	border: 2px solid var(--color-1);
+	border-radius: 6vmin;
+}
+
+.section-club-intro {
+	height: 90vh;
 }
 
 .club-name {
-    font-family: "Kode Mono", sans-serif;
-    font-size: 10vmin;
-    color: var(--title-color);
-	margin: 0;
-	text-align: center;
+    font-size: 10.5vmin;
 }
 
 .club-tagline {
-    font-family: "Kode Mono", sans-serif;
-	font-size: 3.5vmin;
-	color: var(--color-4);
-	text-align: center;
+	font-size: 3vmin;
 }
 
-.club-description {
-	display: none;
+.section-club-description {
+	height: 10vh;
 }
 
-@media (width < height) {
+.scrolldown-box {
+	aspect-ratio: 5/2;
+	width: 10vmin;
+}
 
+.club-description-box {
+	width: 90vw;
+	height: 90vh;
+}
+
+.word {
+	display: inline-block;
 }
