@@ -43,4 +43,7 @@ nav img {
         overflow: hidden;
         flex-direction: column !important;
     }
+    nav .logo h1 {
+        font-size: 1rem;
+    }
 }
