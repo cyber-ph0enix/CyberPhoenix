@@ -18,7 +18,7 @@ app.get("/blogs", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-    res.render("cyber_phoenix/aboutUs.ejs");
+    res.render("cyber_phoenix/about.ejs");
 })
 
 app.listen(8080, () => console.log("app is listening to port 8080"));

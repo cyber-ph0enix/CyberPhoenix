@@ -29,28 +29,47 @@ gsap.to(".scrolldown-box", {
         start: "top bottom-=10.05%",
         end: "center 25%",
         scrub: 1,
-        // onToggle: toggleBoxContent,
         onUpdate: toggleBoxContent
     },
     width: "80vw",
     height: "80vh",
-    // onComplete: showText,
 });
 
-// function removeText() {
-//     box.
-// }
+gsap.from(".section-club-desc h3", {
+        scrollTrigger: {
+            trigger: ".section-club-desc h3",
+            start: "top 65%",
+            end: "top 20%",
+            scrub: 1,
+            onUpdate: showDesc
+        },
+        opacity:0,
+        backgroundPositionX: "-15.5%",
+    });
+
+
+function showDesc(obj) {
+    if (obj.progress>0.9) {
+        gsap.to(".club-desc", {
+            opacity: 1
+        });
+    }
+    else {
+        gsap.to(".club-desc", {
+            opacity: 0
+        });
+    }
+}
 
 function toggleBoxContent(obj) {
     let title = document.querySelector(".section-club-desc h3");
     let description = document.querySelector(".club-desc");
     let box = document.querySelector(".section-club-desc>div");
-    console.log(obj.progress);
     if (obj.progress > 0.4) {
         box.classList.remove("scrolldown-box");
         box.classList.add("club-desc-box");
-        title.style.display = "initial";
-        description.style.display = "initial";
+        title.style.display = "inline-block";
+        description.style.display = "inline-block";
     }
     else {
         box.classList.remove("club-desc-box");
