@@ -1,0 +1,23 @@
+/* ------------------- footer --------------------- */
+footer {
+    padding: 7vw 0 3vw 0;
+    gap: 2vw;
+}
+footer .club-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    font-family: "chakra petch", sans-serif;
+}
+footer .club-logo img {
+    width: 2vw;
+}
+footer .part-2 {
+    gap: 1vw;
+}
+@media (max-width: 1120px) {
+    footer h1 {
+        font-size: 1.4rem;
+    }
+}

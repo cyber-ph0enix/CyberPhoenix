@@ -14,7 +14,13 @@ body {
     background-color: #121315;
     padding: 6vw;
     color: #e0eeee;
-    font-family: "chakra petch", sans-serif;
+    font-family: "space grotesk", sans-serif;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 900px) {
@@ -28,50 +34,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-/* ----------------------- navbar -------------------- */
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 2vw 3vw;
-    width: 100%;
-}
-.nav-element {
-    display: flex;
-    gap: 2vw;
-}
-.nav-link {
-    text-decoration: none;
-    color: #e0eeee;
-}
-nav img {
-    position: absolute;
-    width: 3vw;
-    display: none;
-    cursor: pointer;
-    right: 2vw;
-    top: 2vw;
-}
-@media (max-width: 900px) {
-    nav img {
-        display: block;
-    }
-    nav {
-        flex-direction: column !important;
-        gap: 3vh;
-    }
-    .nav-element {
-        position: absolute;
-        height: 0;
-        opacity: 0;
-        overflow: hidden;
-        flex-direction: column !important;
-    }
 }
 
 /* -------------------- section 1-------------------------- */
@@ -92,7 +54,7 @@ nav img {
 .section1-head,
 .section2-head {
     gap: 0;
-    font-family: "kode mono", sans-serif;
+    font-family: "chakra petch", sans-serif;
 }
 .section1 h3 {
     font-weight: lighter;
@@ -152,6 +114,7 @@ nav img {
     align-items: flex-start;
     font-size: 4.5rem;
     line-height: 3.5rem;
+    font-family: "chakra petch", sans-serif;
 }
 .section2-part1 h1 span {
     background-color: #2e2f31;
@@ -236,7 +199,7 @@ nav img {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 6vw;
-    font-family: "kode mono", sans-serif;
+    font-family: "chakra petch", sans-serif;
 }
 .section3-head div {
     display: flex;
@@ -333,7 +296,7 @@ nav img {
 .section4-head {
     font-size: 4.5rem;
     line-height: 3.5rem;
-    font-family: "kode mono", sans-serif;
+    font-family: "chakra petch", sans-serif;
 }
 .section4-head span {
     background-color: #2e2f31;
@@ -420,7 +383,7 @@ nav img {
 .section5-head {
     font-size: 4.5rem;
     line-height: 3.5rem;
-    font-family: "kode mono", sans-serif;
+    font-family: "chakra petch", sans-serif;
 }
 .section5-head span {
     background-color: #2e2f31;
@@ -470,29 +433,5 @@ nav img {
     }
     .social {
         font-size: 0.8rem !important;
-    }
-}
-
-/* ------------------- footer --------------------- */
-footer {
-    padding: 7vw 0 3vw 0;
-    gap: 2vw;
-}
-footer .club-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2vw;
-    font-family: "kode mono", sans-serif;
-}
-footer .club-logo img {
-    width: 2vw;
-}
-footer .part-2 {
-    gap: 1vw;
-}
-@media(max-width: 1120px) {
-    footer h1 {
-        font-size: 1.4rem;
     }
 }
