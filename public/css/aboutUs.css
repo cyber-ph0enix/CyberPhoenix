@@ -41,7 +41,11 @@ body {
 	font-size: 3vmin;
 }
 
-.section-club-description {
+.word {
+	display: inline-block;
+}
+
+.section-club-desc {
 	height: 10vh;
 }
 
@@ -50,11 +54,27 @@ body {
 	width: 10vmin;
 }
 
-.club-description-box {
-	width: 90vw;
-	height: 90vh;
+.club-desc-box {
+	width: 80vw;
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 5%;
+	box-sizing: border-box;
 }
 
-.word {
-	display: inline-block;
+.section-club-desc h3 {
+	display: none;
+	text-align: center;
+	font-size: 5vmin;
+	/* opacity: 0; */
+}
+
+.club-desc {
+	display: none;
+	text-align: center;
+	width: 50vw;
+	/* opacity: 0; */
 }

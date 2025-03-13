@@ -1,12 +1,5 @@
 gsap.registerPlugin(ScrollTrigger, Flip, Text);
 
-let clubDescription = 
-            `CyberPhoenix is a club under the CSE department of Guru Jambheshwar
-			University of Science & Technology. We are a group of cybersecurity
-			enthusiasts who aspire to create a secure digital environment for
-			everyone but for now we are initiating that dream by making our
-			university aware!`;
-
 let timelineFirst = gsap.timeline({
     defaults: {
         duration: 0.5,
@@ -21,10 +14,10 @@ let timelineFirst = gsap.timeline({
 timelineFirst.from(".club-name", {})
     .from(".word", {stagger: 0.25});
 
-gsap.to(".section-club-description", {
+gsap.to(".section-club-desc", {
     scrollTrigger: {
         trigger: ".scrolldown-box",
-        start: "top bottom-=10.1%",
+        start: "top bottom-=10.05%",
         scrub: true
     },
     width: "100vw",
@@ -33,9 +26,36 @@ gsap.to(".section-club-description", {
 gsap.to(".scrolldown-box", {
     scrollTrigger: {
         trigger: ".scrolldown-box",
-        start: "top bottom-=10.1%",
-        scrub: true
+        start: "top bottom-=10.05%",
+        end: "center 25%",
+        scrub: 1,
+        // onToggle: toggleBoxContent,
+        onUpdate: toggleBoxContent
     },
-    width: "90vw",
-    height: "90vh"
+    width: "80vw",
+    height: "80vh",
+    // onComplete: showText,
 });
+
+// function removeText() {
+//     box.
+// }
+
+function toggleBoxContent(obj) {
+    let title = document.querySelector(".section-club-desc h3");
+    let description = document.querySelector(".club-desc");
+    let box = document.querySelector(".section-club-desc>div");
+    console.log(obj.progress);
+    if (obj.progress > 0.4) {
+        box.classList.remove("scrolldown-box");
+        box.classList.add("club-desc-box");
+        title.style.display = "initial";
+        description.style.display = "initial";
+    }
+    else {
+        box.classList.remove("club-desc-box");
+        box.classList.add("scrolldown-box");
+        title.style.display = "none";
+        description.style.display = "none";
+    }
+}
