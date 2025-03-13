@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollTrigger, Flip, Text);
 
+//  ------------- Introduction Section
+
 let timelineFirst = gsap.timeline({
     defaults: {
         duration: 0.5,
@@ -14,10 +16,14 @@ let timelineFirst = gsap.timeline({
 timelineFirst.from(".club-name", {})
     .from(".word", {stagger: 0.25});
 
+
+//  ------------- Description Section
+
 gsap.to(".section-club-desc", {
     scrollTrigger: {
         trigger: ".scrolldown-box",
         start: "top bottom-=10.05%",
+        end: "top 25%",
         scrub: true
     },
     width: "100vw",
@@ -27,7 +33,7 @@ gsap.to(".scrolldown-box", {
     scrollTrigger: {
         trigger: ".scrolldown-box",
         start: "top bottom-=10.05%",
-        end: "center 25%",
+        end: "top 15%",
         scrub: 1,
         onUpdate: toggleBoxContent
     },
@@ -78,3 +84,15 @@ function toggleBoxContent(obj) {
         description.style.display = "none";
     }
 }
+
+//  ------------- Goal Section
+
+let timelineSecond = gsap.timeline();
+timelineSecond.from(".goals-heading", {
+    scrollTrigger: {
+        trigger: ".goals-heading",
+        end: "center center",
+        scrub: true,
+    },
+    backgroundPositionX: "-15.5%",
+})

@@ -112,4 +112,64 @@ body {
 .goal-item {
 	list-style: none;
 	margin: 1%;
+	font-size: 3vmin;
 }
+
+/* ----- Team intoduction section */
+
+.section-team {
+	width: 100vw;
+}
+
+.team-container {
+	width: 70%;
+}
+
+.team-heading {
+	font-size: 7vmin;
+	margin-bottom: 3%;
+}
+
+.member {
+	display: flex;
+	flex-direction: row	;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.75%;
+	border-bottom: 2px solid var(--color-1);
+}
+
+.member:first-of-type {
+	border-top: 2px solid var(--color-1);
+}
+
+.member-name {
+	width: 30%;
+	font-size: 4vmin;
+}
+
+.member-role {
+	text-align: center;
+	width: 30%;
+	font-size: 2vmin;
+}
+
+.member-connect {
+	width: 30%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.member-connect-button {
+	background-color: transparent;
+	border: 2px solid var(--color-1);
+	color: var(--color-1);
+	font-size: 2vmin;
+	font-family: "Kode Mono", sans-serif;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	padding: 3% 5%;
+	border-radius: 0.5rem;
+}
+
