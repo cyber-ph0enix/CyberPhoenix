@@ -14,7 +14,7 @@ let timelineFirst = gsap.timeline({
 });
 
 timelineFirst.from(".club-name", {})
-    .from(".word", {stagger: 0.25});
+    .from(".word", {stagger: 0.1});
 
 
 //  ------------- Description Section
