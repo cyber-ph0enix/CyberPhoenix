@@ -15,7 +15,6 @@ body {
     padding: 6vw;
     color: #e0eeee;
     font-family: "chakra petch", sans-serif;
-    overflow-x: hidden !important;
 }
 
 @media (max-width: 900px) {
@@ -135,6 +134,8 @@ nav img {
 
 /* --------------------- section 2 ------------------ */
 .section2 {
+    width: 80vw;
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr;
     border: 2px solid #e0eeee;
@@ -215,12 +216,21 @@ nav img {
     .section2-part2 {
         justify-content: center;
         align-items: center;
+        gap: 10vw;
+    }
+    .section2 .para-1 {
+        font-size: 1rem;
+    }
+    .section2 .para-2 {
+        font-size: 0.8rem;
     }
 }
 
 /* ----------------------- section 3 ---------------------- */
 .section3 {
     margin-bottom: 16vw;
+    width: 80vw;
+    overflow-x: hidden;
 }
 .section3-head {
     display: grid;
@@ -250,6 +260,8 @@ nav img {
     -webkit-background-clip: text;
 }
 .section3-head h3 {
+    font-weight: lighter;
+    font-size: 0.8rem;
     overflow: hidden;
 }
 .section3-element {
@@ -271,7 +283,8 @@ nav img {
     width: 40vw;
     border-radius: 2vw;
 }
-@media (max-width: 1100px) {
+
+@media (max-width: 1120px) {
     .section3-head {
         margin-bottom: 20vw;
     }
@@ -282,8 +295,6 @@ nav img {
         font-size: 3rem;
         line-height: 2.5rem;
     }
-}
-@media (max-width: 1120px) {
     .section3-elements {
         display: flex;
         flex-direction: column;
@@ -316,6 +327,8 @@ nav img {
 .section4 {
     gap: 3rem;
     margin-bottom: 24vw;
+    width: 80vw;
+    overflow: hidden;
 }
 .section4-head {
     font-size: 4.5rem;
@@ -331,6 +344,13 @@ nav img {
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
+}
+
+@media(max-width: 1120px) {
+    .section4-part1 h1 {
+        font-size: 3rem;
+        line-height: 2.5rem;
+    }
 }
 
 /* --------------- events --------------- */
@@ -392,7 +412,10 @@ nav img {
 
 /* ------------------------- section 5 ------------------------- */
 .section5 {
-    gap: 4vw;
+    gap: 14vw;
+    width: 80vw;
+    overflow-x: hidden;
+    margin-bottom: 16vw;
 }
 .section5-head {
     font-size: 4.5rem;
@@ -440,6 +463,15 @@ nav img {
 .expand {
     gap: 24vw;
 }
+@media(max-width: 1120px) {
+    .section5-head {
+        font-size: 3rem;
+        line-height: 2.5rem;
+    }
+    .social {
+        font-size: 0.8rem !important;
+    }
+}
 
 /* ------------------- footer --------------------- */
 footer {
@@ -458,4 +490,9 @@ footer .club-logo img {
 }
 footer .part-2 {
     gap: 1vw;
+}
+@media(max-width: 1120px) {
+    footer h1 {
+        font-size: 1.4rem;
+    }
 }

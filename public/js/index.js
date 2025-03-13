@@ -104,21 +104,21 @@ tl.to(".section3-head h3 .line span", {
 
 // -------------------- section 3 elements ------------------------
 
-tl.from(".el1", {
-    opacity: 0,
-    y: 300,
-    duration: 1,
-    scrollTrigger: {
-        trigger: ".el1",
-        scrub: true,
-        end: "top 80%"
-    },
-})
+// tl.from(".el1", {
+//     opacity: 0,
+//     y: 300,
+//     duration: 1,
+//     scrollTrigger: {
+//         trigger: ".el1",
+//         scrub: true,
+//         end: "top 80%"
+//     },
+// })
 tl.from(".el1 img", {
     // opacity: 0,
-    rotation: 10,
+    // rotation: 10,
     x: 400,
-    y: 100,
+    // y: 100,
     duration: 1,
     scrollTrigger: {
         trigger: ".el1 img",
@@ -126,21 +126,21 @@ tl.from(".el1 img", {
         start: "top 80%",
     },
 });
-tl.from(".el2", {
-    opacity: 0,
-    y: 300,
-    duration: 1,
-    scrollTrigger: {
-        trigger: ".el2",
-        scrub: true,
-        end: "top 80%"
-    },
-})
+// tl.from(".el2", {
+//     opacity: 0,
+//     y: 300,
+//     duration: 1,
+//     scrollTrigger: {
+//         trigger: ".el2",
+//         scrub: true,
+//         end: "top 80%"
+//     },
+// })
 tl.from(".el2 img", {
     // opacity: 0,
-    rotation: -10,
+    // rotation: -10,
     x: -400,
-    y: 100,
+    // y: 100,
     duration: 1,
     scrollTrigger: {
         trigger: ".el2 img",
@@ -148,21 +148,21 @@ tl.from(".el2 img", {
         start: "top 80%",
     },
 });
-tl.from(".el3", {
-    opacity: 0,
-    y: 300,
-    duration: 1,
-    scrollTrigger: {
-        trigger: ".el3",
-        scrub: true,
-        end: "top 80%"
-    },
-})
+// tl.from(".el3", {
+//     opacity: 0,
+//     y: 300,
+//     duration: 1,
+//     scrollTrigger: {
+//         trigger: ".el3",
+//         scrub: true,
+//         end: "top 80%"
+//     },
+// })
 tl.from(".el3 img", {
     // opacity: 0,
-    rotation: 10,
+    // rotation: 10,
     x: 400,
-    y: 100,
+    // y: 100,
     duration: 1,
     scrollTrigger: {
         trigger: ".el3 img",
@@ -262,6 +262,7 @@ tl.from(".section5-head .span-1", {
         trigger: ".section5-head .span-2",
         scroller: "body",
         start: "top 80%",
+        end: "bottom 20%",
         scrub: true,
     },
 });
@@ -273,6 +274,7 @@ tl.from(".section5-head .span-2", {
         trigger: ".section5-head .span-2",
         scroller: "body",
         start: "top 80%",
+        end: "bottom 20%",
         scrub: true,
     },
 });
@@ -284,6 +286,7 @@ tl.from(".section5-head .span-3", {
         trigger: ".section5-head .span-3",
         scroller: "body",
         start: "top 80%",
+        end: "bottom 20%",
         scrub: true,
     },
 });
