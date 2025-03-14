@@ -14,85 +14,98 @@ let timelineFirst = gsap.timeline({
 });
 
 timelineFirst.from(".club-name", {})
-    .from(".word", {stagger: 0.1});
+    .from(".word", {});
 
 
 //  ------------- Description Section
 
-gsap.to(".section-club-desc", {
-    scrollTrigger: {
-        trigger: ".scrolldown-box",
-        start: "top bottom-=10.05%",
-        end: "top 25%",
-        scrub: true
-    },
-    width: "100vw",
-    height: "100vh"
-});
+// box animation
 gsap.to(".scrolldown-box", {
     scrollTrigger: {
-        trigger: ".scrolldown-box",
-        start: "top bottom-=10.05%",
-        end: "top 15%",
-        scrub: 1,
-        onUpdate: toggleBoxContent
+        trigger: ".section-club-desc",
+        start: "top bottom",
+        end: "top top",
+        scrub: 0.1,
+        onUpdate: toggleBoxContent,
+        // markers: true
     },
     width: "80vw",
-    height: "80vh",
+    height: "60vh",
 });
 
-gsap.from(".section-club-desc h3", {
+function toggleBoxContent(obj) {
+    let title = document.querySelector(".section-club-desc h3");
+    let description = document.querySelector(".desc-container");
+    if (obj.progress > 0.1) {
+        title.style.display = "flex";
+        description.style.display = "initial";
+    }
+    else {
+        title.style.display = "none";
+        description.style.display = "none";
+    }
+    let box = document.querySelector(".section-club-desc>div");
+    showDesc(obj);
+    if (obj.progress == 1) {
+        box.style.position = "static";
+    }
+    else {
+        box.style.position = "fixed";
+    }
+}
+function showDesc(obj) {
+    if (obj.progress>0.98) {
+        gsap.to(".club-desc", {
+            transform: "translateY(0)"
+        });
+    }
+    else {
+        gsap.to(".club-desc", {
+            yPercent: 100
+        });
+    }
+}
+
+// title animation
+gsap.from(".section-club-desc .horizontal-text-reveal", {
         scrollTrigger: {
             trigger: ".section-club-desc h3",
             start: "top 65%",
-            end: "top 20%",
-            scrub: 1,
-            onUpdate: showDesc
+            end: "top top",
+            scrub: 0.1,
+            // markers: true
         },
         opacity:0,
         backgroundPositionX: "-15.5%",
     });
 
 
-function showDesc(obj) {
-    if (obj.progress>0.9) {
-        gsap.to(".club-desc", {
-            opacity: 1
-        });
-    }
-    else {
-        gsap.to(".club-desc", {
-            opacity: 0
-        });
-    }
-}
-
-function toggleBoxContent(obj) {
-    let title = document.querySelector(".section-club-desc h3");
-    let description = document.querySelector(".club-desc");
-    let box = document.querySelector(".section-club-desc>div");
-    if (obj.progress > 0.4) {
-        box.classList.remove("scrolldown-box");
-        box.classList.add("club-desc-box");
-        title.style.display = "inline-block";
-        description.style.display = "inline-block";
-    }
-    else {
-        box.classList.remove("club-desc-box");
-        box.classList.add("scrolldown-box");
-        title.style.display = "none";
-        description.style.display = "none";
-    }
-}
 
 //  ------------- Goal Section
-
-let timelineSecond = gsap.timeline();
-timelineSecond.from(".goals-heading", {
-    scrollTrigger: {
-        trigger: ".goals-heading",
-        end: "center center",
-        scrub: true,
-    },
-    backgroundPositionX: "-15.5%",
+let heading = gsap.utils.toArray(".goals-heading span")
+heading.forEach((word) => {
+    gsap.from(word, {
+        scrollTrigger: {
+            trigger: word,
+            start: "top bottom-=7.5%",
+            end: "bottom center",
+            scrub: 0.1,
+        },
+        backgroundPositionX: "-20%",
+    })
 })
+
+let goal = gsap.utils.toArray(".goal-item");
+goal.forEach((goal) => {
+    gsap.to(goal, {
+        scrollTrigger: {
+            trigger: "goals-list",
+            pin: true,
+            start: "top 10%",
+            scrub: true,
+            markers: true,
+        },
+        xPercent: -100,
+    });
+});
+

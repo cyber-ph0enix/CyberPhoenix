@@ -6,17 +6,26 @@
 	--color-3: #aeb8fe;
 	--color-4: #758bfd;
 	--color-5: #ff8600;
+	--font-title: "chakra petch", sans-serif;
+	--font-normal: "space grotesk", sans-serif;
 }
 
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
 }
 
 body {
 	background-color: var(--color-2);
 	color: var(--color-1);
-	font-family: "Kode Mono", sans-serif;
+	font-family: var(--font-normal);
 }
 
 .vertical-center {
@@ -26,9 +35,20 @@ body {
 	align-items: center;
 }
 
+.horizontal-center {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
 .box {
 	border: 2px solid var(--color-1);
-	border-radius: 6vmin;
+	border-radius: 4vmin;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .horizontal-text-reveal {
@@ -39,80 +59,135 @@ body {
     -webkit-background-clip: text;
 	color: transparent;
 	background-color: #2e2f31;
+	font-family: var(--font-title);
+}
+
+.title {
+	font-size: 7vmin;
+	font-family: var(--font-title);
+}
+.subtitle {
+	font-weight: bolder;
+	font-size: 2vmin;
+	font-family: var(--font-title);
+}
+.normal-text {
+	font: 2vmin;
+	font-family: var(--font-normal);
 }
 
 /* ----- Introduction Section ----- */
 
-.section-club-intro {
-	height: 90vh;
-}
-
 .club-name {
-    font-size: 10.5vmin;
+	font-size: 10vmin;
+	font-family: var(--font-title);
 }
 
-.club-tagline {
-	font-size: 3vmin;
+.section-club-intro {
+	height: 100vh;
 }
 
 .word {
 	display: inline-block;
 }
 
-.section-club-desc {
-	height: 10vh;
-}
-
 /* ----- Description Section ----- */
+.section-club-desc {
+	height: 100vh;
+	overflow: hidden;
+	width: 100vw;
+}
 
 .scrolldown-box {
 	aspect-ratio: 5/2;
 	width: 10vmin;
-	overflow-x: hidden;
+	overflow: hidden;
+	position: fixed;
+	margin: auto;
+	bottom: 2vh;
 }
 
-.club-desc-box {
-	width: 80vw;
-	height: 80vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 5%;
-	box-sizing: border-box;
-	overflow-x: hidden;
-}
 
 .section-club-desc h3 {
 	display: none;
-	text-align: center;
-	font-size: 5vmin;
-	margin: 2rem;
+	margin: 5%;
+	width: 40%;
+	flex-direction: column;
+}
+
+.desc-container {
+	overflow: hidden;
+	display: none;
+	width: 40%;
+	margin: 5%;
 }
 
 .club-desc {
-	display: none;
-	text-align: center;
-	width: 50vw;
-	opacity: 0;
+	width: 100%;
+	overflow: hidden;
+	transform: translateY(100%);
+	font-size: 4vmin;
 }
 
+@media (max-width: 850px) {
+	.scrolldown-box {
+		flex-direction: column;
+	}
+	.section-club-desc h3 {
+		width: 80%;
+		align-items: center;
+	}
+	.desc-container {
+		width: 80%;
+	}
+}
 /* -------- Goals Section --------- */
 
 .section-goals {
-	flex-direction: row;
+	flex-direction: column;
 	width: 100vw;
-	height: 100vh;
-
+	margin-top: 20vh;
+	margin-bottom: 20vh;
 }
 .goals-heading {
-	margin: 2rem;
-	font-size: 7vmin;
+	margin: 2vh;
+	font-size: 20vmin;;
 }
+
+.goals-line {
+	font-size: 5vmin;
+	text-align: center;
+	margin-bottom: 7.5vh;
+	width: 50%;
+}
+
+.goals-list {
+	width: 90vw;
+	display: flex;
+	flex-direction: row;
+	overflow-x: hidden;
+}
+
 .goal-item {
 	list-style: none;
 	margin: 1%;
 	font-size: 3vmin;
+	display: block;
+	aspect-ratio: 1/1;
+	/* width: 40vw;  */
+	height: 80vh;
+	border: 2px solid var(--color-1);
+	border-radius: 2rem;
+	padding: 2%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.goal-title {
+	font-weight: 600;
+	font-size: 7.5vmin;
+	/* text-wrap: nowrap; */
 }
 
 /* ----- Team intoduction section */
@@ -135,7 +210,7 @@ body {
 	flex-direction: row	;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.75%;
+	padding: 2%;
 	border-bottom: 2px solid var(--color-1);
 }
 
@@ -145,7 +220,8 @@ body {
 
 .member-name {
 	width: 30%;
-	font-size: 4vmin;
+	font-size: 3vmin;
+	text-align: center;
 }
 
 .member-role {
@@ -157,19 +233,10 @@ body {
 .member-connect {
 	width: 30%;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 }
 
-.member-connect-button {
-	background-color: transparent;
-	border: 2px solid var(--color-1);
-	color: var(--color-1);
-	font-size: 2vmin;
-	font-family: "Kode Mono", sans-serif;
-	font-weight: bold;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3% 5%;
-	border-radius: 0.5rem;
+.member-connect>img {
+	aspect-ratio: 1/1;
+	width: 10%;
 }
-
