@@ -52,3 +52,37 @@ let timelineFirst = gsap.timeline({
 
 timelineFirst.from(".club-name", {})
     .from(".club-tagline span", {});
+
+
+//  --------- team section
+
+document.querySelectorAll(".member").forEach((member) => {
+    member.addEventListener("mouseenter", () => {
+        gsap.to(member, {
+            width: "45vw",
+            duration: 0.7,
+            ease: "power2.out",
+        });
+        gsap.to(".member", {
+            opacity: 0.3,
+            duration: 0.7,
+            ease: "power2.out",
+        });
+        gsap.to(member, {
+            opacity: 1,
+            duration: 0.7,
+        });
+    });
+
+    member.addEventListener("mouseleave", () => {
+        gsap.to(member, {
+            width: "35vw",
+            duration: 0.7,
+            ease: "power2.inOut",
+        });
+        gsap.to(".member", {
+            opacity: 1,
+            duration: 0.7,
+        });
+    });
+});
