@@ -1,6 +1,7 @@
 /* ------------------- footer --------------------- */
 footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 7vw 0 3vw 0;

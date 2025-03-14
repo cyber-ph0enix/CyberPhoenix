@@ -22,7 +22,6 @@ main {
     align-items: center;
     justify-content: center;
 }
-
 @media (max-width: 900px) {
     body {
         padding: 4vw;
@@ -43,27 +42,23 @@ main {
     display: flex;
     flex-direction: column;
 }
-.part1 {
+.section1-head {
     height: 80vh;
-    gap: 3rem;
+    gap: 2vw;
 }
-.section1 h1 {
+.section1-head h1 {
     line-height: 4.5rem;
     font-size: 5.3rem;
-}
-.section1-head,
-.section2-head {
-    gap: 0;
     font-family: "chakra petch", sans-serif;
 }
 .section1 h3 {
     font-weight: lighter;
     font-size: 1rem;
-    width: 40vw;
+    margin-top: 2vh;
     text-align: center;
 }
 @media (max-width: 1120px) {
-    .head-part1 {
+    .section1-head .wrapper-span {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -71,26 +66,20 @@ main {
     }
 }
 @media (max-width: 800px) {
-    .section1 h1 {
+    .section1-head h1 {
         font-size: 3.5rem;
         line-height: 2.8rem;
     }
 }
-@media (max-width: 550px) {
-    .section1 h1 {
-        font-size: 2.6rem;
-        line-height: 2rem;
-    }
-}
-@media (max-width: 940px) {
-    .section1 h3 {
-        width: 50vw;
-    }
-}
 @media (max-width: 750px) {
-    .section1 h3 {
-        width: 80vw;
+    .section1-head h3 {
         font-size: 0.8rem;
+    }
+}
+@media (max-width: 550px) {
+    .section1-head h1 {
+        font-size: 2.2rem;
+        line-height: 1.8rem;
     }
 }
 
@@ -104,6 +93,10 @@ main {
     border-radius: 1vw;
     padding: 3vw;
     margin-bottom: 16vw;
+}
+.section2-head {
+    gap: 0;
+    font-family: "chakra petch", sans-serif;
 }
 .section2-part1 {
     align-self: center;
@@ -144,7 +137,7 @@ main {
     display: inline-block;
 }
 
-.section2 button {
+button {
     width: fit-content;
     padding: 1vw 2vw;
     font-size: 1.1rem;
@@ -188,12 +181,25 @@ main {
         font-size: 0.8rem;
     }
 }
+@media (max-width: 500px) {
+    .section2 {
+        border-radius: 5vw;
+    }
+    .section2-part1 h1 {
+        font-size: 2.2rem;
+        line-height: 1.8rem;
+    }
+    .section2-part2 button {
+        padding: 2.5vw 4vw;
+        border-radius: 6vw;
+    }
+}
 
 /* ----------------------- section 3 ---------------------- */
 .section3 {
     margin-bottom: 16vw;
     width: 80vw;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .section3-head {
     display: grid;
@@ -224,7 +230,7 @@ main {
 }
 .section3-head h3 {
     font-weight: lighter;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     overflow: hidden;
 }
 .section3-element {
@@ -284,12 +290,26 @@ main {
         width: 60vw;
     }
 }
+@media (max-width: 500px) {
+    .section3-head h1 {
+        font-size: 2.2rem;
+        line-height: 1.8rem;
+    }
+    .section3-head h3 {
+        font-size: 0.8rem;
+    }
+    .section3-element .element-content h1 {
+        font-size: 1.2rem;
+    }
+    .section3-element .element-content h3 {
+        font-size: 0.7rem;
+    }
+}
 
 /* ----------------------- section 4 ---------------------- */
-
 .section4 {
     gap: 3rem;
-    margin-bottom: 24vw;
+    margin-bottom: 20vw;
     width: 80vw;
     overflow: hidden;
 }
@@ -308,11 +328,20 @@ main {
     background-clip: text;
     -webkit-background-clip: text;
 }
+.section4 button {
+    margin-top: 8vh;
+}
 
 @media(max-width: 1120px) {
     .section4-part1 h1 {
         font-size: 3rem;
         line-height: 2.5rem;
+    }
+}
+@media (max-width: 500px) {
+    .section4-part1 h1 {
+        font-size: 2.2rem;
+        line-height: 1.8rem;
     }
 }
 
@@ -332,13 +361,11 @@ main {
     gap: 1vw;
     padding: 3vw 4vw;
 }
-.event-date {
-    display: flex;
-    flex-direction: column;
-}
 .event .event-date {
     font-size: 3rem;
-    line-height: 3rem;
+    gap: 2vh;
+    display: flex;
+    flex-direction: column;
 }
 .event-1 {
     grid-column: 1;
@@ -370,6 +397,23 @@ main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 4vh;
+    }
+}
+@media (max-width: 500px) {
+    .event {
+        border-radius: 4vw;
+        padding: 5vw 4vw;
+        gap: 4vw;
+    }
+    .event .event-date {
+        font-size: 1.8rem;
+        gap: 0;
+    }
+    .section4 button {
+        border-radius: 6vw;
+        padding: 2.5vw 4vw;
+        margin-bottom: 5vh;
     }
 }
 
@@ -433,5 +477,18 @@ main {
     }
     .social {
         font-size: 0.8rem !important;
+    }
+}
+@media (max-width: 500px) {
+    .section5-head {
+        font-size: 2.2rem;
+        line-height: 1.8rem;
+    }
+    .social {
+        width: 60vw;
+        gap: 2vh;
+    }
+    .social img {
+        width: 4vw;
     }
 }

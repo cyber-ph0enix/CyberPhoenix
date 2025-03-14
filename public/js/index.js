@@ -1,22 +1,22 @@
 const tl = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
 
-tl.from(".head-part1", {
+let mm = gsap.matchMedia();
+
+tl.from(".section1-head .wrapper-span", {
     y: 50,
     opacity: 0,
     transform: "skewX(-80deg)",
     filter: "blur(5px)",
     duration: 0.5,
-    stagger: 0.1,
 });
-tl.from(".head-part2", {
+tl.from(".section1-head .span-3", {
     y: 50,
     opacity: 0,
+    transform: "skewX(-80deg)",
     filter: "blur(5px)",
-    transform: "skewX(-40deg)",
     duration: 0.5,
-    stagger: 0.1,
-});
+})
 tl.from(".section1 h3", {
     y: 50,
     opacity: 0,
@@ -61,11 +61,19 @@ tl.from(".para-2", {
     y: 70,
     opacity: 0,
     duration: 1,
+    scrollTrigger: {
+        trigger: ".section2-part2 .para-2",
+        scrub: true,
+    },
 });
 tl.from(".section2-part2 button", {
     y: 20,
     opacity: 0,
     duration: 1,
+    scrollTrigger: {
+        trigger: ".section2-part2 button",
+        scrub: true,
+    },
 });
 
 // --------------------- section 3 head ---------------------------
@@ -104,68 +112,66 @@ tl.to(".section3-head h3 .line span", {
 
 // -------------------- section 3 elements ------------------------
 
-// tl.from(".el1", {
-//     opacity: 0,
-//     y: 300,
-//     duration: 1,
-//     scrollTrigger: {
-//         trigger: ".el1",
-//         scrub: true,
-//         end: "top 80%"
-//     },
-// })
-tl.from(".el1 img", {
-    // opacity: 0,
-    // rotation: 10,
-    x: 400,
-    // y: 100,
+tl.from(".section3-elements .el1 .element-content", {
+    opacity: 0,
+    y: 100,
     duration: 1,
+    stagger: 0.5,
     scrollTrigger: {
-        trigger: ".el1 img",
+        trigger: ".section3-elements .el1 .element-content",
         scrub: true,
-        start: "top 80%",
+        end: "bottom 70%",
     },
 });
-// tl.from(".el2", {
-//     opacity: 0,
-//     y: 300,
-//     duration: 1,
-//     scrollTrigger: {
-//         trigger: ".el2",
-//         scrub: true,
-//         end: "top 80%"
-//     },
-// })
-tl.from(".el2 img", {
-    // opacity: 0,
-    // rotation: -10,
+tl.from(".section3-elements .el1 img", {
+    opacity: 0,
+    x: 400,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".section3-elements .el1 img",
+        scrub: true,
+        start: "top bottom",
+        end: "bottom 30%",
+    },
+});
+tl.from(".section3-elements .el2 .element-content", {
+    opacity: 0,
+    y: 100,
+    duration: 1,
+    stagger: 0.5,
+    scrollTrigger: {
+        trigger: ".section3-elements .el2 .element-content",
+        scrub: true,
+        end: "bottom 70%",
+    },
+});
+tl.from(".section3-elements .el2 img", {
+    opacity: 0,
     x: -400,
-    // y: 100,
     duration: 1,
     scrollTrigger: {
-        trigger: ".el2 img",
+        trigger: ".section3-elements .el2 img",
         scrub: true,
         start: "top 80%",
     },
 });
-// tl.from(".el3", {
-//     opacity: 0,
-//     y: 300,
-//     duration: 1,
-//     scrollTrigger: {
-//         trigger: ".el3",
-//         scrub: true,
-//         end: "top 80%"
-//     },
-// })
-tl.from(".el3 img", {
-    // opacity: 0,
-    // rotation: 10,
+tl.from(".section3-elements .el3 .element-content", {
+    opacity: 0,
+    y: 100,
+    duration: 1,
+    stagger: 0.5,
+    scrollTrigger: {
+        trigger: ".section3-elements .el3 .element-content",
+        scrub: true,
+        end: "bottom 70%",
+    },
+});
+tl.from(".section3-elements .el3 img", {
+    opacity: 0,
     x: 400,
-    // y: 100,
     duration: 1,
     scrollTrigger: {
-        trigger: ".el3 img",
+        trigger: ".section3-elements .el3 img",
         scrub: true,
         start: "top 80%",
     },
@@ -324,8 +330,6 @@ document.querySelectorAll(".social").forEach((social) => {
 });
 
 // ------------------------- expand navbar -----------------------
-
-let mm = gsap.matchMedia();
 
 mm.add("(max-width: 900px)", () => {
     const menu = document.querySelector(".nav-element");
