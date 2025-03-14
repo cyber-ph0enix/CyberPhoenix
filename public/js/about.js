@@ -31,7 +31,7 @@ verticalRevealText.forEach((line) => {
             trigger: line,
             start: "top 90%",
             toggleActions: "play pause resume reset",
-            markers: true
+            // markers: true
         },
         yPercent: 110,
     });
