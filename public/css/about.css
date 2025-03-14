@@ -3,9 +3,6 @@
 :root {
 	--color-1: #e0eeee;
 	--color-2: #121315;
-	--color-3: #aeb8fe;
-	--color-4: #758bfd;
-	--color-5: #ff8600;
 	--font-title: "chakra petch", sans-serif;
 	--font-normal: "space grotesk", sans-serif;
 }
@@ -14,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+	overflow-x: hidden;
 }
 
 html,
@@ -25,30 +23,29 @@ body {
 body {
 	background-color: var(--color-2);
 	color: var(--color-1);
-	font-family: var(--font-normal);
 }
 
-.vertical-center {
+section {
+	width: 100vw;
+}
+
+.vertical {
 	display: flex;
 	flex-direction: column;
+}
+
+.horizontal {
+	display: flex;
+	flex-direction: row;
+}
+
+.center {
 	justify-content: center;
 	align-items: center;
 }
 
-.horizontal-center {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-}
-
-.box {
-	border: 2px solid var(--color-1);
-	border-radius: 4vmin;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+.vertical-reveal-text {
+	overflow-y: hidden;
 }
 
 .horizontal-text-reveal {
@@ -60,73 +57,55 @@ body {
 	color: transparent;
 	background-color: #2e2f31;
 	font-family: var(--font-title);
-}
-
-.title {
-	font-size: 7vmin;
-	font-family: var(--font-title);
-}
-.subtitle {
-	font-weight: bolder;
-	font-size: 2vmin;
-	font-family: var(--font-title);
-}
-.normal-text {
-	font: 2vmin;
-	font-family: var(--font-normal);
+	height: fit-content;
+	overflow-y: hidden;
 }
 
 /* ----- Introduction Section ----- */
-
-.club-name {
-	font-size: 10vmin;
-	font-family: var(--font-title);
-}
 
 .section-club-intro {
 	height: 100vh;
 }
 
-.word {
-	display: inline-block;
+.club-name {
+	font-size: 15vmin;
+	font-family: var(--font-title);
 }
 
 /* ----- Description Section ----- */
 .section-club-desc {
 	height: 100vh;
-	overflow: hidden;
-	width: 100vw;
 }
 
-.scrolldown-box {
-	aspect-ratio: 5/2;
-	width: 10vmin;
-	overflow: hidden;
-	position: fixed;
-	margin: auto;
-	bottom: 2vh;
+.desc-box {
+	border: 2px solid var(--color-1);
+	border-radius: 3vmin;
+	width: 80vw;
+	height: 65vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 2%;
 }
-
 
 .section-club-desc h3 {
-	display: none;
-	margin: 5%;
 	width: 40%;
-	flex-direction: column;
-}
-
-.desc-container {
-	overflow: hidden;
-	display: none;
-	width: 40%;
-	margin: 5%;
+	font-size: 10vmin;
+	line-height: 9vmin;
+	border-right: 2px solid;
 }
 
 .club-desc {
+	width: 60%;
+	font-size: 3vmin;
+	font-family: var(--font-normal);
+	padding: 1%;
+	overflow-y: hidden;
+}
+
+.club-desc>span {
 	width: 100%;
-	overflow: hidden;
-	transform: translateY(100%);
-	font-size: 4vmin;
 }
 
 @media (max-width: 850px) {
@@ -144,50 +123,43 @@ body {
 /* -------- Goals Section --------- */
 
 .section-goals {
-	flex-direction: column;
 	width: 100vw;
 	margin-top: 20vh;
 	margin-bottom: 20vh;
 }
 .goals-heading {
-	margin: 2vh;
-	font-size: 20vmin;;
+	font-size: 15vmin;
+	line-height: 14vmin;
+	align-items: center;
+	margin: 3%;
 }
 
 .goals-line {
 	font-size: 5vmin;
 	text-align: center;
 	margin-bottom: 7.5vh;
-	width: 50%;
 }
 
 .goals-list {
-	width: 90vw;
 	display: flex;
 	flex-direction: row;
-	overflow-x: hidden;
 }
 
 .goal-item {
 	list-style: none;
 	margin: 1%;
 	font-size: 3vmin;
-	display: block;
 	aspect-ratio: 1/1;
-	/* width: 40vw;  */
-	height: 80vh;
+	height: 60vh;
 	border: 2px solid var(--color-1);
 	border-radius: 2rem;
 	padding: 2%;
-	display: flex;
-	flex-direction: column;
 	justify-content: space-evenly;
 }
 
 .goal-title {
 	font-weight: 600;
 	font-size: 7.5vmin;
-	/* text-wrap: nowrap; */
 }
 
 /* ----- Team intoduction section */
@@ -197,17 +169,17 @@ body {
 }
 
 .team-container {
-	width: 70%;
+	width: 40%;
 }
 
 .team-heading {
-	font-size: 7vmin;
+	font-size: 15vmin;
 	margin-bottom: 3%;
+	align-items: center;
 }
 
 .member {
 	display: flex;
-	flex-direction: row	;
 	justify-content: space-between;
 	align-items: center;
 	padding: 2%;
@@ -238,5 +210,5 @@ body {
 
 .member-connect>img {
 	aspect-ratio: 1/1;
-	width: 10%;
+	width: 15%;
 }
