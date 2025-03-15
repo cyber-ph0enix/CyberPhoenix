@@ -10,7 +10,8 @@ horizontalRevealTexts.forEach((text) => {
             trigger: text,
             start: "top 95%",
             end: "center center",
-            scrub: 0.25
+            scrub: 0.25,
+            markers: true
         },
         backgroundPositionX: "-100%",
         x: 30        
@@ -53,6 +54,26 @@ let timelineFirst = gsap.timeline({
 timelineFirst.from(".club-name", {})
     .from(".club-tagline span", {});
 
+
+//  ------------ goals animation
+
+// let goalSection = document.querySelector(".section-goals");
+// let goal = document.querySelector(".goal-item");
+// console.dir(goalSection);
+// gsap.set(goalSection, {
+//     height: ()=> {return `${goal.style.offsetWidth*5}px`;}
+// });
+
+gsap.to(".goals-list", {
+    scrollTrigger: {
+        trigger: ".goal-pin-container",
+        start: "top 20%",
+        pin: true,
+        scrub: true,
+        // markers: true
+    },
+    xPercent: -100
+})
 
 //  --------- team section
 

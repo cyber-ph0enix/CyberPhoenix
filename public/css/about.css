@@ -199,16 +199,21 @@ section {
 	margin-bottom: 20vh;
 }
 .goals-heading {
-	font-size: 15vmin;
-	line-height: 14vmin;
+	font-size: 7rem;
+	line-height: 5.75rem;
 	align-items: center;
 	margin: 3%;
 }
 
 .goals-line {
-	font-size: 5vmin;
+	font-size: 2.5rem;
 	text-align: center;
 	margin-bottom: 7.5vh;
+}
+
+.goal-pin-container {
+	width: 90vw;
+	overflow-x: hidden;
 }
 
 .goals-list {
@@ -216,10 +221,11 @@ section {
 	flex-direction: row;
 }
 
+
 .goal-item {
 	list-style: none;
 	margin: 1%;
-	font-size: 3vmin;
+	font-size: 1rem;
 	aspect-ratio: 1/1;
 	height: 60vh;
 	border: 2px solid var(--color-1);
@@ -230,7 +236,17 @@ section {
 
 .goal-title {
 	font-weight: 600;
-	font-size: 7.5vmin;
+	font-size: 2.5rem;
+}
+
+@media (max-width: 850px) {
+	.goals-list {
+		flex-direction: column !important;
+	}
+	.goal-item {
+		height: auto;
+		width: 80%;
+	}
 }
 
 /* ----- Team intoduction section */
@@ -292,14 +308,18 @@ section {
         font-size: 0.8rem !important;
     }
 }
+
+@media (max-width: 850px) {
+	.member {
+        width: 60vw;
+        gap: 2vh;
+    }
+}
+
 @media (max-width: 500px) {
     .team-heading {
         font-size: 2.2rem;
         line-height: 1.8rem;
-    }
-    .member {
-        width: 60vw;
-        gap: 2vh;
     }
     .member-connect>img {
         width: 4vw;
