@@ -1,61 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Blogs</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Blogs</title>
 
-        <link rel="stylesheet" href="/css/blogs.css" />
-        <link rel="stylesheet" href="/css/navbar.css">
-        <link rel="stylesheet" href="/css/footer.css">
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap"
-            rel="stylesheet" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
-            rel="stylesheet" />
-    </head>
+		<link rel="stylesheet" href="/css/blogs.css" />
+		<link rel="stylesheet" href="/css/navbar.css" />
+		<link rel="stylesheet" href="/css/footer.css" />
 
-    <body>
-        <header>
-            <%- include("../includes/navbar.ejs") %>
-        </header>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kode+Mono:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
 
-        <main>
-            <div class="blogs-page-container">
-                <div id="blogtext">
-                    <h2>Read our Blogs:</h2>
-                </div>
-                <div class="blogs-container">
-                    <% for (let i = 0; i<50; i++) {%>
-                    <div class="blog">
-                        <img
-                            src="https://previews.123rf.com/images/aimage/aimage1706/aimage170600007/79563474-vector-illustration-of-cyber-security.jpg"
-                            alt="img"
-                            class="blog-thumbnail"
-                            loading="lazy" />
-                        <div class="blog-details">
-                            <div class="blog-title">
-                                How to hack any wifi within 15 minutes?
-                            </div>
-                            <div class="blog-post-date blog-subtitle">
-                                09, March 2025
-                            </div>
-                        </div>
-                        <button class="blog-read-button">Read</button>
-                    </div>
-                    <%}%>
-                </div>
-            </div>
-        </main>
+	<body>
+		<header><%- include("../includes/navbar.ejs") %></header>
 
-        <%- include("../includes/footer.ejs") %>
+		<main>
+			<section class="section-1 vertical center">
+				<h1 class="section-1-heading vertical center">
+					<span>DELVE INTO</span>
+					<span> WORLD OF CYBER</span>
+					<span>MAGIC</span>
+				</h1>
+
+				<div class="section-1-content vertical center">
+					<span>Deepen your understanding of the cyber world</span
+					><span>  with specially curated blogs</span>
+				</div>
+			</section>
+
+			<section class="section-2 vertical center">
+				<div class="section-2-content">
+					<% for (let i = 0; i<50; i++) {%>
+					<div class="blog">
+						<div class="blog-content vertical">
+							<h2 class="blog-heading horizontal-text-reveal">
+								<span>
+									How to hack any wifi within 15 minutes?
+								</span>
+							</h2>
+							<div class="blog-date vertical-reveal-text">
+								<span>09, March 2025</span>
+							</div>
+							<!-- <div class="blog-subheading">
+								Lorem, ipsum dolor sit amet consectetur
+								adipisicing elit. Velit molestiae repellat
+								excepturi quidem iusto exercitationem quos
+								similique corporis, suscipit aliquid!
+							</div> -->
+							<div class="blog-keywords">
+								<span class="keywords vertical-reveal-text">Lorem</span
+								><span class="keywords vertical-reveal-text">Ipsum</span
+								><span class="keywords vertical-reveal-text">Cogullo</span
+								><span class="keywords vertical-reveal-text">Kistamba</span
+								><span class="keywords vertical-reveal-text">Toistureto</span
+								><span class="keywords vertical-reveal-text">San</span
+								><span class="keywords vertical-reveal-text">Domero</span
+								><span class="keywords vertical-reveal-text">Ishkumboshiko</span
+								><span class="keywords vertical-reveal-text">Tirdoma</span
+								><span class="keywords vertical-reveal-text">Taska</span>
+							</div>
+						</div>
+						<button class="blog-button">Read</button>
+					</div>
+					<%}%>
+				</div>
+			</section>
+		</main>
+
+		<%- include("../includes/footer.ejs") %>
 
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-        <script src="/js/blogs.js"></script>
-    </body>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+		<script src="/js/blogs.js"></script>
+	</body>
 </html>

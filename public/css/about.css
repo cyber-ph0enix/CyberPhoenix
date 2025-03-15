@@ -34,6 +34,7 @@ main {
 body {
 	background-color: var(--color-2);
 	color: var(--color-1);
+	overflow-x: hidden;
 }
 
 section {
@@ -43,11 +44,6 @@ section {
 .vertical {
 	display: flex;
 	flex-direction: column;
-}
-
-.horizontal {
-	display: flex;
-	flex-direction: row;
 }
 
 .center {

@@ -1,5 +1,4 @@
-gsap.registerPlugin(ScrollTrigger, Flip, Text);
-
+gsap.registerPlugin(ScrollTrigger);
 
 // ----------------- Global animations
 
@@ -11,7 +10,7 @@ horizontalRevealTexts.forEach((text) => {
             start: "top 95%",
             end: "center center",
             scrub: 0.25,
-            markers: true
+            // markers: true
         },
         backgroundPositionX: "-100%",
         x: 30        
