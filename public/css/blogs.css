@@ -160,4 +160,12 @@ span {
 	.blog:nth-child(even) {
 		transform: none;
 	}
+	.blog-content {
+		row-gap: 4vw;
+	}
+	
+	.blog-keywords {
+		gap: 1vw;
+		font-size: 0.8rem;
+	}
 }
