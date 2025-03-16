@@ -1,6 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
-let horizontalRevealTexts = gsap.utils.toArray(".horizontal-text-reveal");
+let horizontalRevealTexts = gsap.utils.toArray(".blog-heading");
 horizontalRevealTexts.forEach((text) => {
     gsap.from(text, {
         scrollTrigger: {
@@ -10,24 +10,8 @@ horizontalRevealTexts.forEach((text) => {
             scrub: 0.25,
             // markers: true
         },
-        backgroundPositionX: "-100%",
-        x: 30        
-    });
-});
-
-let verticalRevealText = gsap.utils.toArray(".vertical-reveal-text");
-
-verticalRevealText = gsap.utils.toArray(".vertical-reveal-text span");
-
-verticalRevealText.forEach((line) => {
-    gsap.from(line, {
-        scrollTrigger: {
-            trigger: line,
-            start: "top 90%",
-            toggleActions: "play pause resume reset",
-            // markers: true
-        },
-        yPercent: 110,
+		opacity: 0,
+        y: 30
     });
 });
 
