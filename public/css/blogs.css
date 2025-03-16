@@ -110,6 +110,12 @@ span {
 	font-size: 2rem;
 	font-weight: bold;
 	font-family: var(--font-title);
+	transition: all 0.25s;
+}
+
+.blog-heading:hover {
+	opacity: 0.75;
+	cursor: pointer;
 }
 
 .blog:nth-child(even) {
@@ -123,16 +129,8 @@ span {
 .blog-keywords {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	font-size: 1.3rem;
+	font-size: 1rem;
 	gap: 0.5vw;
-}
-
-.keywords {
-	transition: all 1;
-}
-
-.keywords:hover {
-	color: #e0eeee93;
 }
 
 .blog-button {
