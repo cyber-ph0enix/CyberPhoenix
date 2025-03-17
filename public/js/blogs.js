@@ -1,24 +1,17 @@
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from("#blogtext > h2", {
-	skewX: -30,
-	opacity: 0,
-	scale: 0.8,
-	y: 50,
-	duration: 0.75,
-})
-
-const blogs = gsap.utils.toArray(".blog");
-
-blogs.forEach((blog) => {
-	gsap.from(blog, {
-		x: ()=> window.innerWidth*0.8,
+let horizontalRevealTexts = gsap.utils.toArray(".blog-heading");
+horizontalRevealTexts.forEach((text) => {
+    gsap.from(text, {
+        scrollTrigger: {
+            trigger: text,
+            start: "top 95%",
+            end: "center center",
+            scrub: 0.25,
+            // markers: true
+        },
 		opacity: 0,
-		duration: 0.25,
-		scrollTrigger: {
-			trigger: blog,
-			toggleActions: "play complete restart reset",
-			start: "top bottom",
-		},
-	});
+        y: 30
+    });
 });
+

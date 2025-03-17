@@ -22,6 +22,30 @@ body {
     justify-content: center;
     align-items: center;
 }
+<<<<<<< HEAD
+=======
+
+body {
+	background-color: var(--color-2);
+	color: var(--color-1);
+	overflow-x: hidden;
+}
+
+section {
+	width: 100%;
+}
+
+.vertical {
+	display: flex;
+	flex-direction: column;
+}
+
+.center {
+	justify-content: center;
+	align-items: center;
+}
+
+>>>>>>> e1f7ace1bde9b831535d4bb57131799f124d155a
 .vertical-reveal-text {
     overflow: hidden;
 }

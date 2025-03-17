@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const tl = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
 let mm = gsap.matchMedia();
@@ -16,6 +17,11 @@ tl.from(".section1 h3", {
     opacity: 0,
     duration: 0.5,
 });
+=======
+gsap.registerPlugin(ScrollTrigger);
+
+// ----------------- Global animations
+>>>>>>> e1f7ace1bde9b831535d4bb57131799f124d155a
 
 let horizontalRevealTexts = gsap.utils.toArray(".horizontal-text-reveal");
 horizontalRevealTexts.forEach((text) => {
@@ -28,7 +34,12 @@ horizontalRevealTexts.forEach((text) => {
             scroller: "body",
             start: "top 95%",
             end: "center center",
+<<<<<<< HEAD
             scrub: true,
+=======
+            scrub: 0.25,
+            // markers: true
+>>>>>>> e1f7ace1bde9b831535d4bb57131799f124d155a
         },
     });
 });
