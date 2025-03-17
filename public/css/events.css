@@ -53,7 +53,7 @@ body {
     padding: 5vw 7vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: #2C3930;
+    background-color: #1a1c21;
     overflow: hidden;
 }
 .event-date {
