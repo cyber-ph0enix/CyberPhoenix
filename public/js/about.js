@@ -1,86 +1,97 @@
-gsap.registerPlugin(ScrollTrigger, Flip, Text);
+const tl = gsap.timeline();
+gsap.registerPlugin(ScrollTrigger);
+let mm = gsap.matchMedia();
 
-
-// ----------------- Global animations
+// ---------------- section 1
+tl.from(".section1-head h1 span", {
+    y: 50,
+    opacity: 0,
+    transform: "skewX(-80deg)",
+    filter: "blur(5px)",
+    duration: 0.5,
+    stagger: 0.4,
+});
+tl.from(".section1 h3", {
+    y: 50,
+    opacity: 0,
+    duration: 0.5,
+});
 
 let horizontalRevealTexts = gsap.utils.toArray(".horizontal-text-reveal");
 horizontalRevealTexts.forEach((text) => {
-    gsap.from(text, {
+    tl.from(text, {
+        x: 100,
+        backgroundPositionX: "-46.5%",
+        duration: 1,
         scrollTrigger: {
             trigger: text,
+            scroller: "body",
             start: "top 95%",
             end: "center center",
-            scrub: 0.25,
-            markers: true
+            scrub: true,
         },
-        backgroundPositionX: "-100%",
-        x: 30        
     });
 });
-
-let verticalRevealText = gsap.utils.toArray(".vertical-reveal-text");
-
-verticalRevealText.forEach((line) => {
-    line.innerHTML = `<span style="display: inline-block">${line.innerHTML}</span>`;
-});
-
-verticalRevealText = gsap.utils.toArray(".vertical-reveal-text span");
+const verticalRevealText = gsap.utils.toArray(".vertical-reveal-text .line span");
 
 verticalRevealText.forEach((line) => {
-    gsap.from(line, {
+    tl.to(line, {
+        transform: "translateY(0)",
+        duration: 1,
+        stagger: 0.4,
         scrollTrigger: {
             trigger: line,
-            start: "top 90%",
-            toggleActions: "play pause resume reset",
-            // markers: true
+            // end: "top 30%",
+            scrub: true,
         },
-        yPercent: 110,
     });
 });
 
-//  ------------- Introduction Section
-
-let timelineFirst = gsap.timeline({
-    defaults: {
-        duration: 0.5,
-        ease: "power1.inOut",
-        filter: "blur(5px)",
-        opacity: 0,
-        y: 40,
-        skewX: "-80deg"
-    }
+mm.add("(min-width: 1000px)", () => {
+    gsap.to(".boxes-wrapper .section3-boxes", {
+        transform: "translateX(-200%)",
+        scrollTrigger: {
+            trigger: ".boxes-wrapper",
+            scroller: "body",
+            markers: true,
+            start: "top 20%",
+            scrub: 2,
+            pin: true,
+        },
+    });
 });
 
-timelineFirst.from(".club-name", {})
-    .from(".club-tagline span", {});
-
-
-//  ------------ goals animation
-
-// let goalSection = document.querySelector(".section-goals");
-// let goal = document.querySelector(".goal-item");
-// console.dir(goalSection);
-// gsap.set(goalSection, {
-//     height: ()=> {return `${goal.style.offsetWidth*5}px`;}
-// });
-
-gsap.to(".goals-list", {
+tl.from(".section4-head h3 .span-1", {
+    x: 100,
+    backgroundPositionX: "-26.5%",
+    duration: 1,
     scrollTrigger: {
-        trigger: ".goal-pin-container",
-        start: "top 20%",
-        pin: true,
+        trigger: ".section4-head h3 .span-1",
+        scroller: "body",
+        start: "top 95%",
+        end: "center center",
         scrub: true,
-        // markers: true
     },
-    xPercent: -100
-})
+});
+tl.from(".section4-head h3 .span-2", {
+    x: 100,
+    backgroundPositionX: "-26.5%",
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".section4-head h3 .span-2",
+        scroller: "body",
+        start: "top 95%",
+        end: "center center",
+        scrub: true,
+    },
+});
 
 //  --------- team section
 
 document.querySelectorAll(".member").forEach((member) => {
     member.addEventListener("mouseenter", () => {
         gsap.to(member, {
-            width: "45vw",
+            width: "50vw",
             duration: 0.7,
             ease: "power2.out",
         });
@@ -97,7 +108,7 @@ document.querySelectorAll(".member").forEach((member) => {
 
     member.addEventListener("mouseleave", () => {
         gsap.to(member, {
-            width: "35vw",
+            width: "40vw",
             duration: 0.7,
             ease: "power2.inOut",
         });
