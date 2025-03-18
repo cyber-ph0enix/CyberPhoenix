@@ -47,15 +47,20 @@ verticalRevealText.forEach((line) => {
     });
 });
 
+// let viewportWidth = window.innerWidth;
+// let boxes = document.querySelector(".boxes-wrapper .section3-boxes");
+// let scrollLength = viewportWidth - boxes.scrollWidth;
+// console.log(scrollLength);
+
 mm.add("(min-width: 1000px)", () => {
     gsap.to(".boxes-wrapper .section3-boxes", {
-        transform: "translateX(-200%)",
+        xPercent: -100,
         scrollTrigger: {
             trigger: ".boxes-wrapper",
             scroller: "body",
-            markers: true,
+            // markers: true,
             start: "top 20%",
-            scrub: 2,
+            scrub: 1,
             pin: true,
         },
     });
