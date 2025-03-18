@@ -6,6 +6,7 @@ const Blog = require("./models/blog");
 
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
@@ -30,6 +31,20 @@ app.get("/", (req, res) => {
 app.get("/blogs", async (req, res) => {
     const allBlogs = await Blog.find({});
     res.render("cyber_phoenix/blogs.ejs", { allBlogs });
+});
+// render new blog form
+app.get("/blogs/new", (req, res) => {
+    res.render("blogs/new.ejs");
+});
+// create new blog
+app.post("/blogs", async (req, res) => {
+    const tags = req.body.tags.split(",");
+    const newBlog = new Blog(req.body);
+    newBlog.tags = tags;
+    
+    const result = await newBlog.save();
+    console.log(result);
+    res.send(result);
 });
 
 // about route
