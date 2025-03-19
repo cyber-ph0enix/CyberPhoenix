@@ -26,24 +26,26 @@ tl.from(".section1 h3", {
 // -------------------- section 2 ------------------------
 tl.from(".section2-part1 h1 .span-1", {
     x: 100,
-    backgroundPositionX: "-15.5%",
+    backgroundPositionX: "-30%",
     duration: 1,
     scrollTrigger: {
         trigger: ".section2-part1 h1 .span-1",
         scroller: "body",
-        start: "top 80%",
+        start: "top bottom",
+        end: "center center",
         scrub: true,
     },
 });
 tl.from(".section2-part1 h1 .span-2", {
     x: 30,
-    backgroundPositionX: "-15.5%",
+    backgroundPositionX: "-30%",
     duration: 1,
     scrollTrigger: {
         trigger: ".section2-part1 h1 .span-2",
         scroller: "body",
-        start: "top 80%",
+        start: "top bottom",
         scrub: true,
+        end: "center center"
     },
 });
 
@@ -53,7 +55,7 @@ tl.to(".para-1 .line span", {
     stagger: 0.4,
     scrollTrigger: {
         trigger: ".para-1 .line span",
-        end: "top 30%",
+        end: "top 35%",
         scrub: true,
     },
 });
@@ -64,6 +66,7 @@ tl.from(".para-2", {
     scrollTrigger: {
         trigger: ".section2-part2 .para-2",
         scrub: true,
+        end: "top center"
     },
 });
 tl.from(".section2-part2 button", {
@@ -73,29 +76,32 @@ tl.from(".section2-part2 button", {
     scrollTrigger: {
         trigger: ".section2-part2 button",
         scrub: true,
+        end: "top center"
     },
 });
 
 // --------------------- section 3 head ---------------------------
 tl.from(".section3-head h1 .span-1", {
     x: 100,
-    backgroundPositionX: "-15.5%",
+    backgroundPositionX: "-30%",
     duration: 1,
     scrollTrigger: {
         trigger: ".section3-head h1 .span-2",
         scroller: "body",
-        start: "top 80%",
+        start: "top bottom",
+        end: "top 25%",
         scrub: true,
     },
 });
 tl.from(".section3-head h1 .span-2", {
     x: 30,
-    backgroundPositionX: "-15.5%",
+    backgroundPositionX: "-30%",
     duration: 1,
     scrollTrigger: {
         trigger: ".section3-head h1 .span-2",
         scroller: "body",
-        start: "top 80%",
+        start: "top bottom",
+        end: "top 25%",
         scrub: true,
     },
 });
@@ -105,7 +111,7 @@ tl.to(".section3-head h3 .line span", {
     stagger: 0.4,
     scrollTrigger: {
         trigger: ".section3-head h3 .line span",
-        end: "top 30%",
+        end: "top 35%",
         scrub: true,
     },
 });
@@ -120,18 +126,20 @@ tl.from(".section3-elements .el1 .element-content", {
     scrollTrigger: {
         trigger: ".section3-elements .el1 .element-content",
         scrub: true,
-        end: "bottom 70%",
+        start: "top bottom",
+        end: "top 25%",
     },
 });
 tl.from(".section3-elements .el1 img", {
     opacity: 0,
     x: 400,
+    rotation: 5,
     duration: 1,
     scrollTrigger: {
         trigger: ".section3-elements .el1 img",
         scrub: true,
         start: "top bottom",
-        end: "bottom 30%",
+        end: "top 25%",
     },
 });
 tl.from(".section3-elements .el2 .element-content", {
@@ -142,17 +150,20 @@ tl.from(".section3-elements .el2 .element-content", {
     scrollTrigger: {
         trigger: ".section3-elements .el2 .element-content",
         scrub: true,
-        end: "bottom 70%",
+        start: "top bottom",
+        end: "top 25%",
     },
 });
 tl.from(".section3-elements .el2 img", {
     opacity: 0,
     x: -400,
+    rotation: -5,
     duration: 1,
     scrollTrigger: {
         trigger: ".section3-elements .el2 img",
         scrub: true,
-        start: "top 80%",
+        start: "top bottom",
+        end: "top 25%",
     },
 });
 tl.from(".section3-elements .el3 .element-content", {
@@ -163,40 +174,45 @@ tl.from(".section3-elements .el3 .element-content", {
     scrollTrigger: {
         trigger: ".section3-elements .el3 .element-content",
         scrub: true,
-        end: "bottom 70%",
+        start: "top bottom",
+        end: "top 25%",
     },
 });
 tl.from(".section3-elements .el3 img", {
     opacity: 0,
     x: 400,
+    rotation: 5,
     duration: 1,
     scrollTrigger: {
         trigger: ".section3-elements .el3 img",
         scrub: true,
-        start: "top 80%",
+        start: "top bottom",
+        end: "top 25%",
     },
 });
 
 // ------------------ section 4 -------------------
 tl.from(".section4-part1 h1 .span-1", {
     x: 100,
-    backgroundPositionX: "-15.5%",
+    backgroundPositionX: "-30%",
     duration: 1,
     scrollTrigger: {
         trigger: ".section4-part1 h1 .span-2",
         scroller: "body",
-        start: "top 80%",
+        start: "top bottom",
+        end: "top 25%",
         scrub: true,
     },
 });
 tl.from(".section4-part1 h1 .span-2", {
     x: 30,
-    backgroundPositionX: "-15.5%",
+    backgroundPositionX: "-30%",
     duration: 1,
     scrollTrigger: {
         trigger: ".section4-part1 h1 .span-2",
         scroller: "body",
-        start: "top 80%",
+        start: "top bottom",
+        end: "top 25%",
         scrub: true,
     },
 });
@@ -212,8 +228,8 @@ tl.from(".event-1", {
         trigger: ".event-1, .event-3",
         // markers: true,
         scrub: true,
-        start: "top 80%",
-        end: "bottom 50%",
+        start: "top bottom",
+        end: "top 40%",
     },
 });
 tl.from(".event-2", {
@@ -226,8 +242,8 @@ tl.from(".event-2", {
         trigger: ".event-2",
         // markers: true,
         scrub: true,
-        start: "top 80%",
-        end: "bottom 60%",
+        tart: "top bottom",
+        end: "top 40%",
     },
 });
 tl.from(".event-3", {
@@ -240,8 +256,8 @@ tl.from(".event-3", {
         trigger: ".event-3",
         // markers: true,
         scrub: true,
-        start: "top 80%",
-        end: "bottom 70%",
+        tart: "top bottom",
+        end: "top 40%",
     },
 });
 tl.from(".event-4", {
@@ -254,15 +270,15 @@ tl.from(".event-4", {
         trigger: ".event-4",
         // markers: true,
         scrub: true,
-        start: "top 80%",
-        end: "bottom 80%",
+        tart: "top bottom",
+        end: "top 40%",
     },
 });
 
 // -------------------- section 5 --------------------
 tl.from(".section5-head .span-1", {
     x: 100,
-    backgroundPositionX: "-15.5%",
+    backgroundPositionX: "-30%",
     duration: 1,
     scrollTrigger: {
         trigger: ".section5-head .span-2",
@@ -274,25 +290,25 @@ tl.from(".section5-head .span-1", {
 });
 tl.from(".section5-head .span-2", {
     x: 30,
-    backgroundPositionX: "-15.5%",
+    backgroundPositionX: "-30%",
     duration: 1,
     scrollTrigger: {
         trigger: ".section5-head .span-2",
         scroller: "body",
         start: "top 80%",
-        end: "bottom 20%",
+        end: "top 20%",
         scrub: true,
     },
 });
 tl.from(".section5-head .span-3", {
     x: 30,
-    backgroundPositionX: "-15.5%",
+    backgroundPositionX: "-30%",
     duration: 1,
     scrollTrigger: {
         trigger: ".section5-head .span-3",
         scroller: "body",
         start: "top 80%",
-        end: "bottom 20%",
+        end: "top 20%",
         scrub: true,
     },
 });

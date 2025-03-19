@@ -31,6 +31,7 @@ body {
 .section1-head {
     height: 80vh;
     gap: 3rem;
+    font-family: "chakra petch", sans-serif;
 }
 .section1-head h1 {
     font-size: 5.3rem;
@@ -45,7 +46,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5vh;
-    margin-bottom: 10vh;
+    margin-bottom: 2vh;
 }
 .section2 .event {
     /* border: 2px solid #e0eeee; */
@@ -94,6 +95,13 @@ button {
     border-radius: 2vw;
     font-family: "space grotesk", sans-serif;
     margin-top: 2vh;
+    border: 2px solid #e0eeee;
+    transition: all 0.25s;
+}
+
+button:hover {
+    background-color: transparent;
+    color: #e0eeee;
 }
 
 /* ------------------- media queries ------------------- */

@@ -141,11 +141,17 @@ button {
     width: fit-content;
     padding: 1vw 2vw;
     font-size: 1.1rem;
+    border: 2px solid #e0eeee;
     background-color: #e0eeee;
     color: #121315;
     border-radius: 2vw;
     cursor: pointer;
     font-family: "space grotesk", sans-serif;
+    transition: all 0.35s;
+}
+button:hover {
+    background-color: transparent;
+    color: #e0eeee;
 }
 @media (max-width: 1000px) {
     .section2-part1 h1 {
@@ -422,7 +428,7 @@ button {
     gap: 14vw;
     width: 80vw;
     overflow-x: hidden;
-    margin-bottom: 16vw;
+    margin-bottom: 4vw;
 }
 .section5-head {
     font-size: 4.5rem;

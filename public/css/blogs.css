@@ -91,6 +91,7 @@ span {
 	justify-items: center;
 	gap: 2vw;
 	height: fit-content;
+	margin-bottom: 6vw;
 }
 
 .blog {
@@ -100,6 +101,7 @@ span {
 	padding: 5%;
 	background-color: #1a1c21;
     overflow: hidden;
+	width: 100%;
 }
 
 .blog-content {
@@ -114,7 +116,7 @@ span {
 }
 
 .blog-heading:hover {
-	opacity: 0.75;
+	opacity: 0.75 !important;
 	cursor: pointer;
 }
 
@@ -140,7 +142,7 @@ span {
 	background-color: var(--color-1);
     font-family: "space grotesk", sans-serif;
     margin-top: 2vh;
-	transition: all 0.5s;
+	transition: all 0.25s;
 	border: 2px solid var(--color-1);
 	font-weight: bold;
 }

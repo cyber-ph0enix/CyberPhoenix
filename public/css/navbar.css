@@ -8,6 +8,7 @@ nav {
     left: 0;
     padding: 2vw 3vw;
     width: 100%;
+    z-index: 1;
 }
 .logo {
     font-family: "chakra petch", sans-serif;
