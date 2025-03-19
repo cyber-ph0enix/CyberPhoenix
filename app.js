@@ -36,6 +36,9 @@ app.get("/blogs", async (req, res) => {
 app.get("/blogs/new", (req, res) => {
     res.render("blogs/new.ejs");
 });
+app.get("/blogs/show", (req, res) => {
+    res.render("blogs/show.ejs");
+});
 // create new blog
 app.post("/blogs", async (req, res) => {
     const tags = req.body.tags.split(",");
