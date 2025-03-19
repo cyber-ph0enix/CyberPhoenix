@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cyber Phoenix - New Blog</title>
+
+        <link rel="stylesheet" href="/css/newBlog.css" />
+        <link rel="stylesheet" href="/css/navbar.css" />
+        <link rel="stylesheet" href="/css/footer.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kode+Mono:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap"
+            rel="stylesheet" />
+    </head>
+
+    <body>
+        <header><%- include("../includes/navbar.ejs") %></header>
+
+        <main>
+            <h1>Create New Blog</h1>
+
+            <form action="/blogs" method="post">
+                <div class="title-input">
+                    <label for="title">Enter Title:</label>
+                    <input type="text" name="title" id="title" required />
+                </div>
+                <div class="image-input">
+                    <label for="image">Enter Image URL:</label>
+                    <input type="text" name="image" id="image" />
+                </div>
+                <div class="content-input">
+                    <label for="content">Enter Blog Content:</label>
+                    <textarea
+                        name="content"
+                        id="content"
+                        rows="20"
+                        cols="100"
+                        required></textarea>
+                </div>
+                <div class="tags-input">
+                    <label for="tags">Enter Tags separated with a comma:</label>
+                    <input type="text" name="tags" id="tags" required />
+                </div>
+
+                <button>Create Blog</button>
+            </form>
+        </main>
+
+        <%- include("../includes/footer.ejs") %>
+    </body>
+</html>
