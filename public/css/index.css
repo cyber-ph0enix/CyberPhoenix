@@ -88,7 +88,7 @@ main {
     width: 80vw;
     overflow-x: hidden;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 4fr;
     border: 2px solid #e0eeee;
     border-radius: 1vw;
     padding: 3vw;
