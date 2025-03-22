@@ -25,24 +25,24 @@
             <form action="/blogs" method="post">
                 <div class="title-input">
                     <label for="title">Enter Title:</label>
-                    <input type="text" name="title" id="title" required />
+                    <input type="text" name="blog[title]" id="title"  />
                 </div>
                 <div class="image-input">
                     <label for="image">Enter Image URL:</label>
-                    <input type="text" name="image" id="image" />
+                    <input type="text" name="blog[image]" id="image" />
                 </div>
                 <div class="content-input">
                     <label for="content">Enter Blog Content:</label>
                     <textarea
-                        name="content"
+                        name="blog[content]"
                         id="content"
                         rows="20"
                         cols="100"
-                        required></textarea>
+                        ></textarea>
                 </div>
                 <div class="tags-input">
                     <label for="tags">Enter Tags separated with a comma:</label>
-                    <input type="text" name="tags" id="tags" required />
+                    <input type="text" name="blog[tags]" id="tags"  />
                 </div>
 
                 <button>Create Blog</button>
