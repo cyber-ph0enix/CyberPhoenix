@@ -36,6 +36,10 @@ span {
 	display: inline-block;
 }
 
+button {
+	cursor: pointer;
+}
+
 .vertical {
 	display: flex;
 	flex-direction: column;
@@ -144,7 +148,6 @@ span {
     margin-top: 2vh;
 	transition: all 0.25s;
 	border: 2px solid var(--color-1);
-	font-weight: bold;
 }
 
 .blog-button:hover {

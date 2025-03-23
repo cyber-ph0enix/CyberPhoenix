@@ -97,6 +97,7 @@ button {
     margin-top: 2vh;
     border: 2px solid #e0eeee;
     transition: all 0.25s;
+    cursor: pointer;
 }
 
 button:hover {
