@@ -33,6 +33,7 @@ app.use(session(sessionOptions));
 
 // using passport
 app.use(passport.initialize());
+app.use(passport.session());
 passport.use(new LocalStrategy(Admin.authenticate()));
 passport.serializeUser(Admin.serializeUser());
 passport.deserializeUser(Admin.deserializeUser());
@@ -70,7 +71,7 @@ app.get(
 // render new blog form
 app.get("/blogs/new", (req, res) => {
     if (!req.isAuthenticated()) res.redirect("/");
-    res.render("blogs/new.ejs");
+    else res.render("blogs/new.ejs");
 });
 
 // show blog
