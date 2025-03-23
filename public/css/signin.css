@@ -1,0 +1,58 @@
+:root {
+    --color-1: #e0eeee;
+    --color-2: #121315;
+    --font-title: "chakra petch", sans-serif;
+    --font-normal: "space grotesk", sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: var(--color-2);
+    color: var(--color-1);
+    font-family: var(--font-normal);
+    padding: 12vw 6vw 6vw 6vw;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+}
+form div {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+input {
+    font-family: var(--font-normal);
+    border-radius: 1vw;
+    padding: 1vh 1vw;
+    background: transparent;
+    border: 2px solid var(--color-1);
+    color: var(--color-1);
+    font-size: 1.1rem;
+}
+button {
+    width: fit-content;
+    padding: 1vw 2vw;
+    border-radius: 2vw;
+    font-family: "space grotesk", sans-serif;
+    margin-top: 2vh;
+    border: 2px solid #e0eeee;
+    transition: all 0.25s;
+}

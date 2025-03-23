@@ -3,9 +3,13 @@ const path = require("path");
 const ejsMate = require("ejs-mate");
 const mongoose = require("mongoose");
 const Blog = require("./models/blog");
+const Admin = require("./models/admin.js");
 const wrapAsync = require("./utils/wrapAsync");
 const ExpressError = require("./utils/ExpressError");
 const { blogSchema } = require("./schema.js");
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+const session = require("express-session");
 
 const app = express();
 
@@ -14,6 +18,24 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
+
+const sessionOptions = {
+    secret: "thisisasecretshh",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        expires: Date.now() + 10 * 60 * 1000,
+        maxAge: 10 * 60 * 1000,
+        httpOnly: true,
+    },
+};
+app.use(session(sessionOptions));
+
+// using passport
+app.use(passport.initialize());
+passport.use(new LocalStrategy(Admin.authenticate()));
+passport.serializeUser(Admin.serializeUser());
+passport.deserializeUser(Admin.deserializeUser());
 
 // creating connection with mongodb
 const MONGO_URL = "mongodb://127.0.0.1:27017/cyber_phoenix";
@@ -47,6 +69,7 @@ app.get(
 );
 // render new blog form
 app.get("/blogs/new", (req, res) => {
+    if (!req.isAuthenticated()) res.redirect("/");
     res.render("blogs/new.ejs");
 });
 
@@ -64,7 +87,7 @@ app.get(
 app.post(
     "/blogs",
     validateBlogSchema,
-    wrapAsync(async (req, res) => {
+    wrapAsync(async (req, res, next) => {
         const tags = req.body.blog.tags.split(",");
         const newBlog = new Blog(req.body.blog);
         newBlog.tags = tags;
@@ -73,6 +96,28 @@ app.post(
         console.log(result);
         res.send(result);
     })
+);
+
+// app.get("/test", async (req, res) => {
+//     const fakeAdmin = new Admin({
+//         email: "fakeadmin@gmail.com",
+//         username: "cp-admin",
+//     });
+
+//     const registered = await Admin.register(fakeAdmin, "fakeadmin");
+//     res.send(registered);
+// });
+app.get("/cp-admin", (req, res) => {
+    res.render("admin/signin.ejs");
+});
+app.post(
+    "/cp-admin",
+    passport.authenticate("local", {
+        failureRedirect: "/cp-admin",
+    }),
+    async (req, res) => {
+        res.send("you're signed in");
+    }
 );
 
 // about route
