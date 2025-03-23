@@ -22,6 +22,12 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 @media (max-width: 900px) {
     body {
         padding: 4vw;

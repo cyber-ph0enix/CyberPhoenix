@@ -33,6 +33,11 @@ section {
 	width: 100%;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .vertical {
 	display: flex;
 	flex-direction: column;
@@ -131,7 +136,7 @@ section {
 .section3-box {
     border: 2px solid #e0eeee;
     border-radius: 1vw;
-    padding: 20vh 3vw;
+    padding: 12vh 3vw;
     display: flex;
     flex-direction: column;
     gap: 8vh;
