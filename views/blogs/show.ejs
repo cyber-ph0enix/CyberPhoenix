@@ -37,32 +37,12 @@
                     <div class="blog-keywords">
                         <% for (let tag of blog.tags) { %>
                         <span class="keywords"><%= tag %></span>
-                        <span class="keywords"><%= tag %></span>
-                        <span class="keywords"><%= tag %></span>
                         <% } %>
                     </div>
                     <div class="line"></div>
                     <div class="blog-content">
-						<p><%= blog.content %></p>
-                        <% for (let i = 0; i<7; i++) { %>
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing
-                            elit. Officia tempora dolore ab autem accusantium
-                            ducimus quos nobis nulla neque sequi eius non
-                            similique facere delectus soluta, qui asperiores,
-                            consequatur, nam repellat magnam earum suscipit!
-                            Voluptatum incidunt itaque ex laboriosam, non dolore
-                            nesciunt perferendis perspiciatis corporis
-                            blanditiis voluptate pariatur aspernatur modi
-                            molestiae animi ratione officiis adipisci voluptates
-                            aliquid soluta quisquam sunt veritatis? Officia,
-                            maiores? Perferendis voluptatibus odio deserunt,
-                            autem assumenda dignissimos tempora saepe. Sapiente,
-                            dolorem! Et similique ipsam deleniti tenetur odio ut
-                            consectetur, dignissimos rem autem iure sapiente
-                            labore in est voluptatem, voluptatum enim obcaecati
-                            recusandae quam delectus maxime quae. Recusandae.
-                        </p>
+						<% for (let para of blog.content) { %>
+                        <p><%= para %></p>
                         <% } %>
                     </div>
                 </div>
@@ -73,6 +53,5 @@
 
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-        <!-- <script src="/js/show.js"></script> -->
     </body>
 </html>

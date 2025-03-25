@@ -13,8 +13,8 @@ async function main() {
 }
 
 const initDB = async () => {
+    await Blog.deleteMany({});
     await Blog.insertMany(data);
-    console.log("init successful");
 };
 
 initDB();

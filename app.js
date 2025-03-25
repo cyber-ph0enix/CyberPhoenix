@@ -10,6 +10,7 @@ const { blogSchema } = require("./schema.js");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const session = require("express-session");
+const methodOverride = require("method-override");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
+app.use(methodOverride("_method"));
 
 const sessionOptions = {
     secret: "thisisasecretshh",
@@ -73,6 +75,44 @@ app.get("/blogs/new", (req, res) => {
     if (!req.isAuthenticated()) res.redirect("/");
     else res.render("blogs/new.ejs");
 });
+// render edit form
+app.get(
+    "/blogs/:id/edit",
+    wrapAsync(async (req, res) => {
+        let { id } = req.params;
+        let blog = await Blog.findById(id);
+        if (!blog) {
+            next(new ExpressError(404, "Blog does not exist."));
+        }
+
+        res.render("blogs/edit.ejs", { blog });
+    })
+);
+// update blog
+app.put(
+    "/blogs/:id",
+    validateBlogSchema,
+    wrapAsync(async (req, res) => {
+        let { id } = req.params;
+        const blog = req.body.blog;
+        const paragraphs = blog.content.split("/n/n");
+        const tags = blog.tags.split(",");
+        blog.tags = tags;
+        blog.content = paragraphs;
+
+        await Blog.findByIdAndUpdate(id, blog);
+        res.redirect("/blogs");
+    })
+);
+// delete blog
+app.delete(
+    "/blogs/:id",
+    wrapAsync(async (req, res) => {
+        let { id } = req.params;
+        let blog = await Blog.findByIdAndDelete(id);
+        res.send(blog);
+    })
+);
 
 // show blog
 app.get(
@@ -89,9 +129,12 @@ app.post(
     "/blogs",
     validateBlogSchema,
     wrapAsync(async (req, res, next) => {
-        const tags = req.body.blog.tags.split(",");
-        const newBlog = new Blog(req.body.blog);
+        const blog = req.body.blog;
+        const paragraphs = blog.content.split("/n/n");
+        const tags = blog.tags.split(",");
+        const newBlog = new Blog(blog);
         newBlog.tags = tags;
+        newBlog.content = paragraphs;
 
         const result = await newBlog.save();
         console.log(result);
