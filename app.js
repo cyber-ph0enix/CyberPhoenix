@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const ejsMate = require("ejs-mate");
@@ -10,6 +11,7 @@ const { blogSchema } = require("./schema.js");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const methodOverride = require("method-override");
 const { isAdmin } = require("./utils/middleware.js");
 
@@ -22,7 +24,28 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 
+// creating connection with mongodb
+const dbUrl = process.env.ATLAS_DB_URL;
+main()
+    .then(() => console.log("connection with db successful"))
+    .catch((err) => console.log(err));
+
+async function main() {
+    await mongoose.connect(dbUrl);
+}
+
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    crypto: {
+        secret: process.env.SECRET,
+    },
+    touchAfter: 24 * 60 * 60,
+});
+store.on("error", (err) => {
+    console.log("ERROR in mongo session store, ", err);
+});
 const sessionOptions = {
+    store,
     secret: "thisisasecretshh",
     resave: false,
     saveUninitialized: true,
@@ -45,16 +68,6 @@ app.use((req, res, next) => {
     res.locals.currUser = req.user;
     next();
 });
-
-// creating connection with mongodb
-const MONGO_URL = "mongodb://127.0.0.1:27017/cyber_phoenix";
-main()
-    .then(() => console.log("connection with db successful"))
-    .catch((err) => console.log(err));
-
-async function main() {
-    await mongoose.connect(MONGO_URL);
-}
 
 // schema validation middleware
 function validateBlogSchema(req, res, next) {
@@ -155,15 +168,6 @@ app.get(
     })
 );
 
-// app.get("/test", async (req, res) => {
-//     const fakeAdmin = new Admin({
-//         email: "fakeadmin@gmail.com",
-//         username: "cp-admin",
-//     });
-
-//     const registered = await Admin.register(fakeAdmin, "fakeadmin");
-//     res.send(registered);
-// });
 app.get("/cp-admin", (req, res) => {
     res.render("admin/signin.ejs");
 });

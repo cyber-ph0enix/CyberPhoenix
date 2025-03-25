@@ -31,7 +31,6 @@
     margin-bottom: 2vh;
 }
 .section2 .event {
-    border: 0.2px solid #a3a3a3;
     border-radius: 1vw;
     padding: 5vw 7vw;
     display: grid;
@@ -144,6 +143,7 @@ button:hover {
         line-height: 2.1rem;
     }
     .event {
+        border: 0.2px solid #a3a3a3;
         border-radius: 5vw !important;
     }
 }
