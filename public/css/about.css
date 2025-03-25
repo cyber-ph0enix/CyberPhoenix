@@ -1,32 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html,
-body {
-    height: 100%;
-    width: 100%;
-}
 body {
     overflow-x: hidden;
-    background-color: #121315;
     padding: 6vw;
-    color: #e0eeee;
-    font-family: "space grotesk", sans-serif;
-}
-
-.vertical-flex-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-body {
-	background-color: var(--color-2);
-	color: var(--color-1);
-	overflow-x: hidden;
 }
 
 section {
