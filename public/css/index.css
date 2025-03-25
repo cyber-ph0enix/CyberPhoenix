@@ -322,7 +322,7 @@ button:hover {
 .section4 {
     gap: 3rem;
     margin-bottom: 20vw;
-    width: 80vw;
+    width: 50vw;
     overflow: hidden;
 }
 .section4-head {
@@ -372,6 +372,7 @@ button:hover {
     flex-direction: column;
     gap: 1vw;
     padding: 3vw 4vw;
+    width: 100%;
 }
 .event .event-date {
     font-size: 3rem;
