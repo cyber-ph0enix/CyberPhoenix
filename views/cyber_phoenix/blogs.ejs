@@ -62,12 +62,16 @@
                         <form action="/blogs/<%= blog._id %>" method="get">
                             <button class="blog-button">Read</button>
                         </form>
+                        <% if (currUser) { %>
                         <form action="/blogs/<%= blog._id %>/edit" method="get">
                             <button class="blog-button">Edit</button>
                         </form>
-                        <form action="/blogs/<%= blog._id %>?_method=DELETE" method="post">
+                        <form
+                            action="/blogs/<%= blog._id %>?_method=DELETE"
+                            method="post">
                             <button class="blog-button">Delete</button>
                         </form>
+                        <% } %>
                     </div>
                     <%}%>
                 </div>

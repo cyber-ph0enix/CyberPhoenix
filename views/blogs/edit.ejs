@@ -38,9 +38,7 @@
                         id="content"
                         rows="20"
                         cols="100"
-                        ><% for (let para of blog.content) { %>
-                            <%= para + "/n/n" %>
-                        <% } %></textarea>
+                        ><% for (let para of blog.content) { %><%= para + "/n/n" %><% } %></textarea>
                 </div>
                 <div class="tags-input">
                     <label for="tags">Enter Tags separated with a comma:</label>

@@ -11,6 +11,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const session = require("express-session");
 const methodOverride = require("method-override");
+const { isAdmin } = require("./utils/middleware.js");
 
 const app = express();
 
@@ -39,6 +40,11 @@ app.use(passport.session());
 passport.use(new LocalStrategy(Admin.authenticate()));
 passport.serializeUser(Admin.serializeUser());
 passport.deserializeUser(Admin.deserializeUser());
+
+app.use((req, res, next) => {
+    res.locals.currUser = req.user;
+    next();
+});
 
 // creating connection with mongodb
 const MONGO_URL = "mongodb://127.0.0.1:27017/cyber_phoenix";
@@ -71,14 +77,32 @@ app.get(
     })
 );
 // render new blog form
-app.get("/blogs/new", (req, res) => {
-    if (!req.isAuthenticated()) res.redirect("/");
-    else res.render("blogs/new.ejs");
+app.get("/blogs/new", isAdmin, (req, res) => {
+    res.render("blogs/new.ejs");
 });
+// create new blog
+app.post(
+    "/blogs",
+    isAdmin,
+    validateBlogSchema,
+    wrapAsync(async (req, res, next) => {
+        const blog = req.body.blog;
+        const paragraphs = blog.content.split("/n/n");
+        const tags = blog.tags.split(",");
+        const newBlog = new Blog(blog);
+        newBlog.tags = tags;
+        newBlog.content = paragraphs;
+
+        const result = await newBlog.save();
+        console.log(result);
+        res.redirect("/blogs");
+    })
+);
 // render edit form
 app.get(
     "/blogs/:id/edit",
-    wrapAsync(async (req, res) => {
+    isAdmin,
+    wrapAsync(async (req, res, next) => {
         let { id } = req.params;
         let blog = await Blog.findById(id);
         if (!blog) {
@@ -91,6 +115,7 @@ app.get(
 // update blog
 app.put(
     "/blogs/:id",
+    isAdmin,
     validateBlogSchema,
     wrapAsync(async (req, res) => {
         let { id } = req.params;
@@ -101,16 +126,18 @@ app.put(
         blog.content = paragraphs;
 
         await Blog.findByIdAndUpdate(id, blog);
-        res.redirect("/blogs");
+        res.redirect(`/blogs/${id}`);
     })
 );
 // delete blog
 app.delete(
     "/blogs/:id",
+    isAdmin,
     wrapAsync(async (req, res) => {
         let { id } = req.params;
         let blog = await Blog.findByIdAndDelete(id);
-        res.send(blog);
+        console.log(blog);
+        res.redirect("/blogs");
     })
 );
 
@@ -120,25 +147,11 @@ app.get(
     wrapAsync(async (req, res, next) => {
         const { id } = req.params;
         const blog = await Blog.findById(id);
+        if (!blog) {
+            next(new ExpressError(404, "Blog does not exist."));
+        }
 
         res.render("blogs/show.ejs", { blog });
-    })
-);
-// create new blog
-app.post(
-    "/blogs",
-    validateBlogSchema,
-    wrapAsync(async (req, res, next) => {
-        const blog = req.body.blog;
-        const paragraphs = blog.content.split("/n/n");
-        const tags = blog.tags.split(",");
-        const newBlog = new Blog(blog);
-        newBlog.tags = tags;
-        newBlog.content = paragraphs;
-
-        const result = await newBlog.save();
-        console.log(result);
-        res.send(result);
     })
 );
 
@@ -160,7 +173,7 @@ app.post(
         failureRedirect: "/cp-admin",
     }),
     async (req, res) => {
-        res.send("you're signed in");
+        res.redirect("/blogs");
     }
 );
 
