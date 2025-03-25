@@ -22,9 +22,7 @@
             <section class="section-1">
                 <div class="blog vertical">
                     <h2 class="blog-heading">
-                        <span>
-                            <%= blog.title %>
-                        </span>
+                        <span> <%= blog.title %> </span>
                     </h2>
                     <div class="blog-date">
                         <span
@@ -32,15 +30,18 @@
                             'numeric', month: 'long', day: 'numeric' }) %></span
                         >
                     </div>
-                    <div class="tags-heading">Tags:</div>
-                    <div class="blog-keywords">
-                        <% for (let tag of blog.tags) { %>
-                        <span class="keywords"><%= tag %></span>
-                        <% } %>
+                    <div>
+                        <div class="tags-heading">Tags:</div>
+                        <div class="blog-keywords">
+                            <% for (let tag of blog.tags) { %>
+                            <span class="keywords"><%= tag %></span>
+                            <% } %>
+                        </div>
                     </div>
+
                     <div class="line"></div>
                     <div class="blog-content">
-						<% for (let para of blog.content) { %>
+                        <% for (let para of blog.content) { %>
                         <p><%= para %></p>
                         <% } %>
                     </div>

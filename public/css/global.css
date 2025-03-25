@@ -63,6 +63,7 @@ nav img {
 @media (max-width: 900px) {
     nav img {
         display: block;
+        width: 6vw;
     }
     nav {
         flex-direction: column !important;
@@ -77,7 +78,7 @@ nav img {
         z-index: 99;
     }
     nav .logo h1 {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -115,6 +116,15 @@ footer .part-2 {
     footer .part-2, footer .copyright-info {
         font-size: 0.8rem;
     }
+}
+@media (max-width: 550px) {
+    footer {
+        margin-top: 12vh;
+        gap: 3vh;
+    }
+    footer .club-logo img {
+        width: 5vw;
+    } 
 }
 
 /* ---------------- button --------------- */

@@ -1,27 +1,22 @@
 body {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     padding: 6vw;
 }
-
-section {
+/* section {
 	width: 100%;
-}
-
+} */
 a {
     text-decoration: none;
     color: inherit;
 }
-
 .vertical {
 	display: flex;
 	flex-direction: column;
 }
-
 .center {
 	justify-content: center;
 	align-items: center;
 }
-
 .vertical-reveal-text {
     overflow: hidden;
 }
@@ -216,14 +211,14 @@ a {
 }
 @media (max-width: 600px) {
     body {
-        padding: 6vw 9vw;
+        padding: 6vw 3vw;
     }
     .section1-head h1 {
-        font-size: 2.8rem;
-        line-height: 2.3rem;
+        font-size: 2.7rem;
+        line-height: 2.1rem;
     }
     .section1-head h3 {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
     .section2 {
         padding-top: 6vh;
@@ -231,21 +226,21 @@ a {
         border-radius: 3vw;
     }
     .section2-head {
-        font-size: 2.2rem !important;
-        line-height: 1.8rem !important;
+        font-size: 2.7rem !important;
+        line-height: 2.1rem !important;
     }
     .section2-content {
-        font-size: 0.6rem !important;
+        font-size: 0.8rem !important;
     }
     .section3-head h3 {
-        font-size: 2.2rem !important;
-        line-height: 1.8rem !important;
+        font-size: 2.7rem !important;
+        line-height: 2.1rem !important;
     }
     .section3-head div {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
     .section3-box {
-        padding: 10vh 2vw;
+        padding: 7vh 8vw;
     }
     .section3-box .box-head {
         font-size: 1.5rem;
@@ -254,16 +249,16 @@ a {
         font-size: 0.7rem;
     }
     .section4-head h3 {
-        font-size: 2.2rem !important;
-        line-height: 1.8rem !important;
+        font-size: 2.7rem !important;
+        line-height: 2.1rem !important;
     }
     .members-list {
-        font-size: 0.7rem !important;
+        font-size: 0.9rem !important;
     }
-}
-@media (max-width: 500px) {
-    .section1-head h1 {
-        font-size: 2.2rem;
-        line-height: 1.8rem;
+    .member {
+        width: 80vw !important;
+    }
+    .member img {
+        width: 5vw !important;
     }
 }

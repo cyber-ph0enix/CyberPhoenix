@@ -11,8 +11,8 @@
     flex-direction: column;
 }
 .section1-head {
-    height: 80vh;
-    gap: 3rem;
+    height: 100vh;
+    gap: 2vh;
     font-family: "chakra petch", sans-serif;
 }
 .section1-head h1 {
@@ -31,7 +31,7 @@
     margin-bottom: 2vh;
 }
 .section2 .event {
-    /* border: 2px solid #e0eeee; */
+    border: 0.2px solid #a3a3a3;
     border-radius: 1vw;
     padding: 5vw 7vw;
     display: grid;
@@ -127,24 +127,24 @@ button:hover {
 }
 @media (max-width: 600px) {
     body {
-        padding: 6vw 9vw;
+        padding: 6vw 3vw;
     }
-    .section1-head h1 {
-        font-size: 2.8rem;
-        line-height: 2.3rem;
+    .section1-head {
+        height: 80vh !important;
     }
     .section1-head h3 {
-        font-size: 1rem;
+        font-size: 0.7rem;
     }
     button {
         padding: 2vw 4vw;
         border-radius: 10vw;
     }
-}
-@media (max-width: 500px) {
     .section1-head h1 {
-        font-size: 2.2rem;
-        line-height: 1.8rem;
+        font-size: 2.7rem;
+        line-height: 2.1rem;
+    }
+    .event {
+        border-radius: 5vw !important;
     }
 }
 @media (max-width: 400px) {

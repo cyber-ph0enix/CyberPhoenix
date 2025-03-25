@@ -7,20 +7,13 @@ main {
 section {
 	width: 100%;
 }
-
 span {
 	display: inline-block;
 }
-
-button {
-	cursor: pointer;
-}
-
 .vertical {
 	display: flex;
 	flex-direction: column;
 }
-
 .center {
 	justify-content: center;
 	align-items: center;
@@ -30,20 +23,17 @@ button {
 
 .section-1 {
 	height: 100vh;
-	gap: 4vh;
+	gap: 2vw;
 }
-
 .section-1-heading {
 	line-height: 4.5rem;
     font-size: 5.3rem;
 	font-family: var(--font-title);
 }
-
 .section-1-content {
 	font-weight: lighter;
 	font-size: 1rem;
 }
-
 @media (max-width: 800px) {
     .section-1-heading {
         font-size: 3.5rem;
@@ -57,8 +47,8 @@ button {
 }
 @media (max-width: 550px) {
     .section-1-heading {
-        font-size: 2.2rem;
-        line-height: 1.8rem;
+        font-size: 2.7rem;
+        line-height: 2.1rem;
     }
 }
 
@@ -73,41 +63,33 @@ button {
 	height: fit-content;
 	margin-bottom: 6vw;
 }
-
 .blog {
 	border-radius: 1vw;
     padding: 5vw 7vw;
-	/* border: 2px solid var(--color-1); */
-	padding: 5%;
+	border: 0.2px solid #a3a3a3;
 	background-color: #1a1c21;
     overflow: hidden;
 	width: 100%;
 }
-
 .blog-content {
 	row-gap: 1vw;
 }
-
 .blog-heading {
 	font-size: 2rem;
 	font-weight: bold;
 	font-family: var(--font-title);
 	transition: all 0.25s;
 }
-
 .blog-heading:hover {
 	opacity: 0.75 !important;
 	cursor: pointer;
 }
-
 .blog:nth-child(even) {
 	transform: translateY(20%);
 }
-
 .tags-heading {
 	font-weight: bolder;
 }
-
 .blog-keywords {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -115,36 +97,30 @@ button {
 	gap: 0.5vw;
 }
 
-.blog-button {
-	width: fit-content;
-    padding: 1vw 2vw;
-    border-radius: 2vw;
-	background-color: var(--color-1);
-    font-family: "space grotesk", sans-serif;
-    margin-top: 2vh;
-	transition: all 0.25s;
-	border: 2px solid var(--color-1);
-}
-
-.blog-button:hover {
-	color: var(--color-1);
-	background-color: transparent;
-}
-
 @media (max-width: 600px) {
 	.section-2-content {
 		grid-template-columns: 1fr;
 		gap: 10vw;
 	}
+	.blog {
+		border-radius: 5vw !important;
+	}
 	.blog:nth-child(even) {
 		transform: none;
 	}
-	.blog-content {
-		row-gap: 4vw;
+	.blog-heading {
+		font-size: 1.8rem;
 	}
-	
+	.blog-content {
+		row-gap: 6vw;
+	}
 	.blog-keywords {
 		gap: 1vw;
 		font-size: 0.8rem;
+	}
+	button {
+		padding: 2.5vw 6vw;
+        border-radius: 6vw;
+        font-size: 0.8rem;
 	}
 }
