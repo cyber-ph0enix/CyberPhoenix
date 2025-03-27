@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 
 // creating connection with mongodb
-const dbUrl = "mongodb://127.0.0.1:27017/cyber_phoenix";
+const dbUrl = process.env.ATLAS_DB_URL;
 main()
     .then(() => console.log("connection with db successful"))
     .catch((err) => console.log(err));
@@ -191,31 +191,10 @@ app.get("/about", (req, res) => {
 app.get(
     "/events",
     wrapAsync(async (req, res) => {
-        const events = await Event.find({});
+        const events = await Event.find({}).sort({ date: -1 });
         res.render("cyber_phoenix/events.ejs", { events });
     })
 );
-
-app.get("/addevents", async (req, res) => {
-    const events = [
-        {
-            title: "Event 1",
-            date: new Date(2025, 2, 27),
-            keywords: [
-                "key1",
-                "key2",
-                "key3",
-                "key4",
-                "key5",
-                "key6",
-                "key7",
-                "key8",
-            ],
-        },
-    ];
-    const result = await Event.insertMany(events);
-    res.send(result);
-});
 
 // page not found
 app.all("*", (req, res, next) => {

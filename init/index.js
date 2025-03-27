@@ -17,4 +17,52 @@ const initDB = async () => {
     await Blog.insertMany(data);
 };
 
+
+app.get("/addevents", async (req, res) => {
+    await Event.deleteMany({});
+    const events = [
+        {
+            title: "Phoenix 0x1: Dark Web - The Internet's Hidden Face",
+            date: new Date(2025, 2, 27),
+            keywords: [
+                "Cyber Awareness",
+                "Online Privacy",
+                "Dark Web",
+                "Bitcoin Billionare",
+                "Cyber Safety",
+                "CIA Triad",
+                "Safe Browsing",
+                "Virtual Private Networks",
+            ],
+        },
+        {
+            title: "CyberNexus: Bridging Expertise and Practices",
+            date: new Date(2025, 3, 21),
+            keywords: [
+                "OSI Model",
+                "Firewalls",
+                "Cloud Services (SaaS/IaaS)",
+                "System Hacking",
+                "Kali Linux",
+                "Packet Tracer",
+                "Metasploit",
+                "Cryptography",
+            ],
+        },
+        // {
+        //     title: "OSINT - The First Step in Digital Forensics",
+        //     date: new Date(2025, 4, 2),
+        //     keywords: [
+        //         "OSINT",
+        //         "Google Dorking",
+        //         "Social Media OSINT",
+        //         "Hacking",
+        //         "Hacking Phases",
+        //         "Reconnaissance",
+        //     ],
+        // },
+    ];
+    const result = await Event.insertMany(events);
+    res.send(result);
+});
 initDB();
