@@ -262,3 +262,10 @@ a {
         width: 5vw !important;
     }
 }
+
+@media (max-width: 400px) {
+    .section1-head h1 {
+        font-size: 1.9rem;
+        line-height: 1.5rem;
+    }
+}
