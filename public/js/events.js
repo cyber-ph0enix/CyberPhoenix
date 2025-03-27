@@ -13,7 +13,7 @@ tl.from(".section1-head h1 span", {
 tl.from(".section1-head h3", {
     y: 50,
     opacity: 0,
-    duration: 1,
+    duration: 0.5,
 });
 
 let verticalRevealEle = gsap.utils.toArray(".vertical-reveal");
