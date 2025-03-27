@@ -47,7 +47,7 @@ store.on("error", (err) => {
 });
 const sessionOptions = {
     store,
-    secret: "thisisasecretshh",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -107,8 +107,7 @@ app.post(
         newBlog.tags = tags;
         newBlog.content = paragraphs;
 
-        const result = await newBlog.save();
-        console.log(result);
+        await newBlog.save();
         res.redirect("/blogs");
     })
 );
