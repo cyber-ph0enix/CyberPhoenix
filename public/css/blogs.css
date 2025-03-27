@@ -128,3 +128,17 @@ a {
         font-size: 0.8rem;
     }
 }
+
+@media (max-width: 350px) {
+    .section-1-heading {
+        font-size: 2.1rem;
+        line-height: 1.6rem;
+    }
+    .section-1-content {
+        font-size: 0.6rem;
+    }
+    .blog-heading {
+        font-size: 1.5rem;
+    }
+}
+

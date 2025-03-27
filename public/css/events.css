@@ -148,6 +148,13 @@ button:hover {
     }
 }
 @media (max-width: 400px) {
+    .section1-head h1{
+        font-size: 1.8rem;
+        line-height: 1.5rem;
+    }
+    .section1-head h3 {
+        font-size: 0.6rem;
+    }
     .event .event-date {
         font-size: 1.3rem;
     }
