@@ -11,11 +11,13 @@ footer .club-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2vw;
+    gap: 0.5vw;
     font-family: "chakra petch", sans-serif;
 }
 footer .club-logo img {
-    width: 2vw;
+    width: 3rem;
+    aspect-ratio: 7/6;
+    /* border-radius: 50%; */
 }
 footer .part-2 {
     gap: 1vw;
@@ -24,10 +26,20 @@ footer .part-2 {
     footer h1 {
         font-size: 1.4rem;
     }
+    footer .club-logo img {
+        width: 2rem;
+        aspect-ratio: 7/6;
+        /* border-radius: 50%; */
+    }
 }
 @media (max-width: 800px) {
     footer h1 {
         font-size: 1.1rem;
+    }
+    footer .club-logo img {
+        width: 1.5rem;
+        aspect-ratio: 7/6;
+        /* border-radius: 50%; */
     }
     footer .part-2, footer .copyright-info {
         font-size: 0.8rem;
