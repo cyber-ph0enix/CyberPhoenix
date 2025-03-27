@@ -11,9 +11,8 @@
             href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kode+Mono:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap"
             rel="stylesheet" />
 
+        <link rel="stylesheet" href="/css/global.css" />
         <link rel="stylesheet" href="/css/events.css" />
-        <link rel="stylesheet" href="/css/navbar.css" />
-        <link rel="stylesheet" href="/css/footer.css" />
     </head>
 
     <body>
@@ -37,33 +36,40 @@
             </section>
 
             <section class="section2">
-                <% for (let i = 0; i<10; i++) {%>
-                    <div class="event">
-                        <h1 class="event-date date1"><span class="vertical-reveal">21 March 2025</span></h1>
+                <% for (const event of events) {%>
+                <div class="event">
+                    <h1 class="event-date date1">
+                        <span class="vertical-reveal"
+                            ><%= event.date.toLocaleString("en-US", { day:
+                            'numeric', month: 'long', year: 'numeric' })
+                            %></span
+                        >
+                    </h1>
 
-                        <div class="event-info">
-                            <h1 class="event-title">Lorem ipsum dolor sit amet</h1>
+                    <div class="event-info">
+                        <h1 class="event-title"><%= event.title %></h1>
 
-                            <div class="event-keywords">
-                                <div class="keywords">
-                                    <h5>Firewall</h5>
-                                    <h5>Phishing</h5>
-                                    <h5>Encryption</h5>
-                                    <h5>Malware</h5>
-                                    <h5>Ransomware</h5>
-                                </div>
-                                <div class="keywords">
-                                    <h5>Penetration Testing</h5>
-                                    <h5>Dark Web</h5>
-                                    <h5>Botnet</h5>
-                                    <h5>DDoS Attack</h5>
-                                </div>
+                        <div class="event-keywords">
+                            <div class="keywords">
+                                <% for( let i = 0; i <
+                                event.keywords.length/2;i++ ) { %>
+                                <h5><%= event.keywords[i] %></h5>
+                                <% } %>
                             </div>
-
-                            <button>Register Now</button>
+                            <div class="keywords">
+                                <% for( let i = event.keywords.length/2 + 1; i <
+                                event.keywords.length;i++ ) { %>
+                                <h5><%= event.keywords[i] %></h5>
+                                <% } %>
+                            </div>
                         </div>
+
+                        <% if (event.registerLink) { %><button>
+                            Register Now</button
+                        ><% } %>
                     </div>
-                <%}%>
+                </div>
+                <% } %>
             </section>
         </main>
 

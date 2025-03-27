@@ -1,20 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html,
 body {
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    background-color: #121315;
     padding: 6vw;
-    color: #e0eeee;
-    font-family: "space grotesk", sans-serif;
 }
 main {
     display: flex;
@@ -28,9 +13,9 @@ a {
     color: inherit;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 600px) {
     body {
-        padding: 4vw;
+        padding: 3vw !important;
     }
 }
 
@@ -79,13 +64,13 @@ a {
 }
 @media (max-width: 750px) {
     .section1-head h3 {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 }
 @media (max-width: 550px) {
     .section1-head h1 {
-        font-size: 2.2rem;
-        line-height: 1.8rem;
+        font-size: 2.8rem;
+        line-height: 2.2rem;
     }
 }
 
@@ -193,17 +178,24 @@ button:hover {
         font-size: 0.8rem;
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 550px) {
     .section2 {
         border-radius: 5vw;
     }
     .section2-part1 h1 {
-        font-size: 2.2rem;
-        line-height: 1.8rem;
+        font-size: 2.7rem;
+        line-height: 2.1rem;
     }
     .section2-part2 button {
         padding: 2.5vw 4vw;
         border-radius: 6vw;
+        font-size: 0.8rem;
+    }
+    .section2-part2 .para-1 .line {
+        font-size: 0.9rem;
+    }
+    .section2-part2 .para-2 {
+        font-size: 0.7rem;
     }
 }
 
@@ -217,14 +209,15 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 6vw;
-    font-family: "chakra petch", sans-serif;
 }
 .section3-head div {
+    font-family: "space grotesk", sans-serif;
     display: flex;
     flex-direction: column;
     gap: 3vw;
 }
 .section3-head h1 {
+    font-family: "chakra petch", sans-serif !important;
     display: flex;
     flex-direction: column;
     font-size: 4.5rem;
@@ -258,7 +251,9 @@ button:hover {
 }
 .element-content h1 {
     font-size: 3rem;
-    text-transform: uppercase;
+}
+.element-content h3 {
+    font-weight: normal;
 }
 .section3-element img {
     width: 40vw;
@@ -280,7 +275,7 @@ button:hover {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 3vw;
+        gap: 14vh;
     }
     .section3-element {
         flex-direction: column;
@@ -299,13 +294,20 @@ button:hover {
 }
 @media (max-width: 700px) {
     .section3-element img {
-        width: 60vw;
+        width: 90%;
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 550px) {
+    .section3 {
+        margin-top: 10vh;
+        margin-bottom: 20vh;
+    }
+    .section3-head {
+        grid-template-columns: 1fr 1fr;
+    }
     .section3-head h1 {
-        font-size: 2.2rem;
-        line-height: 1.8rem;
+        font-size: 2.7rem;
+        line-height: 2.1rem;
     }
     .section3-head h3 {
         font-size: 0.8rem;
@@ -322,7 +324,7 @@ button:hover {
 .section4 {
     gap: 3rem;
     margin-bottom: 20vw;
-    width: 50vw;
+    width: 70vw;
     overflow: hidden;
 }
 .section4-head {
@@ -352,8 +354,8 @@ button:hover {
 }
 @media (max-width: 500px) {
     .section4-part1 h1 {
-        font-size: 2.2rem;
-        line-height: 1.8rem;
+        font-size: 2.7rem;
+        line-height: 2.1rem;
     }
 }
 
@@ -413,7 +415,7 @@ button:hover {
         gap: 4vh;
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 550px) {
     .event {
         border-radius: 4vw;
         padding: 5vw 4vw;
@@ -425,8 +427,9 @@ button:hover {
     }
     .section4 button {
         border-radius: 6vw;
-        padding: 2.5vw 4vw;
+        padding: 2.8vw 5vw;
         margin-bottom: 5vh;
+        font-size: 0.8rem;
     }
 }
 
@@ -492,16 +495,19 @@ button:hover {
         font-size: 0.8rem !important;
     }
 }
-@media (max-width: 500px) {
+@media (max-width: 550px) {
     .section5-head {
-        font-size: 2.2rem;
-        line-height: 1.8rem;
+        font-size: 2.7rem;
+        line-height: 2.1rem;
     }
     .social {
-        width: 60vw;
+        width: 80vw;
         gap: 2vh;
     }
+    .social-text {
+        font-size: 1rem;
+    }
     .social img {
-        width: 4vw;
+        width: 5vw;
     }
 }

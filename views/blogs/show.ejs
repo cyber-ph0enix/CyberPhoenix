@@ -5,9 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Blogs</title>
 
+        <link rel="stylesheet" href="/css/global.css" />
         <link rel="stylesheet" href="/css/show.css" />
-        <link rel="stylesheet" href="/css/navbar.css" />
-        <link rel="stylesheet" href="/css/footer.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,9 +22,7 @@
             <section class="section-1">
                 <div class="blog vertical">
                     <h2 class="blog-heading">
-                        <span>
-                            <%= blog.title %>
-                        </span>
+                        <span> <%= blog.title %> </span>
                     </h2>
                     <div class="blog-date">
                         <span
@@ -33,15 +30,18 @@
                             'numeric', month: 'long', day: 'numeric' }) %></span
                         >
                     </div>
-                    <div class="tags-heading">Tags:</div>
-                    <div class="blog-keywords">
-                        <% for (let tag of blog.tags) { %>
-                        <span class="keywords"><%= tag %></span>
-                        <% } %>
+                    <div>
+                        <div class="tags-heading">Tags:</div>
+                        <div class="blog-keywords">
+                            <% for (let tag of blog.tags) { %>
+                            <span class="keywords"><%= tag %></span>
+                            <% } %>
+                        </div>
                     </div>
+
                     <div class="line"></div>
                     <div class="blog-content">
-						<% for (let para of blog.content) { %>
+                        <% for (let para of blog.content) { %>
                         <p><%= para %></p>
                         <% } %>
                     </div>

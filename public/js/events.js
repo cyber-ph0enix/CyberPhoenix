@@ -40,6 +40,7 @@ keywords.forEach((kw) => {
         scrollTrigger: {
             trigger: kw,
             scrub: true,
+            end: "bottom 65%",
         },
     });
 });

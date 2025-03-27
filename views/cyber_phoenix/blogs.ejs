@@ -5,9 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Blogs</title>
 
+        <link rel="stylesheet" href="/css/global.css" />
         <link rel="stylesheet" href="/css/blogs.css" />
-        <link rel="stylesheet" href="/css/navbar.css" />
-        <link rel="stylesheet" href="/css/footer.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,9 +37,11 @@
                     <% for (let blog of allBlogs) {%>
                     <div class="blog">
                         <div class="blog-content vertical">
-                            <h2 class="blog-heading">
-                                <span> <%= blog.title %> </span>
-                            </h2>
+                            <a href="/blogs/<%= blog._id %>"
+                                ><h2 class="blog-heading">
+                                    <span> <%= blog.title %> </span>
+                                </h2></a
+                            >
                             <div class="blog-date">
                                 <span
                                     ><%= blog.createdAt.toLocaleString("en-US",
@@ -62,12 +63,16 @@
                         <form action="/blogs/<%= blog._id %>" method="get">
                             <button class="blog-button">Read</button>
                         </form>
+                        <% if (currUser) { %>
                         <form action="/blogs/<%= blog._id %>/edit" method="get">
                             <button class="blog-button">Edit</button>
                         </form>
-                        <form action="/blogs/<%= blog._id %>?_method=DELETE" method="post">
+                        <form
+                            action="/blogs/<%= blog._id %>?_method=DELETE"
+                            method="post">
                             <button class="blog-button">Delete</button>
                         </form>
+                        <% } %>
                     </div>
                     <%}%>
                 </div>

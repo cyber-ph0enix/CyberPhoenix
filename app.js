@@ -1,16 +1,20 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const ejsMate = require("ejs-mate");
 const mongoose = require("mongoose");
 const Blog = require("./models/blog");
 const Admin = require("./models/admin.js");
+const Event = require("./models/event.js");
 const wrapAsync = require("./utils/wrapAsync");
 const ExpressError = require("./utils/ExpressError");
 const { blogSchema } = require("./schema.js");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const methodOverride = require("method-override");
+const { isAdmin } = require("./utils/middleware.js");
 
 const app = express();
 
@@ -21,7 +25,28 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 
+// creating connection with mongodb
+const dbUrl = process.env.ATLAS_DB_URL;
+main()
+    .then(() => console.log("connection with db successful"))
+    .catch((err) => console.log(err));
+
+async function main() {
+    await mongoose.connect(dbUrl);
+}
+
+const store = MongoStore.create({
+    mongoUrl: dbUrl,
+    crypto: {
+        secret: process.env.SECRET,
+    },
+    touchAfter: 24 * 60 * 60,
+});
+store.on("error", (err) => {
+    console.log("ERROR in mongo session store, ", err);
+});
 const sessionOptions = {
+    store,
     secret: "thisisasecretshh",
     resave: false,
     saveUninitialized: true,
@@ -40,15 +65,10 @@ passport.use(new LocalStrategy(Admin.authenticate()));
 passport.serializeUser(Admin.serializeUser());
 passport.deserializeUser(Admin.deserializeUser());
 
-// creating connection with mongodb
-const MONGO_URL = "mongodb://127.0.0.1:27017/cyber_phoenix";
-main()
-    .then(() => console.log("connection with db successful"))
-    .catch((err) => console.log(err));
-
-async function main() {
-    await mongoose.connect(MONGO_URL);
-}
+app.use((req, res, next) => {
+    res.locals.currUser = req.user;
+    next();
+});
 
 // schema validation middleware
 function validateBlogSchema(req, res, next) {
@@ -66,19 +86,37 @@ app.get("/", (req, res) => {
 app.get(
     "/blogs",
     wrapAsync(async (req, res) => {
-        const allBlogs = await Blog.find({});
+        const allBlogs = await Blog.find({}).sort({ createdAt: -1 });
         res.render("cyber_phoenix/blogs.ejs", { allBlogs });
     })
 );
 // render new blog form
-app.get("/blogs/new", (req, res) => {
-    if (!req.isAuthenticated()) res.redirect("/");
-    else res.render("blogs/new.ejs");
+app.get("/blogs/new", isAdmin, (req, res) => {
+    res.render("blogs/new.ejs");
 });
+// create new blog
+app.post(
+    "/blogs",
+    isAdmin,
+    validateBlogSchema,
+    wrapAsync(async (req, res, next) => {
+        const blog = req.body.blog;
+        const paragraphs = blog.content.split("/n/n");
+        const tags = blog.tags.split(",");
+        const newBlog = new Blog(blog);
+        newBlog.tags = tags;
+        newBlog.content = paragraphs;
+
+        const result = await newBlog.save();
+        console.log(result);
+        res.redirect("/blogs");
+    })
+);
 // render edit form
 app.get(
     "/blogs/:id/edit",
-    wrapAsync(async (req, res) => {
+    isAdmin,
+    wrapAsync(async (req, res, next) => {
         let { id } = req.params;
         let blog = await Blog.findById(id);
         if (!blog) {
@@ -91,6 +129,7 @@ app.get(
 // update blog
 app.put(
     "/blogs/:id",
+    isAdmin,
     validateBlogSchema,
     wrapAsync(async (req, res) => {
         let { id } = req.params;
@@ -101,16 +140,18 @@ app.put(
         blog.content = paragraphs;
 
         await Blog.findByIdAndUpdate(id, blog);
-        res.redirect("/blogs");
+        res.redirect(`/blogs/${id}`);
     })
 );
 // delete blog
 app.delete(
     "/blogs/:id",
+    isAdmin,
     wrapAsync(async (req, res) => {
         let { id } = req.params;
         let blog = await Blog.findByIdAndDelete(id);
-        res.send(blog);
+        console.log(blog);
+        res.redirect("/blogs");
     })
 );
 
@@ -120,37 +161,14 @@ app.get(
     wrapAsync(async (req, res, next) => {
         const { id } = req.params;
         const blog = await Blog.findById(id);
+        if (!blog) {
+            next(new ExpressError(404, "Blog does not exist."));
+        }
 
         res.render("blogs/show.ejs", { blog });
     })
 );
-// create new blog
-app.post(
-    "/blogs",
-    validateBlogSchema,
-    wrapAsync(async (req, res, next) => {
-        const blog = req.body.blog;
-        const paragraphs = blog.content.split("/n/n");
-        const tags = blog.tags.split(",");
-        const newBlog = new Blog(blog);
-        newBlog.tags = tags;
-        newBlog.content = paragraphs;
 
-        const result = await newBlog.save();
-        console.log(result);
-        res.send(result);
-    })
-);
-
-// app.get("/test", async (req, res) => {
-//     const fakeAdmin = new Admin({
-//         email: "fakeadmin@gmail.com",
-//         username: "cp-admin",
-//     });
-
-//     const registered = await Admin.register(fakeAdmin, "fakeadmin");
-//     res.send(registered);
-// });
 app.get("/cp-admin", (req, res) => {
     res.render("admin/signin.ejs");
 });
@@ -160,7 +178,7 @@ app.post(
         failureRedirect: "/cp-admin",
     }),
     async (req, res) => {
-        res.send("you're signed in");
+        res.redirect("/blogs");
     }
 );
 
@@ -170,8 +188,33 @@ app.get("/about", (req, res) => {
 });
 
 // events route
-app.get("/events", (req, res) => {
-    res.render("cyber_phoenix/events.ejs");
+app.get(
+    "/events",
+    wrapAsync(async (req, res) => {
+        const events = await Event.find({});
+        res.render("cyber_phoenix/events.ejs", { events });
+    })
+);
+
+app.get("/addevents", async (req, res) => {
+    const events = [
+        {
+            title: "Event 1",
+            date: new Date(2025, 2, 27),
+            keywords: [
+                "key1",
+                "key2",
+                "key3",
+                "key4",
+                "key5",
+                "key6",
+                "key7",
+                "key8",
+            ],
+        },
+    ];
+    const result = await Event.insertMany(events);
+    res.send(result);
 });
 
 // page not found

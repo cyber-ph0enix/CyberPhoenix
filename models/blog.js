@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const blogSchema = new Schema({
     title: {
         type: String,
+        trim: true,
         required: true,
     },
     createdAt: {
@@ -11,10 +12,12 @@ const blogSchema = new Schema({
         default: Date.now(),
     },
     image: {
+        trim: true,
         type: String,
     },
     content: {
         type: [String],
+        trim: true,
         required: true,
     },
     tags: [String],

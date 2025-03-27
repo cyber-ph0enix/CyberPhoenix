@@ -5,9 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Cyber Phoenix - New Blog</title>
 
+        <link rel="stylesheet" href="/css/global.css" />
         <link rel="stylesheet" href="/css/newBlog.css" />
-        <link rel="stylesheet" href="/css/navbar.css" />
-        <link rel="stylesheet" href="/css/footer.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,9 +37,7 @@
                         id="content"
                         rows="20"
                         cols="100"
-                        ><% for (let para of blog.content) { %>
-                            <%= para + "/n/n" %>
-                        <% } %></textarea>
+                        ><% for (let para of blog.content) { %><%= para + "/n/n" %><% } %></textarea>
                 </div>
                 <div class="tags-input">
                     <label for="tags">Enter Tags separated with a comma:</label>
