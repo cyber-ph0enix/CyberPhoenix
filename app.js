@@ -5,6 +5,7 @@ const ejsMate = require("ejs-mate");
 const mongoose = require("mongoose");
 const Blog = require("./models/blog");
 const Admin = require("./models/admin.js");
+const Event = require("./models/event.js");
 const wrapAsync = require("./utils/wrapAsync");
 const ExpressError = require("./utils/ExpressError");
 const { blogSchema } = require("./schema.js");
@@ -85,7 +86,7 @@ app.get("/", (req, res) => {
 app.get(
     "/blogs",
     wrapAsync(async (req, res) => {
-        const allBlogs = await Blog.find({});
+        const allBlogs = await Blog.find({}).sort({ createdAt: -1 });
         res.render("cyber_phoenix/blogs.ejs", { allBlogs });
     })
 );
@@ -187,8 +188,33 @@ app.get("/about", (req, res) => {
 });
 
 // events route
-app.get("/events", (req, res) => {
-    res.render("cyber_phoenix/events.ejs");
+app.get(
+    "/events",
+    wrapAsync(async (req, res) => {
+        const events = await Event.find({});
+        res.render("cyber_phoenix/events.ejs", { events });
+    })
+);
+
+app.get("/addevents", async (req, res) => {
+    const events = [
+        {
+            title: "Event 1",
+            date: new Date(2025, 2, 27),
+            keywords: [
+                "key1",
+                "key2",
+                "key3",
+                "key4",
+                "key5",
+                "key6",
+                "key7",
+                "key8",
+            ],
+        },
+    ];
+    const result = await Event.insertMany(events);
+    res.send(result);
 });
 
 // page not found

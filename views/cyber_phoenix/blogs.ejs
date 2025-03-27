@@ -37,9 +37,11 @@
                     <% for (let blog of allBlogs) {%>
                     <div class="blog">
                         <div class="blog-content vertical">
-                            <h2 class="blog-heading">
-                                <span> <%= blog.title %> </span>
-                            </h2>
+                            <a href="/blogs/<%= blog._id %>"
+                                ><h2 class="blog-heading">
+                                    <span> <%= blog.title %> </span>
+                                </h2></a
+                            >
                             <div class="blog-date">
                                 <span
                                     ><%= blog.createdAt.toLocaleString("en-US",
