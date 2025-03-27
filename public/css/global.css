@@ -35,14 +35,22 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 2vw 3vw;
+    padding: 1vw 3vw;
     width: 100%;
     z-index: 99;
     background-color: #121315;
     box-shadow: 0px 1px 15px 7px #121315bd;
 }
 .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
     font-family: "chakra petch", sans-serif;
+}
+.logo img {
+    width: 3rem;
+    aspect-ratio: 7/6;
 }
 .nav-element {
     display: flex;
@@ -52,7 +60,7 @@ nav {
     text-decoration: none;
     color: #e0eeee;
 }
-nav img {
+nav .hamburger {
     position: absolute;
     width: 3vw;
     display: none;
@@ -61,9 +69,9 @@ nav img {
     top: 2vw;
 }
 @media (max-width: 900px) {
-    nav img {
+    nav .hamburger {
         display: block;
-        width: 6vw;
+        width: 4vw;
     }
     nav {
         flex-direction: column !important;
@@ -80,6 +88,9 @@ nav img {
     nav .logo h1 {
         font-size: 1.1rem;
     }
+    .logo img {
+        width: 1.7rem;
+    }
 }
 
 /* ------------------- footer --------------------- */
@@ -95,11 +106,12 @@ footer .club-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2vw;
+    gap: 0.5vw;
     font-family: "chakra petch", sans-serif;
 }
 footer .club-logo img {
-    width: 2vw;
+    width: 3rem;
+    aspect-ratio: 7/6;
 }
 footer .part-2 {
     gap: 1vw;
@@ -107,6 +119,9 @@ footer .part-2 {
 @media (max-width: 1120px) {
     footer h1 {
         font-size: 1.4rem;
+    }
+    footer .club-logo img {
+        width: 2rem;
     }
 }
 @media (max-width: 800px) {
@@ -116,15 +131,15 @@ footer .part-2 {
     footer .part-2, footer .copyright-info {
         font-size: 0.8rem;
     }
+    footer .club-logo img {
+        width: 1.65rem;
+    } 
 }
 @media (max-width: 550px) {
     footer {
         margin-top: 12vh;
         gap: 3vh;
     }
-    footer .club-logo img {
-        width: 5vw;
-    } 
 }
 
 /* ---------------- button --------------- */
