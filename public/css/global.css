@@ -43,7 +43,7 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 1vw 3vw;
+    padding: 2vw 3vw;
     width: 100%;
     z-index: 99;
     background-color: #121315;
@@ -98,6 +98,19 @@ nav .hamburger {
     }
     .logo img {
         width: 1.7rem;
+    }
+}
+@media (max-width: 600px) {
+    nav {
+        padding-top: 3vh;
+        padding-bottom: 2vh;
+    }
+    nav .logo {
+        gap: 3vw;
+    }
+    nav .hamburger {
+        width: 6vw;
+        top: 3vh;
     }
 }
 
