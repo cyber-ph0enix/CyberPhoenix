@@ -106,6 +106,8 @@ a {
         gap: 10vw;
     }
     .blog {
+        padding-top: 3vh;
+        padding-bottom: 3vh;
         border: 0.2px solid #a3a3a3;
         border-radius: 5vw !important;
     }

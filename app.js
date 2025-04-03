@@ -101,11 +101,9 @@ app.post(
     validateBlogSchema,
     wrapAsync(async (req, res, next) => {
         const blog = req.body.blog;
-        const paragraphs = blog.content.split("/n/n");
         const tags = blog.tags.split(",");
         const newBlog = new Blog(blog);
         newBlog.tags = tags;
-        newBlog.content = paragraphs;
 
         await newBlog.save();
         res.redirect("/blogs");
@@ -133,10 +131,8 @@ app.put(
     wrapAsync(async (req, res) => {
         let { id } = req.params;
         const blog = req.body.blog;
-        const paragraphs = blog.content.split("/n/n");
         const tags = blog.tags.split(",");
         blog.tags = tags;
-        blog.content = paragraphs;
 
         await Blog.findByIdAndUpdate(id, blog);
         res.redirect(`/blogs/${id}`);
