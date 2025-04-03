@@ -26,9 +26,12 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 section {
     overflow-x: hidden;
+}
+a {
+    text-decoration: none !important;
+    color: var(--color-1);
 }
 
 /* ----------------------- navbar -------------------- */

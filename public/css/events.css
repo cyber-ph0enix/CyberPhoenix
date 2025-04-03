@@ -48,7 +48,7 @@
     display: inline-block;
 }
 .event-info {
-    justify-self: end;
+    justify-self: start;
     display: flex;
     flex-direction: column;
     gap: 3vw;
