@@ -13,7 +13,7 @@
 
         <link rel="stylesheet" href="/css/global.css" />
         <link rel="stylesheet" href="/css/events.css" />
-        <link rel="shortcut icon" href="/assets/logo.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/assets/logo.ico" type="image/x-icon" />
     </head>
 
     <body>
@@ -41,8 +41,9 @@
                 <div class="event">
                     <h1 class="event-date date1">
                         <span class="vertical-reveal"
-                            ><%= event.date.toLocaleString("en-US", { day:
-                            'numeric', month: 'long', year: 'numeric' })
+                            ><% if (!event.date) { %> To Be Revealed <% } else {
+                            %><%= event.date.toLocaleString("en-US", { day:
+                            'numeric', month: 'long', year: 'numeric' }) %> <% }
                             %></span
                         >
                     </h1>
