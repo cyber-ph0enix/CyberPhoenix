@@ -118,7 +118,7 @@ app.get(
         let { id } = req.params;
         let blog = await Blog.findById(id);
         if (!blog) {
-            next(new ExpressError(404, "Blog does not exist."));
+            return next(new ExpressError(404, "Blog does not exist."));
         }
 
         res.render("blogs/edit.ejs", { blog });
