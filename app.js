@@ -73,7 +73,7 @@ app.use((req, res, next) => {
 // schema validation middleware
 function validateBlogSchema(req, res, next) {
     const { error } = blogSchema.validate(req.body);
-    if (error) throw new ExpressError(400, error);
+    if(error) throw new ExpressError(400, error);
     else next();
 }
 
@@ -158,9 +158,8 @@ app.get(
         const { id } = req.params;
         const blog = await Blog.findById(id);
         if (!blog) {
-            next(new ExpressError(404, "Blog does not exist."));
+            return next(new ExpressError(404, "Blog does not exist."));
         }
-
         res.render("blogs/show.ejs", { blog });
     })
 );
