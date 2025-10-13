@@ -11,8 +11,8 @@ const ExpressError = require("./utils/ExpressError");
 const { blogSchema } = require("./schema.js");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const session = require("express-session");
 const MongoStore = require("connect-mongo");
+const session = require("express-session");
 const methodOverride = require("method-override");
 const { isAdmin } = require("./utils/middleware.js");
 
@@ -26,7 +26,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 
 // creating connection with mongodb
-const dbUrl = process.env.ATLAS_DB_URL;
+//const dbUrl = process.env.ATLAS_DB_URL;
+const dbUrl= "mongodb://127.0.0.1:27017/cyberphoenixDB";
 main()
     .then(() => console.log("connection with db successful"))
     .catch((err) => console.log(err));
@@ -34,7 +35,6 @@ main()
 async function main() {
     await mongoose.connect(dbUrl);
 }
-
 const store = MongoStore.create({
     mongoUrl: dbUrl,
     crypto: {
@@ -81,6 +81,7 @@ function validateBlogSchema(req, res, next) {
 app.get("/", (req, res) => {
     res.render("cyber_phoenix/index.ejs");
 });
+
 
 // show all blogs route
 app.get(
@@ -190,6 +191,7 @@ app.get(
         res.render("cyber_phoenix/events.ejs", { events });
     })
 );
+
 
 // page not found
 app.all("*", (req, res, next) => {

@@ -274,7 +274,20 @@ tl.from(".event-4", {
         end: "top 40%",
     },
 });
-
+tl.from(".event-5", {
+    rotation: -10,
+    duration: 1,
+    x: -100,
+    y: 100,
+    opacity: 0,
+    scrollTrigger: {
+        trigger: ".event-5",
+        // markers: true,
+        scrub: true,
+        tart: "top bottom",
+        end: "top 40%",
+    },
+});
 // -------------------- section 5 --------------------
 tl.from(".section5-head .span-1", {
     x: 100,
@@ -344,3 +357,27 @@ document.querySelectorAll(".social").forEach((social) => {
         });
     });
 });
+//backtotop
+let mybutton = document.getElementById("btn-back-to-top");
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

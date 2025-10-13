@@ -57,6 +57,7 @@ a {
     grid-template-columns: 1fr 1fr;
     text-align: start;
     margin-bottom: 30vh;
+    background: linear-gradient(to right, #1a2145, #2a1526);
 }
 .section2 .section2-head {
     display: flex;
@@ -109,6 +110,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 8vh;
+    background: linear-gradient(to right, #1a2145, #2a1526);
 }
 .section3-box .box-head {
     font-size: 2.7rem;
@@ -130,7 +132,7 @@ a {
 }
 .section4 .members-list {
     gap: 1vw;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .members-list .member {
     width: 40vw;
@@ -253,7 +255,7 @@ a {
         line-height: 2.1rem !important;
     }
     .members-list {
-        font-size: 0.9rem !important;
+        font-size: 0.7rem !important;
     }
     .member {
         width: 80vw !important;

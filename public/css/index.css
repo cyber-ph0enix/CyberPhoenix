@@ -93,6 +93,7 @@ a {
     border-radius: 1vw;
     padding: 3vw;
     margin-bottom: 16vw;
+    background: linear-gradient(to right, #1a2145, #2a1526);
 }
 .section2-head {
     gap: 0;
@@ -412,6 +413,12 @@ button:hover {
 .event-4 {
     grid-column: 2;
     grid-row: 4 / 6;
+    background-color: #eb129f;
+    color: #121315;
+}
+.event-5 {
+    grid-column: 1;
+    grid-row: 5 / 9;
     background-color: #decf3e;
     color: #121315;
 }
@@ -520,3 +527,12 @@ button:hover {
         width: 5vw;
     }
 }
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 20%;
+  display: none;
+}
+
