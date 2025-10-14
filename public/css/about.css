@@ -90,30 +90,30 @@ a {
 /* ---------------- section 3 */
 .section3-head {
     gap: 4vh;
-    margin-bottom: 12vh;
+    margin-bottom: 11vh;
 }
 .section3 .section3-head h3 {
     font-family: "chakra petch", sans-serif;
-    font-size: 4.5rem;
-    line-height: 3.5rem;
+    font-size: 4.2rem;
+    line-height: 3.3rem;
 }
 .section3-boxes {
     display: grid;
-    grid-template-columns: repeat(5, 30vw);
+    grid-template-columns: repeat(5, 28vw);
     grid-template-rows: 1fr;
     gap: 4vw;
 }
 .section3-box {
     border: 2px solid #e0eeee;
     border-radius: 1vw;
-    padding: 12vh 3vw;
+    padding: 10.5vh 3vw;
     display: flex;
     flex-direction: column;
     gap: 8vh;
     background: linear-gradient(to right, #1a2145, #2a1526);
 }
 .section3-box .box-head {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 .section3-box .box-content {
@@ -123,19 +123,20 @@ a {
 /* ----------------- section 4 */
 .section4 {
     margin-top: 30vh;
-    gap: 15vh;
+    gap: 11vh;
 }
 .section4-head h3 {
     font-family: "chakra petch", sans-serif;
-    font-size: 4.5rem;
-    line-height: 3.5rem;
+    font-size: 4.2rem;
+    line-height: 3.3rem;
 }
 .section4 .members-list {
     gap: 1vw;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 .members-list .member {
-    width: 40vw;
+    width: 60vw;
+    gap: 3vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -235,7 +236,7 @@ a {
         font-size: 0.8rem !important;
     }
     .section3-head h3 {
-        font-size: 2.7rem !important;
+        font-size: 2.5rem !important;
         line-height: 2.1rem !important;
     }
     .section3-head div {
@@ -258,7 +259,7 @@ a {
         font-size: 0.7rem !important;
     }
     .member {
-        width: 80vw !important;
+        width: 65vw !important;
     }
     .member img {
         width: 5vw !important;
