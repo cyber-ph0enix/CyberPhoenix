@@ -26,8 +26,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 
 // creating connection with mongodb
-//const dbUrl = process.env.ATLAS_DB_URL;
-const dbUrl= "mongodb://127.0.0.1:27017/cyberphoenixDB";
+const dbUrl = process.env.ATLAS_DB_URL;
+//const dbUrl= "mongodb://127.0.0.1:27017/cyberphoenixDB";
 main()
     .then(() => console.log("connection with db successful"))
     .catch((err) => console.log(err));
