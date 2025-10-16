@@ -281,16 +281,29 @@ a {
     padding: 1.5rem 0; /* Add padding for vertical spacing */
 }
 
-.faculty-photo {
-    width: 80px;
-    height: 80px;
+.faculty-icon{
+    width: 5.7vh;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 2.5rem; /* Space between photo and text */
+    margin-right: 2rem; /* Space between photo and text */
     flex-shrink: 0;
 }
 
 .faculty-details {
     display: flex;
     flex-direction: column;
+    text-align: end;
 }
+
+@media (max-width: 1280px){
+    .faculty-icon{
+        width: 5.7vh !important;
+    }
+}
+
+@media (max-width: 600px){
+    .faculty-icon{
+        width: 5vh !important;
+    }
+}
+
