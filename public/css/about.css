@@ -272,3 +272,25 @@ a {
         line-height: 1.5rem;
     }
 }
+
+* ----------------- Faculty Section */
+.faculty-member {
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0; /* Add padding for vertical spacing */
+}
+
+.faculty-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 2.5rem; /* Space between photo and text */
+    flex-shrink: 0;
+}
+
+.faculty-details {
+    display: flex;
+    flex-direction: column;
+}
