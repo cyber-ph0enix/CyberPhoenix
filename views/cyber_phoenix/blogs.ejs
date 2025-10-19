@@ -74,6 +74,11 @@
                     <%}%>
                 </div>
             </section>
+            <% if (currUser) { %>
+                        <form action="/blogs/new" method="get">
+                            <button class="blog-button">Add New Blog</button>
+                        </form>
+            <% } %>
         </main>
 
         <%- include("../includes/footer.ejs") %>
