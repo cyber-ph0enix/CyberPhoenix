@@ -31,6 +31,13 @@
                     <span>Deepen your understanding of the cyber world</span
                     ><span> with specially curated Hacklogs</span>
                 </div>
+                <div>
+                    <% if (currUser) { %>
+                        <form action="/blogs/new" method="get">
+                            <button class="blog-button">Add New Blog</button>
+                        </form>
+            <% } %>
+                </div>
             </section>
 
             <section class="section-2 vertical center">
@@ -74,11 +81,6 @@
                     <%}%>
                 </div>
             </section>
-            <% if (currUser) { %>
-                        <form action="/blogs/new" method="get">
-                            <button class="blog-button">Add New Blog</button>
-                        </form>
-            <% } %>
         </main>
 
         <%- include("../includes/footer.ejs") %>

@@ -124,10 +124,11 @@ a {
         gap: 1vw;
         font-size: 0.8rem;
     }
-    button {
+    .blog-button {
         padding: 2.5vw 6vw;
         border-radius: 6vw;
         font-size: 0.8rem;
+        margin-top: 4vh;
     }
 }
 
