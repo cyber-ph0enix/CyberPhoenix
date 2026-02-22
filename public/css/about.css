@@ -324,3 +324,65 @@ a {
         margin-top: 5vh;
     }
 }
+
+/* cards */
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.member-card {
+  width: 260px;
+  background: rgba(255, 255, 255, 0.05); /* transparent glass */
+  border: 1px solid rgba(255, 255, 255, 0.25); /* soft white outline */
+  backdrop-filter: blur(10px); /* glass blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+  color: #f1f1f1;
+  transition: all 0.3s ease;
+}
+
+.member-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transform: translateY(-8px) scale(1.03);
+}
+
+.member-card h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.member-card p {
+   margin-top: 6px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.member-card a {
+    font-size: smaller;
+  color: #2c2c2c;
+  text-decoration: none;
+}
+/* .card-details {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.4s ease;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.member-card.expanded .card-details {
+  max-height: 200px;
+  opacity: 1;
+}
+
+ */

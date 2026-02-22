@@ -164,7 +164,50 @@
                     </h3>
                 </div>
 
-                <div class="members-list vertical-flex-center">
+                <div class="card-container">
+                    <% members.forEach(member => { %>
+                        <a href="/member/<%= member.id %>" class="member-card">
+                        <!-- <div class="member-card"> -->
+                        <h2><%= member.name %></h2>
+                        <p><%= member.role %></p>
+                        <!-- </div> -->
+                        </a>
+                    <% }) %>
+                </div>
+
+                <!-- 
+
+
+                <div class="member-card" onclick="toggleCard(this)">
+                    <div class="card-front">
+                    <h2>Meera</h2>
+                    <p> Website Team Member</p>
+                    </div>
+
+                    <div class="card-details">
+                    <p><strong>Email:</strong> xyz@email.com</p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/lakshika-soni-9a2bba291"</a></p>
+                    <p><strong>Why Joined:</strong> Passionate about leadership and community building.</p>
+                    </div>
+                </div>
+
+                <div class="member-card" onclick="toggleCard(this)">
+                    <div class="card-front">
+                    <h2>Kunal</h2>
+                    <p> Website Team Member</p>
+                    </div>
+
+                    <div class="card-details">
+                    <p><strong>Email:</strong> xyz@email.com</p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/lakshika-soni-9a2bba291"</a></p>
+                    <p><strong>Why Joined:</strong> Passionate about leadership and community building.</p>
+                    </div>
+                </div>
+
+                </div> -->
+
+
+                <!-- <div class="members-list vertical-flex-center">
                     <a href="https://www.linkedin.com/in/anuj-kumar-261471251">
                         <div class="member">
                             <div class="member-name">Anuj Kumar</div>
@@ -177,9 +220,10 @@
                             </div>
                         </div>
                         <div class="line"></div>
-                    </a>
+                    </a> -->
 
-                    <a href="https://www.linkedin.com/in/aakash-sehgal">
+                    
+                    <!-- <a href="https://www.linkedin.com/in/aakash-sehgal">
                         <div class="member">
                             <div class="member-name">Aakash Sehgal</div>
                             <div class="member-role">Mentor (Co-founder)</div>
@@ -474,7 +518,7 @@
                         <div class="line"></div>
                     </a>
                     
-                </div>
+                 --></div>
 
                 <section class="section4 vertical-flex-center">
                 <div class="section4-head">

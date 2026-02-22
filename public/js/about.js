@@ -123,3 +123,8 @@ document.querySelectorAll(".member").forEach((member) => {
         });
     });
 });
+
+function openProfile(memberId) {
+  // Redirect to profile page with ID
+  window.location.href = "profile.html?id=" + memberId;
+}

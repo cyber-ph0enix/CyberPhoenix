@@ -15,6 +15,7 @@ const MongoStore = require("connect-mongo");
 const session = require("express-session");
 const methodOverride = require("method-override");
 const { isAdmin } = require("./utils/middleware.js");
+const members= require("./models/members.js");
 
 const app = express();
 
@@ -26,8 +27,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 
 // creating connection with mongodb
-const dbUrl = process.env.ATLAS_DB_URL;
-//const dbUrl= "mongodb://127.0.0.1:27017/cyberphoenixDB";
+//const dbUrl = process.env.ATLAS_DB_URL;
+const dbUrl= "mongodb://127.0.0.1:27017/cyberphoenixDB";
 main()
     .then(() => console.log("connection with db successful"))
     .catch((err) => console.log(err));
@@ -179,7 +180,18 @@ app.post(
 
 // about route
 app.get("/about", (req, res) => {
-    res.render("cyber_phoenix/about.ejs");
+    res.render("cyber_phoenix/about.ejs", {members});
+});
+
+// 👤 Individual member profile
+app.get("/member/:id", (req, res) => {
+  const member = members.find(m => m.id === req.params.id);
+
+  if (!member) {
+    return res.status(404).send("Member not found");
+  }
+
+  res.render("cyber_phoenix/profile.ejs", { member });
 });
 
 // events route
@@ -202,5 +214,11 @@ app.use((err, req, res, next) => {
     let { statusCode = 500, message = "Sorry, something went wrong." } = err;
     res.status(statusCode).render("error.ejs", { statusCode, message });
 });
+
+// // 🏠 Members list page
+// app.get("/", (req, res) => {
+//   res.render("index", { members });
+// });
+
 
 app.listen(8080, () => console.log("app is listening to port 8080"));
