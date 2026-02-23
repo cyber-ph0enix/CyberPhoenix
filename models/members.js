@@ -80,14 +80,6 @@ const members = [
     reason: "To share industry experience with students."
   } ,
   {
-    id: "lakshya",
-    name: "Lakshya",
-    role: "Core Team Member",
-    email: "piyush@email.com",
-    linkedin: "https://in.linkedin.com/in/cyber-b757a9379",
-    reason: "To share industry experience with students."
-  } ,
-  {
     id: "nitya",
     name: "Nitya",
     role: "Core Team Member",
@@ -153,11 +145,11 @@ const members = [
     reason: "To share industry experience with students."
   },
    {
-    id: "nityansh",
-    name: "Nityansh",
+    id: "priyanshi",
+    name: "Priyanshi",
     role: "Media Team Member",
     email: "",
-    linkedin: "https://www.linkedin.com/in/nityansh-juneja-355bb4378?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedin: "https://www.linkedin.com/",
     reason: "To share industry experience with students."
   },
  {
