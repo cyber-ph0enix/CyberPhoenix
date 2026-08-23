@@ -58,7 +58,13 @@
                     </h1>
 
                     <div class="event-info">
-                        <h1 class="event-title"><%= event.title %></h1>
+                        <h1 class="event-title">
+                            <%= event.title %>
+                        
+                                <% if (event.date && new Date(event.date) < new Date()) { %>
+                                    <span class="completed-tick">✓</span>
+                                    <% } %>
+                        </h1>
 
                         <div class="event-keywords">
                             <div class="keywords">
