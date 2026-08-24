@@ -167,8 +167,23 @@ button:hover {
 }
 
 .completed-tick {
-    color: #00ff66;
-    font-size: 0.7em;
-    margin-left: 10px;
-    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-left: 12px;
+
+    background-color: #32b51f;
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+
+    vertical-align: middle;
 }
