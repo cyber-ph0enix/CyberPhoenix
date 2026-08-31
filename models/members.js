@@ -31,14 +31,7 @@ const members = [
     linkedin: "https://www.linkedin.com/in/lakshika-soni-9a2bba291",
     reason: "I joined the CyberPhoenix Club because I wanted to take an active step into the cybersecurity field and create something meaningful for students, who are curious about digital security but don’t know where to start. As someone who enjoys leadership and organizing tech activities, I saw this club as a chance to build my confidence, improve my technical and communication skills, and represent my department. It also helps me grow professionally while contributing to a strong cybersecurity culture in my college."
   } ,
-  {
-    id: "nishant",
-    name: "Nishant",
-    role: "Coordinator",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/nishant179",
-    reason: "To share industry experience with students."
-  } ,
+  
   {
     id: "harsh",
     name: "Harsh Sharma",
@@ -63,14 +56,6 @@ const members = [
     linkedin: "https://www.linkedin.com/in/yash-raj-0105a5330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     reason: "To share industry experience with students."
   } ,
-  {
-    id: "rudrakshi",
-    name: "Rudrakshi",
-    role: "Core Team Member",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/rudrakshi-mittal-269743345",
-    reason: "To share industry experience with students."
-  },
    {
     id: "harshraj",
     name: "Harsh Raj Ranjan",
@@ -79,22 +64,7 @@ const members = [
     linkedin: "https://www.linkedin.com/in/harshrajranjan01?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     reason: "To share industry experience with students."
   } ,
-  {
-    id: "nitya",
-    name: "Nitya",
-    role: "Core Team Member",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/nitya-chhabra-477a9b325?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    reason: "I joined the Cyber Phoenix Club because I genuinely want to grow both personally and professionally. I believe this club provides the right environment to improve my soft skills like communication, teamwork, and problem-solving. At the same time, I am very interested in cybersecurity and want to deepen my knowledge through practical exposure, competitions, and real-world challenges. Being part of this club will help me learn from experienced peers, think like a security professional, and build confidence while contributing to meaningful projects"
-  },
-  {
-    id: "devdeep",
-    name: "Devdeep",
-    role: "Technical Team Member",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/devdeepdhariiwal",
-    reason: "To share industry experience with students."
-  },
+ 
   {
     id: "saniya",
     name: "Saniya Yadav",
@@ -128,23 +98,6 @@ const members = [
     reason: "To share industry experience with students."
   },
    {
-    id: "lakshayRana",
-    name: "Lakshay Rana",
-    role: "Media Team Member",
-    email: "",
-    linkedin: "https://www.linkedin.com/in/lakshy-rana-9655a8323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    reason: "I joined the Cyber Phoenix Club because it offers a perfect blend of learning, creativity, and teamwork. The club focuses on exploring cybersecurity, ethical hacking, and digital innovation, which matches my interest in technology. It provides opportunities to work on real projects, share knowledge, and grow with like-minded peers. Being part of this community helps me enhance my skills, stay updated with the latest trends, and contribute to solving modern digital challenges. Most importantly, it inspires me to push boundaries and become more confident in the tech world."
-  },
-
-   {
-    id: "harshit",
-    name: "Harshit Raj Mishra",
-    role: "Media Team Member",
-    email: "",
-    linkedin: "https://www.linkedin.com/in/harshit-mishra-6aa4a0337?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    reason: "To share industry experience with students."
-  },
-   {
     id: "priyanshi",
     name: "Priyanshi",
     role: "Media Team Member",
@@ -152,14 +105,7 @@ const members = [
     linkedin: "https://www.linkedin.com/",
     reason: "To share industry experience with students."
   },
- {
-    id: "meera",
-    name: "Meera Catter",
-    role: "Website Team Member",
-    email: "",
-    linkedin: "https://www.linkedin.com/in/meera-catter-738450277",
-    reason: "I joined the Cyber Phoenix Club as a Website Team member to pursue my interest in cybersecurity while strengthening my web development skills. Being part of the team allows me to work on real-world projects, collaborate with like-minded peers, and understand how secure and efficient websites are built and maintained."
-  },
+ 
  {
     id: "kunal",
     name: "Kunal Phogat",
