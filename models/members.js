@@ -64,6 +64,14 @@ const members = [
     linkedin: "https://www.linkedin.com/in/harshrajranjan01?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     reason: "To share industry experience with students."
   } ,
+   {
+    id: "ashish",
+    name: "Ashish",
+    role: "Core Team Member",
+    email: "",
+    linkedin: "https://linkedin.com/in/ashish-nagar-6a9a1a349",
+    reason: "Hi, I'm Ashish, a Core Team Member of the CyberPheonix Club. I joined this club because of my profound interest in cybersecurity and my aspiration to build a successful career in this field. CyberPheonix provides me with an excellent platform to enhance my technical skills, collaborate with intellectually curious individuals, explore emerging technologies, and grow both personally and professionally."
+  },
  
   {
     id: "saniya",
@@ -105,6 +113,14 @@ const members = [
     linkedin: "https://www.linkedin.com/",
     reason: "To share industry experience with students."
   },
+   {
+    id: "prajjwal",
+    name: "Prajjwal",
+    role: "Media Team Member",
+    email: "",
+    linkedin: "",
+    reason: "I joined Cyber Phoenix because I’m interested in video editing and wanted to use my skills in something practical. I also wanted to learn more, work with a good team, and contribute to the club by creating engaging content."
+  },
  
  {
     id: "kunal",
@@ -114,6 +130,10 @@ const members = [
     linkedin: "https://www.linkedin.com/in/kunal-phogat-b20752294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     reason: "I was learning web development when the opening for frontend developer came and I have not been a part of any club that's why I joined cyberpheonix as a web developer"
   },
+ 
+ 
+
+
 
 ];
 
