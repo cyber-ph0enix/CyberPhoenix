@@ -7,12 +7,11 @@ export default function NotFound() {
     <main className={styles.container}>
       <ShieldAlert size={80} strokeWidth={1.5} />
       <h1 className={styles.errorCode}>404</h1>
-      <h2 className={styles.title}>Breach Detected: Page Not Found</h2>
+      <h2 className={styles.title}>Page Not Found</h2>
       <p className={styles.description}>
-        The sector you are trying to access does not exist in our mainframe. 
-        It may have been moved, deleted, or never existed.
+        The requested resource could not be located in our system. It may have been moved or deleted.
       </p>
-      <Button href="/">Return to Base</Button>
+      <Button href="/">Go to Home</Button>
     </main>
   );
 }
