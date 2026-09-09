@@ -1,147 +1,317 @@
+export enum Team {
+  CORE = "Core Team",
+  MEDIA = "Media Team",
+  TECH = "Tech Team"
+}
+
+export enum Role {
+  FOUNDER = "Founder",
+  COORDINATOR = "Coordinator",
+  CO_COORDINATOR = "Co-coordinator",
+  TEAM_LEAD = "Team Lead",
+  MENTOR = "Mentor",
+  FACULTY = "Faculty Advisor",
+  MEMBER = "Member",
+}
+
+export enum Status {
+  ACTIVE = "Active",
+  ALUMNI = "Alumni",
+  RESIGNED = "Resigned",
+  REMOVED = "Removed",
+}
+
 export interface Member {
   id: string;
   name: string;
-  role: string;
-  email: string;
-  linkedin: string;
+  teams: Team[];
+  roles: Role[];
+  status: Status;
+  linkedin?: string;
+  email?: string;
   reason: string;
 }
 
 export const members: Member[] = [
+  // FACULTY ADVISORS
   {
-    id: "anuj",
-    name: "Anuj Kumar",
-    role: "Mentor [Founder]",
-    email: "anuj@email.com",
-    linkedin: "https://www.linkedin.com/in/anuj-kumar-261471251",
-    reason: "To guide students and build a strong tech community."
+    id: "sanjeev-kumar",
+    name: "Prof. Sanjeev Kumar",
+    teams: [],
+    roles: [Role.FACULTY],
+    status: Status.ACTIVE,
+    reason: "Chairperson of CSE Department",
   },
   {
-    id: "aakash",
-    name: "Aakash Sehgal",
-    role: "Mentor [Co-founder]",
-    email: "aakash@email.com",
-    linkedin: "https://www.linkedin.com/in/aakash-sehgal",
-    reason: "To mentor students and help them grow professionally."
+    id: "anupma-sangwan",
+    name: "Dr. Anupma Sangwan",
+    teams: [],
+    roles: [Role.FACULTY],
+    status: Status.ACTIVE,
+    reason: "Faculty in-charge of CyberPhoenix Club",
   },
-  {
-    id: "piyush",
-    name: "Piyush Bansal",
-    role: "Mentor",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/piyush-bansal-662344219",
-    reason: "I joined the CyberPhoenix Club because cybersecurity genuinely excites me and I have a strong interest in learning and growing in this field. Before joining, I did not have much experience in teamwork or public speaking, but this club gave me the perfect platform to improve both. It helped me overcome hesitation, build confidence, and interact with people. Through awareness sessions and activities, I got the opportunity to reach a wider audience and share knowledge, which made me realize that this is something I truly love doing."
-  },
-  {
-    id: "lakshika",
-    name: "Lakshika Soni",
-    role: "Media Team Mentor",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/lakshika-soni-9a2bba291",
-    reason: "I joined the CyberPhoenix Club because I wanted to take an active step into the cybersecurity field and create something meaningful for students, who are curious about digital security but don’t know where to start. As someone who enjoys leadership and organizing tech activities, I saw this club as a chance to build my confidence, improve my technical and communication skills, and represent my department. It also helps me grow professionally while contributing to a strong cybersecurity culture in my college."
-  },
-  {
-    id: "harsh",
-    name: "Harsh Sharma",
-    role: "Coordinator",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/harsh-sharma80?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    reason: "The day I heard the word 'CYBER' from the founders of Cyberphoenix club, I was excited to be its part, not only because I had a keen interest in cybersecurity but also because that felt something relatable, something I had been searching- a like minded team, where we tackle problems and grow together, where I having guiding seniors and supportive colleagues. I had always been an Organisation first man, I loved working in a team and the soft skills and connections that could make, were cherry on the cake.\nWill all that being said,\nToday I am here coordinator of a phenomenal club."
-  },
+
+  // ACTIVE MEMBERS
   {
     id: "uday",
     name: "Uday",
-    role: "Co-Coordinator",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/bindal-uday",
-    reason: "To share industry experience with students."
-  }, 
-  {
-    id: "yashraj",
-    name: "Yash Raj",
-    role: "Co-Coordinator",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/yash-raj-0105a5330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    reason: "To share industry experience with students."
+    teams: [Team.CORE, Team.TECH],
+    roles: [Role.FOUNDER, Role.COORDINATOR, Role.TEAM_LEAD],
+    status: Status.ACTIVE,
+    reason:
+      "Pioneering the club's technical direction and overseeing core infrastructure.",
   },
   {
-    id: "harshraj",
-    name: "Harsh Raj Ranjan",
-    role: "Core Team Member",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/harshrajranjan01?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    reason: "To share industry experience with students."
+    id: "harsh-sharma",
+    name: "Harsh Sharma",
+    teams: [Team.CORE],
+    roles: [Role.COORDINATOR, Role.TEAM_LEAD],
+    status: Status.ACTIVE,
+    reason:
+      "Driving organizational strategy and ensuring seamless collaboration across all divisions.",
+  },
+  {
+    id: "yash-raj",
+    name: "Yash Raj",
+    teams: [Team.MEDIA],
+    roles: [Role.CO_COORDINATOR],
+    status: Status.ACTIVE,
+    reason:
+      "Bridging the gap between technical execution and visual communication.",
   },
   {
     id: "ashish",
     name: "Ashish",
-    role: "Core Team Member",
-    email: "",
-    linkedin: "https://linkedin.com/in/ashish-nagar-6a9a1a349",
-    reason: "Hi, I'm Ashish, a Core Team Member of the CyberPheonix Club. I joined this club because of my profound interest in cybersecurity and my aspiration to build a successful career in this field. CyberPheonix provides me with an excellent platform to enhance my technical skills, collaborate with intellectually curious individuals, explore emerging technologies, and grow both personally and professionally."
+    teams: [Team.CORE],
+    roles: [Role.MEMBER],
+    status: Status.ACTIVE,
+    reason:
+      "Managing foundational operations and facilitating club-wide initiatives.",
   },
   {
-    id: "saniya",
-    name: "Saniya Yadav",
-    role: "Technical Team Member",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/saniya-yadav-5471b3323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    reason: "I am Saniya Yadav, a Technical Team Member of Cyber Phoenix. I joined the club to challenge myself beyond classroom learning and gain real-world exposure in cybersecurity. I am curious about how digital systems function, how vulnerabilities emerge, and how they can be secured effectively. Being part of the technical team allows me to strengthen my problem-solving skills and continuously grow in a field that plays a crucial role in today’s digital world."
+    id: "harsh-raj-ranjan",
+    name: "Harsh Raj Ranjan",
+    teams: [Team.CORE],
+    roles: [Role.MEMBER],
+    status: Status.ACTIVE,
+    reason:
+      "Strengthening the core framework and streamlining event management processes.",
+  },
+  {
+    id: "priyanshi-singh",
+    name: "Priyanshi Singh",
+    teams: [Team.MEDIA],
+    roles: [Role.MEMBER],
+    status: Status.ACTIVE,
+    reason:
+      "Crafting engaging digital content and elevating the club's visual presence.",
+  },
+  {
+    id: "dushyant-yadav",
+    name: "Dushyant Yadav",
+    teams: [Team.MEDIA],
+    roles: [Role.MEMBER],
+    status: Status.ACTIVE,
+    reason:
+      "Documenting club milestones and amplifying our reach across social platforms.",
   },
   {
     id: "yachika",
     name: "Yachika",
-    role: "Technical Team Member",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/yachika-2b940238a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    reason: "To share industry experience with students."
+    teams: [Team.TECH],
+    roles: [Role.MEMBER],
+    status: Status.ACTIVE,
+    reason:
+      "Developing robust technical solutions and participating in competitive cybersecurity challenges.",
+  },
+  {
+    id: "saniya-yadav",
+    name: "Saniya Yadav",
+    teams: [Team.TECH],
+    roles: [Role.MEMBER],
+    status: Status.ACTIVE,
+    reason:
+      "Analyzing vulnerabilities and contributing to hands-on security workshops.",
   },
   {
     id: "vikas",
     name: "Vikas",
-    role: "Technical Team Member",
-    email: "piyush@email.com",
-    linkedin: "https://www.linkedin.com/in/vikasdhiiman?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    reason: "I joined the CyberPhoenix Club to improve my technical skills and learn new things beyond the classroom. I am interested in cybersecurity and technology, and I want to gain practical experience by working on real projects. This club gives me a good platform to learn, collaborate with others, and grow as a technical team member while contributing to meaningful activities."
-  },
-  {
-    id: "dushyant",
-    name: "Dushyant",
-    role: "Media Team Member",
-    email: "",
-    linkedin: "https://www.linkedin.com/in/dushyant-yadav-305b69211?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    reason: "To share industry experience with students."
-  },
-  {
-    id: "priyanshi",
-    name: "Priyanshi",
-    role: "Media Team Member",
-    email: "",
-    linkedin: "https://www.linkedin.com/",
-    reason: "To share industry experience with students."
-  },
-  {
-    id: "prajjwal",
-    name: "Prajjwal",
-    role: "Media Team Member",
-    email: "",
-    linkedin: "",
-    reason: "I joined Cyber Phoenix because I’m interested in video editing and wanted to use my skills in something practical. I also wanted to learn more, work with a good team, and contribute to the club by creating engaging content."
+    teams: [Team.TECH],
+    roles: [Role.MEMBER],
+    status: Status.ACTIVE,
+    reason:
+      "Building secure architectures and guiding junior members in technical labs.",
   },
   {
     id: "kunal",
-    name: "Kunal Phogat",
-    role: "Website Team Member",
-    email: "",
-    linkedin: "https://www.linkedin.com/in/kunal-phogat-b20752294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    reason: "I was learning web development when the opening for frontend developer came and I have not been a part of any club that's why I joined cyberpheonix as a web developer"
-  }
+    name: "Kunal",
+    teams: [Team.TECH],
+    roles: [Role.MEMBER],
+    status: Status.ACTIVE,
+    reason:
+      "Optimizing web performance and implementing secure coding practices.",
+  },
+
+  {
+    id: "prajwal-yadav",
+    name: "Prajwal Yadav",
+    teams: [Team.MEDIA],
+    roles: [Role.MEMBER],
+    status: Status.ACTIVE,
+    reason:
+      "Crafting engaging digital content and elevating the club's visual presence.",
+  },
+
+  // FOUNDERS
+  {
+    id: "lakshika",
+    name: "Lakshika",
+    teams: [Team.MEDIA],
+    roles: [Role.FOUNDER, Role.MENTOR],
+    status: Status.ALUMNI, // Treated as Mentor in UI due to Role.MENTOR
+    reason:
+      "Actively guiding the current cohort and shaping the club's long-term vision.",
+  },
+  {
+    id: "aakash",
+    name: "Aakash",
+    teams: [Team.CORE],
+    roles: [Role.FOUNDER, Role.MENTOR],
+    status: Status.ALUMNI,
+    reason:
+      "Established the club's foundational principles and initial operating structure.",
+  },
+  {
+    id: "piyush",
+    name: "Piyush",
+    teams: [Team.CORE],
+    roles: [Role.FOUNDER, Role.MENTOR],
+    status: Status.ALUMNI,
+    reason:
+      "Fostered the early community and initiated our first major technical events.",
+  },
+  {
+    id: "kartik",
+    name: "Kartik",
+    teams: [Team.CORE],
+    roles: [Role.FOUNDER, Role.MENTOR],
+    status: Status.ALUMNI,
+    reason:
+      "Spearheaded the integration of practical cybersecurity labs into the curriculum.",
+  },
+  {
+    id: "anuj-kumar",
+    name: "Anuj Kumar",
+    teams: [Team.CORE],
+    roles: [Role.FOUNDER, Role.MENTOR],
+    status: Status.ALUMNI,
+    reason:
+      "Drafted the original charter and built relationships with industry professionals.",
+  },
+  {
+    id: "nishant",
+    name: "Nishant",
+    teams: [Team.CORE],
+    roles: [Role.FOUNDER, Role.MENTOR],
+    status: Status.ALUMNI,
+    reason:
+      "Architected the initial club infrastructure and recruitment protocols.",
+  },
+  {
+    id: "kanishka",
+    name: "Kanishka",
+    teams: [Team.MEDIA],
+    roles: [Role.FOUNDER, Role.MENTOR],
+    status: Status.ALUMNI,
+    reason:
+      "Designed the original brand identity and launched our first digital campaigns.",
+  },
+  {
+    id: "arpita",
+    name: "Arpita",
+    teams: [Team.TECH],
+    roles: [Role.FOUNDER, Role.MENTOR],
+    status: Status.ALUMNI,
+    reason:
+      "Developed the very first iteration of the CyberPhoenix digital platform.",
+  },
+  {
+    id: "abhinav",
+    name: "Abhinav",
+    teams: [Team.TECH],
+    roles: [Role.FOUNDER, Role.MENTOR],
+    status: Status.ALUMNI,
+    reason:
+      "Laid the groundwork for our web presence and external communications.",
+  },
+
+  // PAST CONTRIBUTORS
+  {
+    id: "harshit-raj-mishra",
+    name: "Harshit Raj Mishra",
+    teams: [Team.MEDIA],
+    roles: [Role.MEMBER],
+    status: Status.REMOVED,
+    reason: "",
+  },
+  {
+    id: "dev",
+    name: "Dev",
+    teams: [Team.TECH],
+    roles: [Role.MEMBER],
+    status: Status.REMOVED,
+    reason: "",
+  },
+  {
+    id: "nitya",
+    name: "Nitya",
+    teams: [Team.CORE],
+    roles: [Role.MEMBER],
+    status: Status.RESIGNED,
+    reason: "",
+  },
+  {
+    id: "rudrakshi",
+    name: "Rudrakshi",
+    teams: [Team.CORE],
+    roles: [Role.MEMBER],
+    status: Status.RESIGNED,
+    reason: "",
+  },
+  {
+    id: "parshant",
+    name: "Parshant",
+    teams: [Team.CORE],
+    roles: [Role.MEMBER],
+    status: Status.RESIGNED,
+    reason: "",
+  },
+  {
+    id: "lakshya",
+    name: "Lakshya",
+    teams: [Team.MEDIA],
+    roles: [Role.MEMBER],
+    status: Status.RESIGNED,
+    reason: "",
+  },
+  {
+    id: "aaryan",
+    name: "Aaryan",
+    teams: [Team.MEDIA],
+    roles: [Role.MEMBER],
+    status: Status.RESIGNED,
+    reason: "",
+  },
+  {
+    id: "meera",
+    name: "Meera",
+    teams: [Team.TECH],
+    roles: [Role.MEMBER],
+    status: Status.RESIGNED,
+    reason: "",
+  },
 ];
 
 export async function getMembers(): Promise<Member[]> {
-  return members;
-}
-
-export async function getMemberById(id: string): Promise<Member | undefined> {
-  return members.find(m => m.id === id);
+  return members.sort((a, b) => a.name.localeCompare(b.name));
 }

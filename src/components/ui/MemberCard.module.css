@@ -1,0 +1,167 @@
+.card {
+  border: 1px solid rgba(224, 238, 238, 0.2);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--color-2);
+  cursor: pointer;
+  color: var(--color-1);
+  width: 100%;
+  min-width: 250px;
+  max-width: 350px;
+}
+
+.card:hover {
+  border-color: var(--color-1);
+}
+
+.name {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  background-color: rgba(224, 238, 238, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badgeRole {
+  background-color: rgba(224, 238, 238, 0.25);
+}
+
+/* Modal Styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(18, 19, 21, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.modal {
+  background-color: var(--color-2);
+  border: 1px solid var(--color-1);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: var(--color-1);
+}
+
+.modalTitle {
+  font-family: var(--font-title);
+  font-size: 2rem;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--color-1);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.closeBtn:hover {
+  opacity: 0.7;
+}
+
+.reason {
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  border-left: 3px solid var(--color-1);
+  padding-left: 1rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-2);
+  background-color: var(--color-1);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.socialLink:hover {
+  opacity: 0.8;
+}
+
+/* Specific Tag Styles */
+.tagMentor {
+  background-color: rgba(255, 215, 0, 0.1);
+  color: #ffd700;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+.tagFounder {
+  background-color: rgba(255, 140, 0, 0.1);
+  color: #ff8c00;
+  border: 1px solid rgba(255, 140, 0, 0.2);
+}
+.tagCoordinator {
+  background-color: rgba(147, 112, 219, 0.1);
+  color: #9370db;
+  border: 1px solid rgba(147, 112, 219, 0.2);
+}
+.tagTeamLead {
+  background-color: rgba(0, 250, 154, 0.1);
+  color: #00fa9a;
+  border: 1px solid rgba(0, 250, 154, 0.2);
+}
+.tagCore {
+  background-color: rgba(220, 20, 60, 0.1);
+  color: #ff6b81;
+  border: 1px solid rgba(220, 20, 60, 0.2);
+}
+.tagTech {
+  background-color: rgba(30, 144, 255, 0.1);
+  color: #1e90ff;
+  border: 1px solid rgba(30, 144, 255, 0.2);
+}
+.tagMedia {
+  background-color: rgba(255, 20, 147, 0.1);
+  color: #ff1493;
+  border: 1px solid rgba(255, 20, 147, 0.2);
+}
+
