@@ -1,0 +1,348 @@
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+  padding-top: 2rem;
+}
+
+.title {
+  font-family: var(--font-title);
+  font-size: 4rem;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.highlightText {
+  color: var(--color-1);
+}
+
+.subtitle {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: rgba(224, 238, 238, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.timelineRow {
+  display: flex;
+  width: 100%;
+  position: relative;
+  /* Add padding bottom for visual spacing between rows */
+  padding-bottom: 4rem;
+}
+
+/* Left Column: Date */
+.dateCol {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 2.5rem;
+  padding-top: 2.2rem;
+  flex-shrink: 0;
+}
+
+.dateMonth {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dateYear {
+  font-size: 0.95rem;
+  color: rgba(224, 238, 238, 0.6);
+  font-weight: 500;
+}
+
+/* Middle Column: Divider (Line & Marker) */
+.dividerCol {
+  width: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  bottom: -4rem; /* Extend into the padding of the next row */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(224, 238, 238, 0.15) 0%, rgba(224, 238, 238, 0.05) 100%);
+  z-index: 1;
+}
+
+/* Hide the tail on the last item */
+.timelineRow:last-child .line {
+  background: linear-gradient(to bottom, rgba(224, 238, 238, 0.15) 0%, transparent 100%);
+}
+
+.marker {
+  position: absolute;
+  top: 2.2rem; /* Aligns visually with the text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.6rem;
+  height: 2.6rem;
+  background: var(--color-2); /* Solid background to obscure line behind it */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.markerConcluded {
+  color: #2dd4bf; /* Premium teal/sage */
+  border: 2px solid rgba(45, 212, 191, 0.3);
+}
+
+.timelineRow:hover .markerConcluded {
+  color: #5eead4;
+  border-color: rgba(45, 212, 191, 0.8);
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.3);
+  transform: translateX(-50%) scale(1.1);
+}
+
+.markerUpcoming {
+  color: #38bdf8; /* Premium electric cyan/blue */
+  border: 2px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.timelineRow:hover .markerUpcoming {
+  border-color: #38bdf8;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+  transform: translateX(-50%) scale(1.15);
+}
+
+/* Right Column: Card */
+.cardCol {
+  flex-grow: 1;
+  padding-left: 2.5rem;
+}
+
+.cardContent {
+  background: rgba(224, 238, 238, 0.02);
+  border: 1px solid rgba(224, 238, 238, 0.08);
+  border-radius: 1rem;
+  padding: 2.2rem;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.timelineRow:hover .cardContent {
+  background: rgba(224, 238, 238, 0.04);
+  border-color: rgba(224, 238, 238, 0.2);
+  transform: translateY(-4px); /* Immersive lifting effect */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.eventTitle {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  color: var(--color-1);
+  line-height: 1.2;
+}
+
+.statusBadge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.statusConcluded {
+  background: rgba(45, 212, 191, 0.05);
+  color: #2dd4bf;
+  border: 1px solid rgba(45, 212, 191, 0.2);
+}
+
+.timelineRow:hover .statusConcluded {
+  background: rgba(45, 212, 191, 0.1);
+  border-color: rgba(45, 212, 191, 0.4);
+}
+
+.statusUpcoming {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.timelineRow:hover .statusUpcoming {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.keyword {
+  font-size: 0.75rem;
+  background-color: rgba(224, 238, 238, 0.03);
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  color: rgba(224, 238, 238, 0.7);
+  font-weight: 500;
+  border: 1px solid rgba(224, 238, 238, 0.1);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.03em;
+}
+
+.timelineRow:hover .keyword {
+  border-color: rgba(224, 238, 238, 0.3);
+  color: var(--color-1);
+  background-color: rgba(224, 238, 238, 0.06);
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 2.5rem; }
+  
+  .timelineRow {
+    flex-direction: column;
+    padding-bottom: 3rem;
+  }
+
+  .dateCol {
+    width: 100%;
+    align-items: flex-start;
+    padding-right: 0;
+    padding-bottom: 1rem;
+    padding-top: 0;
+    padding-left: 3rem; 
+  }
+
+  .dateMonth {
+    font-size: 1.1rem;
+  }
+
+  .dividerCol {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: -3rem; /* extend through padding */
+    width: 2rem;
+  }
+
+  .line {
+    left: 50%;
+  }
+
+  .marker {
+    top: -0.2rem;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .cardCol {
+    padding-left: 3rem; 
+  }
+  
+  .cardHeader {
+    flex-direction: column-reverse;
+    gap: 0.8rem;
+  }
+  
+  .eventTitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* New Styles for Tagline and Resources */
+.tagline {
+  font-family: var(--font-normal);
+  font-size: 1.05rem;
+  color: rgba(224, 238, 238, 0.7);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.resourcesWrapper {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(224, 238, 238, 0.1);
+}
+
+.resourcesLabel {
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  color: rgba(224, 238, 238, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resourcesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.resourceBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  background: rgba(224, 238, 238, 0.04);
+  border: 1px solid rgba(224, 238, 238, 0.1);
+  color: var(--color-1);
+  font-family: var(--font-normal);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.resourceBtn:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.15);
+}
