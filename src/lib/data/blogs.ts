@@ -23,7 +23,7 @@ export interface BlogPost {
 export function getSortedBlogs(): BlogMeta[] {
   const fileNames = fs.readdirSync(blogsDirectory);
   const allBlogsData = fileNames
-    .filter(fileName => fileName.endsWith('.md'))
+    .filter(fileName => fileName.endsWith('.md') && !fileName.startsWith('_'))
     .map(fileName => {
       const slug = fileName.replace(/\.md$/, '');
       const fullPath = path.join(blogsDirectory, fileName);

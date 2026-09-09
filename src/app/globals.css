@@ -34,7 +34,7 @@ a {
 
 /* Global container for standard padding */
 .layout-content {
-  padding: 12vh 5vw 5vh 5vw;
+  padding: 120px 5vw 5vh 5vw;
   min-height: 80vh;
   max-width: 1400px;
   margin: 0 auto;

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Clock, Calendar, User } from 'lucide-react';
+import { Clock, Calendar, User, PenTool } from 'lucide-react';
 import { getSortedBlogs } from '@/lib/data/blogs';
 import styles from './blogs.module.css';
 
@@ -16,6 +16,11 @@ export default function Blogs() {
         <div className={styles.subtitle}>
           <span>Deepen your understanding of the cyber world</span>
           <span>with specially curated Hacklogs</span>
+        </div>
+        <div style={{ marginTop: '2rem' }}>
+          <Link href="/blogs/writer" className={styles.studioBtn}>
+            <PenTool size={16} /> Open Hacklog Studio
+          </Link>
         </div>
       </header>
 
