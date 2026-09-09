@@ -1,13 +1,7 @@
 ---
-title: "CyberPhoenix 2x3: Hackathon"
-tagline: "24-Hour Innovation and Coding Challenge"
+id: "2x3"
+title: "Code-Blooded"
+tagline: "A Hackathon - Innovation and Coding Arena"
 date: "2026-10-08"
-keywords: ["Coding Challenge", "Problem-Solving", "Team Collaboration"]
-resources:
-  - title: "Hacker Guide"
-    url: "#"
-    icon: "doc"
-  - title: "Submission Portal"
-    url: "#"
-    icon: "platform"
+keywords: ["Coding Challenge", "Problem-Solving", "Team Collab"]
 ---

@@ -12,6 +12,7 @@ export interface EventResource {
 
 export interface EventMeta {
   slug: string;
+  id?: string;
   title: string;
   tagline?: string;
   date: string;
@@ -25,7 +26,7 @@ export function getSortedEvents(): EventMeta[] {
   const now = new Date();
   
   const allEventsData = fileNames
-    .filter(fileName => fileName.endsWith('.md'))
+    .filter(fileName => fileName.endsWith('.md') && !fileName.startsWith('_'))
     .map(fileName => {
       const slug = fileName.replace(/\.md$/, '');
       const fullPath = path.join(eventsDirectory, fileName);
@@ -40,6 +41,7 @@ export function getSortedEvents(): EventMeta[] {
 
       return {
         slug,
+        id: data.id || '',
         title: data.title || slug,
         tagline: data.tagline || '',
         date: data.date,

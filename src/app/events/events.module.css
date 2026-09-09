@@ -346,3 +346,10 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(56, 189, 248, 0.15);
 }
+
+.eventId {
+  font-family: var(--font-title);
+  color: var(--color-1);
+  opacity: 0.8;
+  font-weight: 800;
+}

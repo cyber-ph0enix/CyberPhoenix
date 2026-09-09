@@ -1,10 +1,17 @@
 ---
-title: "CyberPhoenix 2x1: Orientation"
-tagline: "Embark on Your Cybersecurity Journey"
+id: "2x1"
+title: "CyberVerse & Hacker's NET"
+tagline: "Embark on Your Cybersecurity Journey. Networking concepts with practical studies"
 date: "2026-09-08"
-keywords: ["Career Exploration", "Industry Readiness", "Professional Development"]
+keywords:
+  [
+    "Career Exploration",
+    "Industry Readiness",
+    "OSI & TCP/IP models",
+    "Case Studies",
+  ]
 resources:
-  - title: "Welcome Deck"
-    url: "#"
+  - title: "Live Presentation"
+    url: "https://phoenix-0x.github.io/networking"
     icon: "slides"
 ---

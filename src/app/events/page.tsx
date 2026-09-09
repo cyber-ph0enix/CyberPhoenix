@@ -62,7 +62,10 @@ export default function EventsPage() {
               <div className={styles.cardCol}>
                 <div className={styles.cardContent}>
                   <div className={styles.cardHeader}>
-                    <h2 className={styles.eventTitle}>{event.title}</h2>
+                    <h2 className={styles.eventTitle}>
+                      {event.id && <span className={styles.eventId}>{event.id} <span style={{opacity: 0.5}}>-</span> </span>}
+                      {event.title}
+                    </h2>
                     <div className={`${styles.statusBadge} ${isConcluded ? styles.statusConcluded : styles.statusUpcoming}`}>
                       {isConcluded ? 'CONCLUDED' : 'UPCOMING'}
                     </div>
