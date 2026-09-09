@@ -1,0 +1,99 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2vw 3vw;
+    width: 100%;
+    z-index: 99;
+    background-color: var(--color-2);
+    box-shadow: 0px 1px 15px 7px #121315bd;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+    font-family: var(--font-title);
+    text-decoration: none;
+    color: var(--color-1);
+}
+
+.logoImg {
+    width: 3rem;
+    height: auto;
+}
+
+.navElement {
+    display: flex;
+    gap: 2vw;
+}
+
+.navLink {
+    text-decoration: none;
+    color: var(--color-1);
+    transition: color 0.2s ease-in-out;
+}
+
+.navLink:hover {
+    color: #a0a0a0;
+}
+
+.hamburger {
+    position: absolute;
+    width: 3vw;
+    display: none;
+    cursor: pointer;
+    right: 2vw;
+    top: 2vw;
+    color: var(--color-1);
+}
+
+@media (max-width: 900px) {
+    .hamburger {
+        display: block;
+        width: 4vw;
+    }
+    .nav {
+        flex-direction: column;
+        gap: 3vh;
+    }
+    .navElement {
+        display: none;
+        flex-direction: column;
+        z-index: 99;
+        width: 100%;
+        text-align: center;
+    }
+    .navElementOpen {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        margin-top: 2vh;
+        width: 100%;
+        text-align: center;
+    }
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+    .logoImg {
+        width: 1.7rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav {
+        padding-top: 3vh;
+        padding-bottom: 2vh;
+    }
+    .logo {
+        gap: 3vw;
+    }
+    .hamburger {
+        width: 6vw;
+        top: 3vh;
+    }
+}

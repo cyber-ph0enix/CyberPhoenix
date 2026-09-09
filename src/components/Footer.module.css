@@ -1,0 +1,61 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5vw 0 3vw 0;
+    gap: 2vw;
+}
+
+.clubLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+    font-family: var(--font-title);
+}
+
+.clubLogoImg {
+    width: 3rem;
+    height: auto;
+}
+
+.part2 {
+    gap: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyrightInfo {
+    margin-top: 1vw;
+}
+
+@media (max-width: 1120px) {
+    .clubLogo h1 {
+        font-size: 1.4rem;
+    }
+    .clubLogoImg {
+        width: 2rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .clubLogo h1 {
+        font-size: 1.1rem;
+    }
+    .part2, .copyrightInfo {
+        font-size: 0.8rem;
+    }
+    .clubLogoImg {
+        width: 1.65rem;
+    } 
+}
+
+@media (max-width: 550px) {
+    .footer {
+        margin-top: 12vh;
+        gap: 3vh;
+    }
+}

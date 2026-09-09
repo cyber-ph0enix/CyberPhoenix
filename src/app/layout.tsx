@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "CyberPhoenix",
   description: "Securing Tomorrow's World Today.",
+  icons: {
+    icon: "/assets/logo.ico",
+  },
 };
 
 export default function RootLayout({
@@ -14,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
