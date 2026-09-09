@@ -23,6 +23,7 @@ body {
   background-color: var(--color-2);
   color: var(--color-1);
   font-family: var(--font-normal);
+  overflow-x: hidden;
 }
 
 a {
@@ -30,25 +31,10 @@ a {
   color: var(--color-1);
 }
 
-button {
-  width: fit-content;
-  padding: 1vw 2vw;
-  border-radius: 2vw;
-  background-color: var(--color-1);
-  font-family: var(--font-normal);
-  margin-top: 2vh;
-  transition: all 0.25s;
-  border: 2px solid var(--color-1);
-  cursor: pointer;
-  color: var(--color-2);
-}
-
-button:hover {
-  color: var(--color-1);
-  background-color: transparent;
-}
-
+/* Global container for standard padding */
 main {
-  padding-top: 10vh; /* space for fixed navbar */
+  padding: 12vh 5vw 5vh 5vw; /* top padding accounts for fixed navbar */
   min-height: 80vh;
+  max-width: 1400px;
+  margin: 0 auto;
 }
