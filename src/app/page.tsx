@@ -2,6 +2,7 @@ import Button from "@/components/ui/Button";
 import styles from "./page.module.css";
 import socials from "@/lib/data/socials.json";
 import { MessageCircle, Camera, Briefcase, Code2, Shield, Terminal, Globe, Users, PlaySquare, Bird } from "lucide-react";
+import LogoIcon from "@/components/ui/LogoIcon";
 
 export default function Home() {
   
@@ -39,6 +40,9 @@ export default function Home() {
     <main className={styles.container}>
       {/* Hero Section */}
       <section className={styles.section1}>
+        <div className={styles.heroLogoWrapper}>
+          <LogoIcon size={220} className={styles.heroLogo} useGradient={true} />
+        </div>
         <h1 className={styles.heroHeading}>
           <span className={styles.highlightText}>SECURING TOMORROW&apos;S</span>
           <span>WORLD TODAY.</span>

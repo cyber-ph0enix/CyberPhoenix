@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
 
@@ -12,13 +11,6 @@ export default function Navbar() {
   return (
     <nav className={styles.nav}>
       <Link href="/" className={styles.logo}>
-        <Image
-          src="/assets/logo.png"
-          alt="cp"
-          width={48}
-          height={41}
-          className={styles.logoImg}
-        />
         <h1>CyberPhoenix</h1>
       </Link>
       

@@ -16,8 +16,9 @@
 }
 
 .clubLogoImg {
-    width: 3rem;
+    width: auto;
     height: auto;
+    color: #38bdf8; /* Original bluish color */
 }
 
 .part2 {
