@@ -1,7 +1,9 @@
 ---
 title: "Introduction to Hacklogs"
-date: "2025-04-03"
-tags: ["Introduction", "Hacklogs", "Purpose", "Our Blogs", "Articles"]
+date: "2026-08-25"
+author: "Harsh Sharma"
+tags: ["Community", "Announcement"]
+summary: "Welcome to Hacklogs. Explore our mission, vision, and the cybersecurity journey ahead."
 ---
 
 ### A Gateway to Cybersecurity Insights and Growth

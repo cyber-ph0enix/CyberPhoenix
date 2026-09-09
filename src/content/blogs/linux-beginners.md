@@ -1,7 +1,9 @@
 ---
-title: "Linux For CyberSecurity Beginners"
-date: "2025-10-19"
-tags: ["Linux ", " Cybersecurity basics ", " Ethical Hacking ", " CyberSecurity Training"]
+title: "Linux for Cybersecurity Beginners"
+date: "2026-08-20"
+author: "Saniya Yadav"
+tags: ["Linux", "Beginner", "Tutorial"]
+summary: "A beginner-friendly guide to mastering Linux commands essential for cybersecurity."
 ---
 
 ### Linux for Cybersecurity Beginners

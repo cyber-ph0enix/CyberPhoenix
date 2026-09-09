@@ -1,7 +1,9 @@
 ---
 title: "Cybersecurity October Highlights"
-date: "2025-10-19"
-tags: ["October Highlights ", " Data Breaches ", " Arrests ", " Global Trends ", " New Tools "]
+date: "2026-08-30"
+author: "Yash Raj"
+tags: ["News", "Highlights", "Cybersecurity"]
+summary: "A comprehensive roundup of the most critical cybersecurity news and vulnerabilities from October."
 ---
 
 ### Cybersecurity Monthly Highlights – October 2025
