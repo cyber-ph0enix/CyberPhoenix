@@ -1,7 +1,7 @@
 export enum Team {
   CORE = "Core Team",
   MEDIA = "Media Team",
-  TECH = "Tech Team"
+  TECH = "Tech Team",
 }
 
 export enum Role {
@@ -58,6 +58,7 @@ export const members: Member[] = [
     teams: [Team.CORE, Team.TECH],
     roles: [Role.FOUNDER, Role.COORDINATOR, Role.TEAM_LEAD],
     status: Status.ACTIVE,
+    linkedin: "https://www.linkedin.com/in/linkin-uday",
     reason:
       "Pioneering the club's technical direction and overseeing core infrastructure.",
   },
@@ -67,6 +68,7 @@ export const members: Member[] = [
     teams: [Team.CORE],
     roles: [Role.COORDINATOR, Role.TEAM_LEAD],
     status: Status.ACTIVE,
+    linkedin: "https://www.linkedin.com/in/harsh-sharma80",
     reason:
       "Driving organizational strategy and ensuring seamless collaboration across all divisions.",
   },
@@ -76,6 +78,7 @@ export const members: Member[] = [
     teams: [Team.MEDIA],
     roles: [Role.CO_COORDINATOR],
     status: Status.ACTIVE,
+    linkedin: "https://www.linkedin.com/in/yash-raj-0105a5330",
     reason:
       "Bridging the gap between technical execution and visual communication.",
   },
@@ -85,6 +88,7 @@ export const members: Member[] = [
     teams: [Team.CORE],
     roles: [Role.MEMBER],
     status: Status.ACTIVE,
+    linkedin: "https://linkedin.com/in/ashish-nagar-6a9a1a349",
     reason:
       "Managing foundational operations and facilitating club-wide initiatives.",
   },
@@ -94,6 +98,7 @@ export const members: Member[] = [
     teams: [Team.CORE],
     roles: [Role.MEMBER],
     status: Status.ACTIVE,
+    linkedin: "https://www.linkedin.com/in/harshrajranjan01",
     reason:
       "Strengthening the core framework and streamlining event management processes.",
   },
@@ -112,6 +117,7 @@ export const members: Member[] = [
     teams: [Team.MEDIA],
     roles: [Role.MEMBER],
     status: Status.ACTIVE,
+    linkedin: "https://www.linkedin.com/in/dushyant-yadav-305b69211",
     reason:
       "Documenting club milestones and amplifying our reach across social platforms.",
   },
@@ -121,6 +127,7 @@ export const members: Member[] = [
     teams: [Team.TECH],
     roles: [Role.MEMBER],
     status: Status.ACTIVE,
+    linkedin: "https://www.linkedin.com/in/yachika-2b940238a",
     reason:
       "Developing robust technical solutions and participating in competitive cybersecurity challenges.",
   },
@@ -130,6 +137,7 @@ export const members: Member[] = [
     teams: [Team.TECH],
     roles: [Role.MEMBER],
     status: Status.ACTIVE,
+    linkedin: "https://www.linkedin.com/in/saniya-yadav-5471b3323",
     reason:
       "Analyzing vulnerabilities and contributing to hands-on security workshops.",
   },
@@ -139,6 +147,7 @@ export const members: Member[] = [
     teams: [Team.TECH],
     roles: [Role.MEMBER],
     status: Status.ACTIVE,
+    linkedin: "https://www.linkedin.com/in/vikasdhiiman",
     reason:
       "Building secure architectures and guiding junior members in technical labs.",
   },
@@ -148,6 +157,7 @@ export const members: Member[] = [
     teams: [Team.TECH],
     roles: [Role.MEMBER],
     status: Status.ACTIVE,
+    linkedin: "https://www.linkedin.com/in/kunal-phogat-b20752294",
     reason:
       "Optimizing web performance and implementing secure coding practices.",
   },
@@ -168,7 +178,8 @@ export const members: Member[] = [
     name: "Lakshika",
     teams: [Team.MEDIA],
     roles: [Role.FOUNDER, Role.MENTOR],
-    status: Status.ALUMNI, // Treated as Mentor in UI due to Role.MENTOR
+    status: Status.ALUMNI,
+    linkedin: "https://www.linkedin.com/in/lakshika-soni-9a2bba291", // Treated as Mentor in UI due to Role.MENTOR
     reason:
       "Actively guiding the current cohort and shaping the club's long-term vision.",
   },
@@ -178,6 +189,7 @@ export const members: Member[] = [
     teams: [Team.CORE],
     roles: [Role.FOUNDER, Role.MENTOR],
     status: Status.ALUMNI,
+    linkedin: "https://www.linkedin.com/in/aakash-sehgal",
     reason:
       "Established the club's foundational principles and initial operating structure.",
   },
@@ -187,6 +199,7 @@ export const members: Member[] = [
     teams: [Team.CORE],
     roles: [Role.FOUNDER, Role.MENTOR],
     status: Status.ALUMNI,
+    linkedin: "https://www.linkedin.com/in/piyush-bansal-662344219",
     reason:
       "Fostered the early community and initiated our first major technical events.",
   },
@@ -196,6 +209,7 @@ export const members: Member[] = [
     teams: [Team.CORE],
     roles: [Role.FOUNDER, Role.MENTOR],
     status: Status.ALUMNI,
+    linkedin: "https://www.linkedin.com/in/kartik-cy63r-h",
     reason:
       "Spearheaded the integration of practical cybersecurity labs into the curriculum.",
   },
@@ -205,6 +219,7 @@ export const members: Member[] = [
     teams: [Team.CORE],
     roles: [Role.FOUNDER, Role.MENTOR],
     status: Status.ALUMNI,
+    linkedin: "https://www.linkedin.com/in/anuj-kumar-261471251",
     reason:
       "Drafted the original charter and built relationships with industry professionals.",
   },
@@ -214,6 +229,7 @@ export const members: Member[] = [
     teams: [Team.CORE],
     roles: [Role.FOUNDER, Role.MENTOR],
     status: Status.ALUMNI,
+    linkedin: "https://www.linkedin.com/in/nishant179",
     reason:
       "Architected the initial club infrastructure and recruitment protocols.",
   },
@@ -223,6 +239,7 @@ export const members: Member[] = [
     teams: [Team.MEDIA],
     roles: [Role.FOUNDER, Role.MENTOR],
     status: Status.ALUMNI,
+    linkedin: "https://www.linkedin.com/in/kanishka-yadav-403a11256",
     reason:
       "Designed the original brand identity and launched our first digital campaigns.",
   },
@@ -232,6 +249,7 @@ export const members: Member[] = [
     teams: [Team.TECH],
     roles: [Role.FOUNDER, Role.MENTOR],
     status: Status.ALUMNI,
+    linkedin: "https://www.linkedin.com/in/arpita26",
     reason:
       "Developed the very first iteration of the CyberPhoenix digital platform.",
   },
@@ -241,6 +259,7 @@ export const members: Member[] = [
     teams: [Team.TECH],
     roles: [Role.FOUNDER, Role.MENTOR],
     status: Status.ALUMNI,
+    linkedin: "https://www.linkedin.com/in/001-abhinav-dhiman",
     reason:
       "Laid the groundwork for our web presence and external communications.",
   },
@@ -252,6 +271,7 @@ export const members: Member[] = [
     teams: [Team.MEDIA],
     roles: [Role.MEMBER],
     status: Status.REMOVED,
+    linkedin: "https://www.linkedin.com/in/harshit-mishra-6aa4a0337",
     reason: "",
   },
   {
@@ -260,6 +280,7 @@ export const members: Member[] = [
     teams: [Team.TECH],
     roles: [Role.MEMBER],
     status: Status.REMOVED,
+    linkedin: "https://www.linkedin.com/in/devdeepdhariiwal",
     reason: "",
   },
   {
@@ -268,6 +289,7 @@ export const members: Member[] = [
     teams: [Team.CORE],
     roles: [Role.MEMBER],
     status: Status.RESIGNED,
+    linkedin: "https://www.linkedin.com/in/nitya-chhabra-477a9b325",
     reason: "",
   },
   {
@@ -276,6 +298,7 @@ export const members: Member[] = [
     teams: [Team.CORE],
     roles: [Role.MEMBER],
     status: Status.RESIGNED,
+    linkedin: "https://www.linkedin.com/in/rudrakshi-mittal-269743345",
     reason: "",
   },
   {
@@ -284,6 +307,7 @@ export const members: Member[] = [
     teams: [Team.CORE],
     roles: [Role.MEMBER],
     status: Status.RESIGNED,
+    linkedin: "https://www.linkedin.com/in/prashant-s-730aa3297",
     reason: "",
   },
   {
@@ -292,6 +316,7 @@ export const members: Member[] = [
     teams: [Team.MEDIA],
     roles: [Role.MEMBER],
     status: Status.RESIGNED,
+    linkedin: "https://www.linkedin.com/in/lakshy-rana-9655a8323",
     reason: "",
   },
   {
@@ -300,6 +325,7 @@ export const members: Member[] = [
     teams: [Team.MEDIA],
     roles: [Role.MEMBER],
     status: Status.RESIGNED,
+    linkedin: "https://www.linkedin.com/in/aaryan-0a5880328",
     reason: "",
   },
   {
@@ -308,6 +334,7 @@ export const members: Member[] = [
     teams: [Team.TECH],
     roles: [Role.MEMBER],
     status: Status.RESIGNED,
+    linkedin: "https://www.linkedin.com/in/meera-catter-738450277",
     reason: "",
   },
 ];
