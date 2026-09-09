@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "CyberPhoenix",
   description: "Securing Tomorrow's World Today.",
   icons: {
-    icon: "/assets/logo.ico",
+    icon: "/assets/favicon.svg",
   },
 };
 
@@ -20,9 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        <div className="layout-content">
-          {children}
-        </div>
+        <div className="layout-content">{children}</div>
         <Footer />
       </body>
     </html>
