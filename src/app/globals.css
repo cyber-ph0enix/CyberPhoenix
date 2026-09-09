@@ -39,3 +39,9 @@ a {
   max-width: 1400px;
   margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+  .layout-content {
+    padding: 100px 1.5rem 3vh 1.5rem;
+  }
+}
